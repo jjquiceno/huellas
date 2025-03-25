@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Fundacion Huellas del Ayer</title>
+</head>
+<body>
+    <section class="container">
+        <div class="preliminar">
+            <div id="tel-email">
+                <div class="tel-email-int">
+                    <!-- <i class="fa-light fa-phone-flip"></i> -->
+                    <i class="fa-solid fa-phone-flip"></i>
+                    <p class="lightI">+57 123 456 78 90</p>
+                </div>
+                <div class="tel-email-int">
+                    <i class="fa-solid fa-envelope"></i>
+                    <p><a href="" class="correo lightI">fundacionhuellasdelayer@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="pre-redes"> 
+                <i class="fa-brands fa-twitter redes"></i>
+                <i class="fa-brands fa-instagram redes"></i>
+                <i class="fa-brands fa-tiktok redes"></i>
+                <i class="fa-brands fa-whatsapp redes"></i>
+            </div>
+        </div>
+        <div class="header">
+            <div class="logo">
+                <img class="logo-img" src="img/logos/LOGO HUELLAS.png" alt="logo">
+            </div>
+            <div class="menu">
+                <nav>
+                    <ul>
+                        <li><a href="" class="regular">Inicio</a></li>
+                        <li><a href="" class="regular">Nosotros</a></li>
+                        <li><a href="" class="regular">Programas</a></li>
+                        <li><a href="" class="regular">Trabaja con nosotros</a></li>
+                        <li><a href="" class="regular">Blog</a></li>
+                        <li><a href="" class="regular">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="home">
+            <div>
+                <h1 class="bold">TRABJAMOS JUNTOS PARA</h1>
+                <H2 class="boldI">NUESTROS ADULTOS MAYORES</H2>
+                <div class="separador-nn"></div>
+                <H3 class="lightI">En Fundación Huellas del Ayer trabajamos con amor</H3>
+                <div class="separador-nn"></div>
+                <a href="" id="knowB" class="light">¡CONOCÉ NUESTROS PROGRAMAS!</a>
+            </div>
+        </div>
+        <div class="preview">
+            <div class="preview-content">
+                <h1 class="regular"><span class="lightI">NUESTROS</span> PROFESIONALES</h1>
+                <br>
+                <div class="separador"></div>
+                <br>
+                <p class="regular">NUESTROS ADULTOS MAYORES SON LO MAS IMPORTANTE,<br> POR ESO CONTAMOS CON PROFESIONALES DE LA SALUD PARA ATENDER SUS NECESIDADES</p>
+            </div>
+            <div class="preview-content">
+                <div class="pro">
+                    <div id="mt1" class="pro-image">
+                        <div class="pro-image-content">
+                            <h2 class="regular WHITE">ESPECIALISTAS EN NUTRICION</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="pro">
+                    <div id="mt2" class="pro-image">
+                        <div class="pro-image-content">
+                            <h2 class="regular WHITE">APOYO PSICOLOGICO PROFESIONAL</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="pro">
+                    <div id="mt3" class="pro-image">
+                        <div class="pro-image-content">
+                            <h2 class="regular WHITE">RED DE APOYO SOCIAL</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="pro">
+                    <div id="mt4" class="pro-image">
+                        <div class="pro-image-content">
+                            <h2 class="regular WHITE">ACOMPAÑAMIENTO Y CUIDADO DEDICADO</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="pro">
+                    <div id="mt5" class="pro-image">
+                        <div class="pro-image-content">
+                            <h2 class="regular WHITE">TERAPIA OCUPACIONAL PERSONALIZADA</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="pro">
+                    <div id="mt6" class="pro-image">
+                        <div class="pro-image-content">
+                            <h2 class="regular WHITE">Cuidado Médico Integral</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modales">
+                <div id="modal1" class="pro-image-modal">
+                    <h1>modal 1</h1>
+                    <div class="cerrar">
+                        cerrar
+                    </div>
+                </div>
+                <div id="modal2" class="pro-image-modal">
+                    <h1>modal 2</h1>
+                    <div class="cerrar">
+
+                    </div>
+                </div>
+                <div id="modal3" class="pro-image-modal">
+                    <div class="cerrar">
+
+                    </div>
+                </div>
+                <div id="modal4" class="pro-image-modal">
+                    <div class="cerrar">
+
+                    </div>
+                </div>
+                <div id="modal5" class="pro-image-modal">
+                    <div class="cerrar">
+
+                    </div>
+                </div>
+                <div id="modal6" class="pro-image-modal">
+                    <div class="cerrar">
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                // variables de los modales
+                const cajon = document.querySelector('.modales');
+                const cerrar = document.querySelectorAll('.cerrar');
+                const modales = [
+                    {tarjeta: document.getElementById('mt1'), ventana: document.getElementById('modal1')}, 
+                    {tarjeta: document.getElementById('mt2'), ventana: document.getElementById('modal2')}, 
+                    {tarjeta: document.getElementById('mt3'), ventana: document.getElementById('modal3')}, 
+                    {tarjeta: document.getElementById('mt4'), ventana: document.getElementById('modal4')}, 
+                    {tarjeta: document.getElementById('mt5'), ventana: document.getElementById('modal5')}, 
+                    {tarjeta: document.getElementById('mt6'), ventana: document.getElementById('modal6')}
+                ];
+
+                modales.forEach(modal => {
+                    modal.tarjeta.addEventListener("click", () => {
+                        modales.forEach(m => m.ventana.style.display = "none")
+                        cajon.style.display = "flex";
+                        setTimeout(() => {
+                            cajon.style.opacity = "1";
+                        }, 10)
+                        modal.ventana.style.display = "block";
+                    });
+                });
+                cerrar.forEach(close => {
+                    close.addEventListener("click", () => {
+                        cajon.style.opacity = "0";
+                        setTimeout(() => {
+                            cajon.style.display = "none";
+                            modal.ventana.style.display = "none";
+                        }, 300);
+                    });
+                });
+            </script>
+        </div>
+        <div class="content">
+            <div class="contentTittle">
+                <h2 class="regular"><span class="lightI">¿PORQUE</span> ELEGIRNOS?</h2>
+                <!-- <br> -->
+                <div class="separador"></div>
+                <!-- <br> -->
+                <P class="regular">CONOCE NUESTROS VALORES</P>
+            </div>
+        </div>
+        <div class="valores">
+            <!-- primeros dos valores -->
+            <div class="valoresContainer">
+                <div class="cuadroC">
+                    <div>
+                        <img class="imgValor1" src="img/galeria/_MG_0592.png" alt="">
+                    </div>
+                    <div>
+                        <p class="valortt blackI">Valor1</p>
+                        <p class="valortext lightI">texto</p>
+                    </div>
+                </div>
+                <div class="cuadro">
+                    <div>
+                        <p class="valortt blackI">Valor2</p>
+                        <p class="valortext lightI">texto</p>
+                        <button class="btn-normal">conoce mas de nosotros</button>
+                        <!-- <a class="btn-normal" href="">conoce mas de nosotros</a> -->
+                    </div>
+                    <br>
+                    <div>
+                        <img class="imgValor1" src="img/galeria/_MG_0561.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- otros dos valores -->
+            <div class="valoresContainer">
+                <div class="cuadro2">
+                    <div>
+                        <p class="valortt blackI">Valor3</p>
+                    </div>
+                    <div>
+                        <img class="imgValor2" src="img/galeria/_MG_0631.png" alt="">
+                    </div>
+                </div>
+                <div class="cuadroC2">
+                    <div>
+                        <img class="imgValor2" src="img/galeria/_MG_0772.png" alt="">
+                    </div>
+                    <div>
+                        <p class="valortt blackI">valor4</p>
+                        <p class="lightI">texto</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content2">
+            <div>
+                <div id="imgC2">
+                    <!-- <img id="imgC2-int" src="img/galeria/_MG_0787.png" alt=""> -->
+                </div>
+                <div id="textC2">
+                    <h1 class="boldI">Hemos ayudado a miles de personas</h1>
+                    <br>
+                    <div class="separador"></div>
+                    <br>
+                    <p class="regular">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem rem vel, libero nisi blanditiis illum laboriosam, est consequuntur possimus omnis dolorem. Doloribus similique, culpa eius exercitationem aliquid dignissimos in nihil?</p>
+                    <div id="numeros">
+                        <div class="numeros" data-end="350" data-time="5000">
+                            <p class="lightI">cosa 1</p>
+                            <span class="blackI numeros_number"></span>
+                        </div>
+                        <div class="numeros" data-end="500" data-time="6000">
+                            <p class="lightI">cosa 2</p>
+                            <span class="blackI numeros_number"></span>
+                        </div>
+                        <div class="numeros" data-end="750" data-time="7000">
+                            <p class="lightI">cosa 3</p>
+                            <span class="blackI numeros_number"></span>
+                        </div>
+                    </div>
+                    <script>
+                        document.addEventListener("DOMContentLoaded", function() {
+                            const numeros = document.querySelectorAll(".numeros");
+                            numeros.forEach(numero => {
+                                let start = 0; 
+                                const end = parseInt(numero.getAttribute("data-end"));
+                                const time = parseInt(numero.getAttribute("data-time"));
+                                const increment = 50;
+                                const incrementAmount = Math.ceil(end/(time/increment));
+                                const numerito = numero.querySelector('.numeros_number');
+
+                                function counter(){
+                                    const interval = setInterval(() => {
+                                        start += incrementAmount;
+                                        if (start >= end){
+                                            start = end; 
+                                            clearInterval(interval);
+                                        }
+                                        numerito.textContent = start;
+                                    }, increment);
+                                };
+                                const observar = new IntersectionObserver((entries) => {
+                                    entries.forEach(entry => {
+                                        if (entry.isIntersecting){
+                                            counter();
+                                            observar.disconnect();
+                                        }
+                                    });
+                                });
+                                observar.observe(document.getElementById('numeros'));
+                            })
+                        })
+                    </script>
+                </div>
+            </div>
+        </div>
+        <div class="ma">
+
+        </div>
+        <div class="contact">
+            <h1>conoce mas en nuesras redes sociales</h1>
+        </div>
+        <div class="fotter">
+            <div class="fotter-int"></div>
+            <div class="fotter-int"></div>
+            <div class="fotter-int"></div>
+            <div class="fotter-int"></div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init()
+    </script>
+</body>
+</html>
