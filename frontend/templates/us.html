@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/nosotros.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <section class="container">
+        <div class="preliminar">
+            <div id="tel-email">
+                <div class="tel-email-int" data-aos="zoom-in" data-aos-duration="500">
+                    <!-- <i class="fa-light fa-phone-flip"></i> -->
+                    <i class="fa-solid fa-phone-flip"></i>
+                    <p class="lightI">+57 123 456 78 90</p>
+                </div>
+                <div class="tel-email-int" data-aos="zoom-in" data-aos-duration="500">
+                    <i class="fa-solid fa-envelope"></i>
+                    <p><a href="" class="correo lightI">fundacionhuellasdelayer@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="pre-redes"> 
+                <i class="fa-brands fa-twitter redes" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="50"></i>
+                <i class="fa-brands fa-instagram redes" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="100"></i>
+                <i class="fa-brands fa-tiktok redes" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="150"></i>
+                <i class="fa-brands fa-whatsapp redes" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="200"></i>
+            </div>
+        </div>
+        <div class="header">
+            <div class="logo">
+                <a href="#"><img class="logo-img" src="../img/logos/LOGO HUELLAS.png" alt="logo" data-aos="fade-up" data-aos-duration="700"></a>
+            </div>
+            <div class="menu">
+                <nav>
+                    <ul>
+                        <li><a class="header-link light" href="../../index.html" class="regular position" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="100">Inicio</a></li>
+                        <li><a class="header-link light" href="#" class="regular option" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="150">Nosotros</a></li>
+                        <li><a class="header-link light" href="projects.html" class="regular option" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="200">Programas</a></li>
+                        <li><a class="header-link light" href="docs.html" class="regular option" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="300">Transparencia</a></li>
+                        <li><a class="header-link light" href="contacto.php" class="regular option" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="350">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="home">
+            <div class="home-texts">
+                <div class="separador-corto"></div>
+                <br>
+                <p class="blackI x2">NOSOTROS</p>
+                <br>
+                <div class="separador"></div>
+                <br>
+                <P class="regular x1-5">CONOCENOS UN POCO <span>MÁS</span></P>
+                <br>
+                <div class="separador-corto"></div>
+            </div>
+        </div>
+
+        <div class="video">
+            <div>
+                <video class="video-mov" id="Video">
+                    <source src="../img/videos/IMG_9252.mp4" type="video/mp4">
+                </video>
+                <div class="controles">
+                    <div class="bgW">
+                        <div id="continue">
+                            <i id="play" class="fa-solid fa-play"></i>
+                            <i id="pause" class="fa-solid fa-pause"></i>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+            <div class="separadorVertical"></div>
+            <div>
+                <p class="light x1-5 GREEN">CONOCENOS</p>
+                <p class="bold x2">SOMOS HUELLAS DEL AYER</p>
+                <br>
+                <div class="separador-izquierdo"></div>
+                <br>
+                <p class="regular">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, corporis.</p>
+            </div>     
+        </div>
+
+        <script>
+            const video = document.getElementById('Video');
+            const continueB = document.getElementById('continue');
+            const pauseB = document.getElementById('pause');
+            const playB = document.getElementById('play');
+
+            pauseB.style.display = 'none';
+            pauseB.style.opacity = '0';
+
+            function playVideo() {
+                if(video.paused){
+                    video.play();
+                    playB.style.opacity = '0';
+                    pauseB.style.opacity = '1';
+
+                    setTimeout(() => {
+                        playB.style.display = 'none';
+                        pauseB.style.display = 'block'; 
+                    }, 300)
+                }else{
+                    video.pause();
+                    pauseB.style.display = 'none';
+                    playB.style.display = 'block';
+                    setTimeout(() => {
+                        pauseB.style.opacity = '0';
+                        playB.style.opacity = '1';
+                    }, 300)
+                }
+            }
+            continueB.addEventListener('click', () => {
+                playVideo();
+                continueB.classList.add('rebotar');
+                setTimeout(() => {
+                    continueB.classList.remove('rebotar');
+                },300)
+            });
+        </script>
+        
+        <div class="mision-vision">
+            <div class="mv" id="mv1">
+                <div>
+                    <p class="regular x2">MISIÓN</p>
+                    <br>
+                    <div class="separador-black"></div>
+                    <br>
+                    <p class="regular x1">Somos un equipo de profesionales dedicados con enfoque humano, comprometidos en desarrollar e implementar estrategias innovadoras para el cuidado, ampliando la esperanza de vida saludable y mejorando la calidad de vida de los adultos mayores.</p>
+                </div>
+            </div>
+            <div class="mv" id="mv2">
+                <div>
+                    <p class="regular x2">VISIÓN</p>
+                    <br>
+                    <div class="separador-black"></div>
+                    <br>
+                    <p class="regular x1">En el 2030, nos consolidaremos como líderes nacionales destacados en el diseño y ejecución de programas revolucionarios para el bienestar de la población adulta mayor y en condición de discapacidad. Buscamos generar transformaciones significativas no solo en su calidad de vida, sino también en su entorno más cercano, siendo reconocidos como agentes clave de positividad y cambio.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="historia">
+            <div class="historia-texto">
+                <div>
+                    <p class="bold x2">UN POCO DE NUESTRA HISTORIA</p>
+                </div>
+                <p class="regular x1-5">La Fundación Huellas del Ayer, creada en abril de 2011, nace con la misión de proporcionar  un  espacio  de  paz  y calidad de vida para adultos mayores. Comprometidos  con  el  servicio,  la integración  y  el  bienestar,  nuestro equipo altamente calificado se enfoca en la tranquilidad de los usuarios y sus familias, marcando la diferencia para aquellos que nos necesitan.</p>
+            </div>
+        </div>
+
+        <div class="galeria">
+            <div class="galeria-int">
+                <div class="galeria-pht"></div>
+                <div class="galeria-pht"></div>
+                <div class="galeria-pht"></div>
+                <div class="galeria-pht"></div>
+                <div class="galeria-pht"></div>
+                <div class="galeria-pht"></div>
+                <div class="galeria-pht"></div>
+                <div class="galeria-pht"></div>
+                <div class="galeria-pht"></div>
+                <div class="galeria-pht"></div>
+                <div class="galeria-pht"></div>
+                <div class="galeria-pht"></div>
+            </div>
+        </div>
+
+        <div class="fotter">
+            <div class="fotter-int fot-logo">
+                <img src="../img/logos/LOGO HUELLAS.png" alt="">
+            </div>
+            <div class="fotter-int fot-programas">
+                <h3 class="bold fot-programas-tt">NUESTROS PROGRAMAS</h3>
+                <br>
+                <ul>
+                    <li class="programa regular textonormal">programa1</li>
+                    <li class="programa regular textonormal">programa2</li>
+                    <li class="programa regular textonormal">programa3</li>
+                    <li class="programa regular textonormal">programa4</li>
+                    <li class="programa regular textonormal">programa5</li>
+                    <li class="programa regular textonormal">programa6</li>
+                    <li class="programa regular textonormal">programa7</li>
+                </ul>
+            </div>
+            <div class="fotter-int fot-contacto">
+                <h3 class="bold fot-programas-tt">CONTACTANOS O VISITANOS</h3>
+                <br>
+                <div class="fot-contacto-int">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p class="regular textonormal">ubicacion</p>
+                </div>
+                <div class="separadorInV"></div>
+                <div class="fot-contacto-int">
+                    <i class="fa-solid fa-clock"></i>
+                    <p class="regular textonormal">horario de atencion</p>
+                </div>
+                <div class="separadorInV"></div>
+                <div class="fot-contacto-int">
+                    <i class="fa-solid fa-phone-flip"></i>
+                    <p class="regular textonormal">+57 123 456 78 90</p>
+                </div>
+                <div class="separadorInV"></div>
+                <div class="fot-contacto-int">
+                    <i class="fa-solid fa-envelope"></i>
+                    <p class="regular textonormal">fundacionhuellasdelayer<br>@gmail.com</p>
+                </div>
+            </div>
+            <div class="fotter-int fot-news">
+                <h3 class="bold fot-programas-tt">¡SIGUENOS!</h3>
+                <br><br>
+                <div class="fot-news-int">
+                    <i class="fa-brands fa-twitter redes"></i>
+                    <p class="regular textonormal">Twitter</p>
+                </div>
+                <div class="separadorInV"></div>
+                <div class="fot-news-int">
+                    <i class="fa-brands fa-instagram redes"></i>
+                    <p class="regular textonormal">Instagram</p>
+                </div>
+                <div class="separadorInV"></div>
+                <div class="fot-news-int">
+                    <i class="fa-brands fa-tiktok redes"></i>
+                    <p class="regular textonormal">Tik Tok</p>
+                </div>
+                <div class="separadorInV"></div>
+                <div class="fot-news-int">
+                    <i class="fa-brands fa-whatsapp redes"></i>
+                    <p class="regular textonormal">WhatsApp</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init()
+    </script>
+</body>
+</html>
