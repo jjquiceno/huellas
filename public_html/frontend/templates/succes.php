@@ -61,6 +61,7 @@ $user_id = $auth->getUserId();
     <div class="welcome-message">
         <h1>Bienvenido <?php echo htmlspecialchars($_SESSION['username']); ?></h1>
         <p>Has iniciado sesión exitosamente.</p>
+        <p><a href="../../../backend/download_pdf.php" class="logout-btn" style="background-color: #2196F3; margin-bottom: 10px;">Descargar mis datos en PDF</a></p>
         <p><a href="../../../backend/logout.php" class="logout-btn">Cerrar sesión</a></p>
     </div>
 </body>
