@@ -1,0 +1,177 @@
+.home{
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../img/galeria/img8.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    position: relative;
+}
+.home *{
+    position: relative;
+    z-index: 2;
+}
+.home::after{
+    content: "";
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.199);
+    border-radius: 0 0 25px 25px;
+}
+.home-texts{
+    width: 50%;
+    height: 70%;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    background: linear-gradient(45deg, #2a9d493b, #f2ca0033);
+}
+
+/* --------------------docs container---------------- */
+.docs-container{
+    width: 100%;
+    height: fit-content;
+    background-image: url(../img/galeria/img13.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.docs-container *{
+    position: relative;
+    z-index: 4;
+}
+.docs-container::after{
+    content: "";
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(../img/logos/LOGO\ HUELLAS.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(255, 255, 255, 0.473);
+    opacity: .1;
+}
+.docs-container::before{
+    content: "";
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(10px);
+}
+.buscador{
+    width: 90%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 20px;
+}
+.buscador-input{        
+    border: none;
+    width: 70%;
+    height: 70%;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.137);
+    outline: none;
+    transition: .3s ease;
+}
+.buscador-button{
+    border: none;
+    width: 4%;
+    height: 70%;
+    background-color: transparent;
+    border-radius: 3px;
+}
+.buscador-input:focus{
+    box-shadow: 1px 1px 10px 1px #00000079;
+    background-color: rgba(255, 255, 255, 0.13);
+}
+.docs{
+    width: 90%;
+    height: fit-content;
+    display: flex;  
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.docs-int{
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.233);
+}
+.docCaja{
+    width: 20%;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.651);
+    height: 30vh;
+    display: grid;
+    grid-template-columns: 90%;
+    grid-template-rows: 70% 1% 20%;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+.docCaja-int{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.dcI2{
+    width: 100%;
+    border-radius: 5px;
+    height: 100%;
+    background-color: #f2ca0033;
+    align-items: center;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    transition: .3s ease;
+}
+.dcI2:hover{
+    box-shadow: 1px 1px 10px 1px #00000079;
+    background-color: #f2ca0049;
+    color: white;
+    text-shadow: 1px 1px 10px #00000079;
+}
+
+/* responsive */
+@media screen and (max-width: 820px){
+    .home-texts{
+        width: 90%;
+    }
+    .docs{
+        flex-direction: column;
+        align-items: center;
+    }
+    .docCaja{
+        width: 80%;
+    }
+}
