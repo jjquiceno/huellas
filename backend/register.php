@@ -65,7 +65,7 @@
                 echo "
                 <script>
                     alert('New record created successfully');
-                    window.location.href = '../public_html/frontend/templates/induccionacces.php';
+                    window.location.href = '../public_html/frontend/templatesIntranet/registerEmpleado.php';
                 </script>";
             } else {
                 echo "
