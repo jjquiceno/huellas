@@ -27,7 +27,7 @@
     }
     
     if ($auth->login($nombre_usuario, $password)) {
-        header('Location: ../public_html/frontend/templates/succes.php');
+        header('Location: ../public_html/frontend/templatesIntranet/succes.php');
         exit;
     } else {
         echo "

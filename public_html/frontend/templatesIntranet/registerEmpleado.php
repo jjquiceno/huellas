@@ -62,43 +62,48 @@
                             <div class="separador-black"></div>
                         </div>
                         <div class="info-message" data-validate = "El tipo de identificacion es requerido">
-                            <select name="tipo_identificacion" class="caja_text regular">
+                            <select name="tipo_identificacion_id" class="caja_text regular" required>
                                 <option value="">Tipo Identificacion</option>
-                                <option value="">CC</option>
-                                <option value="">CE</option>
-                                <option value="">PA</option>
-                                <option value="">TI</option>
+                                <option value="CC132">CC</option>
+                                <option value="CE798">CE</option>
+                                <option value="TI548">TI</option>
                             </select>
                             <span></span>
                             <div class="separador-black"></div>
                         </div>
-
+                        <div class="info-message" data-validate = "El nombre es requerido">
+                            <input class="caja_text regular" type="text" name="nombre" required>
+                            <label class="label lightI" for="nombre">nombre</label>
+                            <span></span>
+                            <div class="separador-black"></div>
+                        </div>
                         <div class="info-message" data-validate="La fecha de nacimiento es requerida">
                             <input class="caja_text regular" type="date" name="fecha_nacimiento" required>
                             <label class="label lightI" for="fecha_nacimiento">Fecha de Nacimiento</label>
                             <span></span>
                             <div class="separador-black"></div>
                         </div>
-                        <div class="info-message" data-validate="El nombre de usuarioes necesario">
+                        <div class="info-message" data-validate="El nombre de usuario es requerido">
                             <input class="caja_text regular" type="text" name="nombre_usuario" required>
                             <label class="label lightI" for="nombre_usuario">Nombre de Usuario</label>
                             <span></span>
                             <div class="separador-black"></div>
                         </div>
                         <div class="info-message" data-validate = "El cargo es requerido">
-                            <select name="cargo_id" class="caja_text regular">
+                            <select name="cargo_id" class="caja_text regular" required>
                                 <option value="">Cargo</option>
-                                <option value="1">Administrador</option>
-                                <option value="2">Usuario</option>
+                                <option value="01">Programador</option>
+                                <option value="02">Diseñadora</option>
+                                <option value="03">Asistente administrativo</option>
                             </select>
                             <span></span>
                             <div class="separador-black"></div>
                         </div>
                         <div class="info-message" data-validate = "El tipo de contrato es requerido">
-                            <select name="tipo_contrato_id" class="caja_text regular">
+                            <select name="tipo_contrato_id" class="caja_text regular" required>
                                 <option value="">Tipo de Contrato</option>
-                                <option value="1">Contrato por prestacion de servicios</option>
-                                <option value="2">Contrato vinculado</option>
+                                <option value="CPS789">Contrato por prestacion de servicios</option>
+                                <option value="CTV145">Contrato vinculado</option>
                             </select>
                             <span></span>
                             <div class="separador-black"></div>
