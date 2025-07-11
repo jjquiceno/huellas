@@ -70,7 +70,7 @@ class Auth {
     // Cerrar sesión
     public function logout() {
         if (session_status() === PHP_SESSION_ACTIVE) {
-            $_SESSION = array();
+            $_SESSION = [];
             session_destroy();
         }
     }

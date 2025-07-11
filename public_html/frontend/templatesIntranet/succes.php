@@ -1,18 +1,13 @@
 <?php
-require_once '../../../config.php';
-require_once '../../../auth.php';
-
-// Crear instancia de Auth
-$auth = new Auth($conexion);
-
-// Verificar sesión
-if (!$auth->isLoggedIn()) {
-    header("Location: induccionacces.php");
-    exit;
-}
-
-// Obtener información del usuario
-$user_id = $auth->getUserId();
+// require_once '../../../config.php';
+// require_once '../../../auth.php';
+// $auth = new Auth($conexion);
+// if (!$auth->isLoggedIn()) {
+//     header("Location: ../templatesinduccionacces.php");
+//     exit;
+// }
+// $user_id = $auth->getUserId();
+require_once '../../../helpers/require_login.php';
 ?>
 
 <!DOCTYPE html>

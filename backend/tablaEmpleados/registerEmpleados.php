@@ -3,18 +3,18 @@
 
     require_once '../../helpers/Validator.php';
     
-    // Validar y limpiar datos
-    $identificacion = Validator::validateIdentificacion($_POST['identificacion'] ?? '');
-    $tipo_identificacion_id = Validator::validateTipoIdentificacion($_POST['tipo_identificacion_id'] ?? '');
-    $nombre = Validator::validateNombre($_POST['nombre'] ?? '');
-    $fecha_nacimiento = Validator::validateFechaNacimiento($_POST['fecha_nacimiento'] ?? '');
+    // Obtener datos originales
+    $identificacion = $_POST['identificacion'] ?? '';
+    $tipo_identificacion_id = $_POST['tipo_identificacion_id'] ?? '';
+    $nombre = $_POST['nombre'] ?? '';
+    $fecha_nacimiento = $_POST['fecha_nacimiento'] ?? '';
     $nombre_usuario = Validator::sanitizeUsername($_POST['nombre_usuario'] ?? '');
-    $cargo_id = Validator::validateCargo($_POST['cargo_id'] ?? '');
-    $tipo_contrato_id = Validator::validateTipoContrato($_POST['tipo_contrato_id'] ?? '');
-    $salario = Validator::validateSalario($_POST['salario'] ?? '');
+    $cargo_id = $_POST['cargo_id'] ?? '';
+    $tipo_contrato_id = $_POST['tipo_contrato_id'] ?? '';
+    $salario = $_POST['salario'] ?? '';
 
-    // validar identificacion
-    if($identificacion === false) {
+    // Validar datos
+    if (!Validator::validateIdentificacion($identificacion)) {
         echo "
             <script>
                 alert('La identificacion debe tener al menos 8 caracteres y no puede tener caracteres especiales');
@@ -22,9 +22,7 @@
             </script>";
         exit;
     }
-
-    // validar tipo de identificacion
-    if($tipo_identificacion_id === false){
+    if(!Validator::validateTipoIdentificacion($tipo_identificacion_id)){
         echo "
             <script>
                 alert('El tipo de identificacion es requerido');
@@ -32,9 +30,7 @@
             </script>";
         exit;
     }
-
-    // validar nombre
-    if($nombre === false){
+    if(!Validator::validateNombre($nombre)){
         echo "
             <script>
                 alert('El nombre es requerido');
@@ -42,9 +38,7 @@
             </script>";
         exit;
     }
-
-    // validar fecha de nacimiento
-    if($fecha_nacimiento === false){
+    if(!Validator::validateFechaNacimiento($fecha_nacimiento)){
         echo "
             <script>
                 alert('La fecha de nacimiento es requerida');
@@ -52,9 +46,7 @@
             </script>";
         exit;
     }
-
-    //validar cargo 
-    if($tipo_contrato_id === false){
+    if(!Validator::validateCargo($cargo_id)){
         echo "
             <script>
                 alert('El tipo de contrato es requerido');
@@ -62,9 +54,7 @@
             </script>";
         exit;
     }
-   
-    // validar tipo de contrato 
-    if($tipo_contrato_id === false){
+    if(!Validator::validateTipoContrato($tipo_contrato_id)){
         echo "
             <script>
                 alert('El tipo de contrato es requerido');
@@ -72,9 +62,7 @@
             </script>";
         exit;
     }
-    
-    // validar salario 
-    if($salario === false){
+    if(!Validator::validateSalario($salario)){
         echo "
             <script>
                 alert('El salario es requerido o debe ser mayor a 0');
@@ -84,9 +72,9 @@
     } 
 
     // Verificar si ya existe un usuario con estos datos
-    $check_sql = "SELECT * FROM empleados WHERE identificacion = ? OR tipo_identificacion_id = ? OR nombre = ? OR fecha_nacimiento = ? OR nombre_usuario = ? OR cargo_id = ? OR tipo_contrato_id = ? OR salario = ?";
+    $check_sql = "SELECT * FROM empleados WHERE identificacion = ? OR nombre_usuario = ?";
     if ($check_stmt = $conexion->prepare($check_sql)) {
-        $check_stmt->bind_param("issssssi", $identificacion, $tipo_identificacion_id, $nombre, $fecha_nacimiento, $nombre_usuario, $cargo_id, $tipo_contrato_id, $salario);
+        $check_stmt->bind_param("is", $identificacion, $nombre_usuario);
         $check_stmt->execute();
         $result = $check_stmt->get_result();
         
