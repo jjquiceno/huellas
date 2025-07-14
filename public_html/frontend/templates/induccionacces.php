@@ -186,12 +186,10 @@
                             <div class="separador-black"></div>
                         </div>
                         <div style="flex-direction: column; display: flex; gap: 5px; justify-content: center; align-items: center; margin-bottom: 10px;">
-                            <p class="WHITE regular x1-5">¿No tienes cuenta?</p>
-                            <a href="register.php" class="regular x1-5">Registrate</a>
+                            <p class="WHITE regular x1-5">¿Eres administrador?</p>
+                            <a href="adminLogin.php" class="regular x1-5">Ingresa como administrador</a>
                         </div>
-                        <!-- <br> -->
                         <div class="e-b">
-                            <!--<button class="enviar" type="submit">ENVIAR MENSAJE</button>-->
                             <input type="submit" value="enviar" name="enviar" class="enviar bold">
                         </div>
                     </form>

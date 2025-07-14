@@ -8,6 +8,7 @@
     $tipo_identificacion_id = $_POST['tipo_identificacion_id'] ?? '';
     $nombre = $_POST['nombre'] ?? '';
     $fecha_nacimiento = $_POST['fecha_nacimiento'] ?? '';
+    $fecha_ingreso = $_POST['fecha_ingreso'] ?? '';
     $nombre_usuario = Validator::sanitizeUsername($_POST['nombre_usuario'] ?? '');
     $cargo_id = $_POST['cargo_id'] ?? '';
     $tipo_contrato_id = $_POST['tipo_contrato_id'] ?? '';
@@ -42,6 +43,14 @@
         echo "
             <script>
                 alert('La fecha de nacimiento es requerida');
+                window.history.back();
+            </script>";
+        exit;
+    }
+    if(!Validator::validateFechaIngreso($fecha_ingreso)){
+        echo "
+            <script>
+                alert('La fecha de ingreso es requerida');
                 window.history.back();
             </script>";
         exit;
@@ -81,7 +90,7 @@
         if ($result->num_rows > 0) {
             echo "
             <script>
-                alert('Error: User already exists with this document, username or email');
+                alert('Error: User already exists with this document or username');
                 window.history.back();
             </script>";
             $check_stmt->close();
@@ -90,24 +99,24 @@
         $check_stmt->close();
     }
 
-    if (!$identificacion || !$tipo_identificacion_id || !$nombre || !$fecha_nacimiento || !$nombre_usuario || !$cargo_id || !$tipo_contrato_id || !$salario) {
+    if (!$identificacion || !$tipo_identificacion_id || !$nombre || !$fecha_nacimiento || !$fecha_ingreso || !$nombre_usuario || !$cargo_id || !$tipo_contrato_id || !$salario) {
         echo "
         <script>
             alert('All fields are required');
             window.history.back();
         </script>";
     } else {
-        $sql = "INSERT INTO empleados (identificacion, tipo_identificacion_id, nombre, fecha_nacimiento, nombre_usuario, cargo_id, tipo_contrato_id, salario) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO empleados (identificacion, tipo_identificacion_id, nombre, fecha_nacimiento, fecha_ingreso, nombre_usuario, cargo_id, tipo_contrato_id, salario) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         if ($stmt = $conexion->prepare($sql)) {
             // Vincular parámetros
-            $stmt->bind_param("issssssi", $identificacion, $tipo_identificacion_id, $nombre, $fecha_nacimiento, $nombre_usuario, $cargo_id, $tipo_contrato_id, $salario);
+            $stmt->bind_param("issssssi", $identificacion, $tipo_identificacion_id, $nombre, $fecha_nacimiento, $fecha_ingreso, $nombre_usuario, $cargo_id, $tipo_contrato_id, $salario);
             
             // Ejecutar la consulta
             if ($stmt->execute()) {
                 echo "
                 <script>
                     alert('New record created successfully');
-                    window.location.href = '../public_html/frontend/templatesIntranet/registerEmpleado.php';
+                    window.location.href = '../../public_html/frontend/templates/induccionacces.php';
                 </script>";
             } else {
                 echo "

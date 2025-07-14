@@ -25,8 +25,37 @@ if ($stmt = $conexion->prepare($sql)) {
 } else {
     die('Error en la consulta de usuario');
 }
-
 if (!$user) {
+    die('Usuario no encontrado');
+}
+
+// obtener los datos de la tabla empleado
+$sql = 'SELECT identificacion, tipo_identificacion_id, nombre, fecha_nacimiento, fecha_ingreso, nombre_usuario, cargo_id, salario FROM empleados WHERE nombre_usuario = ?';
+if ($stmt = $conexion->prepare($sql)) {
+    $stmt->bind_param('s', $user_name);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $empleado = $result->fetch_assoc();
+    $stmt->close();
+} else {
+    die('Error en la consulta de usuario');
+}
+if (!$empleado) {
+    die('Usuario no encontrado');
+}
+
+// obtener los datos de cargo
+$sql = 'SELECT * FROM cargos WHERE cargo_id = ?';
+if ($stmt = $conexion->prepare($sql)) {
+    $stmt->bind_param('i', $empleado['cargo_id']);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $cargo = $result->fetch_assoc();
+    $stmt->close();
+} else {
+    die('Error en la consulta de usuario');
+}
+if (!$cargo) {
     die('Usuario no encontrado');
 }
 
@@ -42,12 +71,24 @@ $pdf->useTemplate($tplIdx, 0, 0, 210); // 210mm = ancho A4
 // Escribir los datos del usuario sobre la plantilla
 $pdf->SetFont('Times','',12);
 $pdf->SetTextColor(0,0,0);
-$pdf->SetXY(9, 102); // Ajusta la posición según tu plantilla
-$pdf->Cell(90,10,'CERTIFICA que el señor(a) ' . $user['nombre_usuario'] . ' con cedula número 1033180348,  labora con nosotros desde el 3 de febrero del 2025, con un contrato Término Fijo y devenga un salario mensual de $1,423,500 desempeñando el cargo de  CUIDADOR' );
-$pdf->SetXY(60, 110);
-$pdf->Cell(90,10,'Email: ' . $user['email']);
+$pdf->SetXY(9, 108); // Ajusta la posición según tu plantilla
+$pdf->MultiCell(190, 5, iconv('UTF-8', 'windows-1252//TRANSLIT',
+    'CERTIFICA que el señor(a) ' . $empleado['nombre'] . 
+    ' con cédula número ' . $empleado['identificacion'] . 
+    ' labora con nosotros desde el ' . $empleado['fecha_ingreso'] . ' con un contrato Término Fijo y devenga un salario mensual de $' . $empleado['salario'] . ' desempeñando el cargo de ' . 
+    $cargo['cargo']
+));
+$pdf->SetXY(9, 140); // Ajusta la posición según tu plantilla
+$pdf->MultiCell(190, 5, iconv('UTF-8', 'windows-1252//TRANSLIT',
+    'Si requiere alguna información adicional puede comunicarse al correo electrónico nomina@fundacionhuellasdelayer.com'
+));
+$pdf->SetXY(9, 170); // Ajusta la posición según tu plantilla
+$pdf->MultiCell(190, 5, iconv('UTF-8', 'windows-1252//TRANSLIT',
+    'Esta constancia se expide en la ciudad de Envigado el día ' . date('d/m/Y')
+));
+
 
 // Descargar el PDF
-$pdf->Output('D', 'mis_datos.pdf');
+$pdf->Output('D', 'certificado-laboral.pdf');
 exit;
 ?>

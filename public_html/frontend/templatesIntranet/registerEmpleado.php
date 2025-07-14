@@ -1,3 +1,6 @@
+<?php
+require_once '../../../helpers/require_login.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,6 +83,12 @@
                         <div class="info-message" data-validate="La fecha de nacimiento es requerida">
                             <input class="caja_text regular" type="date" name="fecha_nacimiento" required>
                             <label class="label lightI" for="fecha_nacimiento">Fecha de Nacimiento</label>
+                            <span></span>
+                            <div class="separador-black"></div>
+                        </div>
+                        <div class="info-message" data-validate="La fecha de ingreso es requerida">
+                            <input class="caja_text regular" type="date" name="fecha_ingreso" required>
+                            <label class="label lightI" for="fecha_ingreso">Fecha de Ingreso</label>
                             <span></span>
                             <div class="separador-black"></div>
                         </div>

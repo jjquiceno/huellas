@@ -52,6 +52,18 @@ class Validator {
         return true;
     }
 
+    // validar fecha de ingreso
+    public static function validateFechaIngreso($fecha_ingreso){
+        if($fecha_ingreso === "" || $fecha_ingreso === null){ 
+            return false;
+        }
+        // Convertir a timestamps para comparar correctamente
+        if(strtotime($fecha_ingreso) > strtotime(date("Y-m-d"))){
+            return false;
+        }
+        return true;
+    }
+
     // validar cargo
     public static function validateCargo($cargo){
         if($cargo === "" || $cargo === null || strlen($cargo) == 0){ 

@@ -1,3 +1,6 @@
+<?php
+require_once __DIR__. '/../../../helpers/require_login.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
