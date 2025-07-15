@@ -2,7 +2,7 @@
 session_start();
 require_once __DIR__ . '/fpdf/fpdf.php';
 require_once __DIR__ . '/fpdi/src/autoload.php';
-require_once __DIR__ . '/conexion.php'; // Ajusta si tu archivo de conexión tiene otro nombre
+require_once __DIR__ . '/conexion.php';
 
 use setasign\Fpdi\Fpdi;
 
