@@ -1,14 +1,14 @@
 <?php
 session_start();
-require_once __DIR__ . '/fpdf/fpdf.php';
-require_once __DIR__ . '/fpdi/src/autoload.php';
-require_once __DIR__ . '/conexion.php';
+require_once __DIR__ . '/../fpdf/fpdf.php';
+require_once __DIR__ . '/../fpdi/src/autoload.php';
+require_once __DIR__ . '/../conexion.php';
 
 use setasign\Fpdi\Fpdi;
 
 // Verifica si el usuario está logueado
 if (!isset($_SESSION['username'])) {
-    echo "<script>alert('Debes iniciar sesión para descargar el PDF'); window.location.href='../public_html/frontend/templates/login.php';</script>";
+    echo "<script>alert('Debes iniciar sesión para descargar el PDF'); window.location.href='../../public_html/frontend/templates/login.php';</script>";
     exit;
 }
 

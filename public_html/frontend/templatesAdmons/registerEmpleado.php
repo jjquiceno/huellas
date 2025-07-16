@@ -1,5 +1,5 @@
 <?php
-require_once '../../../helpers/require_login.php';
+require_once __DIR__. '/../../../helpers/require_login_admin.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,27 +7,6 @@ require_once '../../../helpers/require_login.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Formulario de ingreso a la inducción de la Fundación Huellas del Ayer. Si vas a trabajar con nosotros, completa tu inducción aquí.">
-    <meta name="keywords" content="inducción, ingreso, Fundación Huellas del Ayer, trabajar, empleados, formulario, acceso, bienestar">
-    <meta name="author" content="Fundación Huellas del Ayer">
-    <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#f2ca007c">
-    <meta property="og:title" content="Acceso a Inducción - Fundación Huellas del Ayer">
-    <meta property="og:description" content="Si vas a trabajar con nosotros, completa tu ingreso a la inducción en este formulario. Fundación Huellas del Ayer.">
-    <meta property="og:image" content="https://www.fundacionhuellasdelayer.com/frontend/img/logos/LOGO%20HUELLAS.png">
-    <meta property="og:url" content="https://www.fundacionhuellasdelayer.com/frontend/templates/induccionacces.php">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Fundación Huellas del Ayer">
-    <meta property="og:locale" content="es_CO">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:alt" content="Logo de la Fundación Huellas del Ayer">
-    <meta property="og:image:secure_url" content="https://www.fundacionhuellasdelayer.com/frontend/img/logos/LOGO%20HUELLAS.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Acceso a Inducción - Fundación Huellas del Ayer">
-    <meta name="twitter:description" content="Completa el formulario para ingresar a tu inducción como parte del equipo de la Fundación Huellas del Ayer.">
-    <meta name="twitter:image" content="https://www.fundacionhuellasdelayer.com/frontend/img/logos/LOGO%20HUELLAS.png">
-    <meta name="twitter:image:alt" content="Logo de la Fundación Huellas del Ayer">
     <link rel="icon" href="../img/logos/LOGO HUELLAS.png">
     <title>REGISTRAR EMPLEADOS</title>
     <link rel="stylesheet" href="../css/home.css">
@@ -104,6 +83,7 @@ require_once '../../../helpers/require_login.php';
                                 <option value="01">Programador</option>
                                 <option value="02">Diseñadora</option>
                                 <option value="03">Asistente administrativo</option>
+                                <option value="04">Cuidadora</option>
                             </select>
                             <span></span>
                             <div class="separador-black"></div>

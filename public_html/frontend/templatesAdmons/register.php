@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__. '/../../../helpers/require_login.php';
+require_once __DIR__. '/../../../helpers/require_login_admin.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

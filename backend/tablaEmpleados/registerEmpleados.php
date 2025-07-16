@@ -109,7 +109,7 @@
         $sql = "INSERT INTO empleados (identificacion, tipo_identificacion_id, nombre, fecha_nacimiento, fecha_ingreso, nombre_usuario, cargo_id, tipo_contrato_id, salario) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         if ($stmt = $conexion->prepare($sql)) {
             // Vincular parámetros
-            $stmt->bind_param("issssssi", $identificacion, $tipo_identificacion_id, $nombre, $fecha_nacimiento, $fecha_ingreso, $nombre_usuario, $cargo_id, $tipo_contrato_id, $salario);
+            $stmt->bind_param("isssssssi", $identificacion, $tipo_identificacion_id, $nombre, $fecha_nacimiento, $fecha_ingreso, $nombre_usuario, $cargo_id, $tipo_contrato_id, $salario);
             
             // Ejecutar la consulta
             if ($stmt->execute()) {
