@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__. '/../../../helpers/require_login_admin.php';
+    require_once __DIR__. '/../../../helpers/require_login_admin.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -84,6 +84,7 @@ require_once __DIR__. '/../../../helpers/require_login_admin.php';
                                 <option value="02">Diseñadora</option>
                                 <option value="03">Asistente administrativo</option>
                                 <option value="04">Cuidadora</option>
+                                <option value="05">Psicologa</option>
                             </select>
                             <span></span>
                             <div class="separador-black"></div>

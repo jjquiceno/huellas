@@ -36,13 +36,47 @@ class Auth {
                         $_SESSION['username'] = $username;
                         $_SESSION['user_id'] = $user['nombre_usuario'];
                         $_SESSION['last_activity'] = time();
+
+                        $sql = "SELECT identificacion, tipo_identificacion_id, nombre, fecha_nacimiento, fecha_ingreso, nombre_usuario, cargo_id, tipo_contrato_id, salario FROM empleados WHERE nombre_usuario = ?";
+                        if($stmt = $this->conn->prepare($sql)) {
+                            $stmt->bind_param("s", $user['nombre_usuario']);
+                            $stmt->execute();
+                            $result = $stmt->get_result();
+                            
+                            if ($result->num_rows === 1) {
+                                $empleado = $result->fetch_assoc();
+                                $_SESSION['identificacion'] = $empleado['identificacion'];
+                                $_SESSION['tipo_identificacion_id'] = $empleado['tipo_identificacion_id'];
+                                $_SESSION['nombre'] = $empleado['nombre'];
+                                $_SESSION['fecha_nacimiento'] = $empleado['fecha_nacimiento'];
+                                $_SESSION['fecha_ingreso'] = $empleado['fecha_ingreso'];
+                                $_SESSION['nombre_usuario'] = $empleado['nombre_usuario'];
+                                $_SESSION['cargo_id'] = $empleado['cargo_id'];
+                                $_SESSION['tipo_contrato_id'] = $empleado['tipo_contrato_id'];
+                                $_SESSION['salario'] = $empleado['salario'];
+                            }
+                        }
+
+                        $sql = "SELECT * FROM tipo_contrato WHERE tipo_contrato_id = ?";
+                        if($stmt = $this->conn->prepare($sql)) {
+                            $stmt->bind_param("s", $empleado['tipo_contrato_id']);
+                            $stmt->execute();
+                            $result = $stmt->get_result();
+                            
+                            if ($result->num_rows === 1) {
+                                $tipo_contrato = $result->fetch_assoc();
+                                $_SESSION['tipo_contrato'] = $tipo_contrato['tipo'];
+                                $_SESSION['termino_contrato'] = $tipo_contrato['termino'];
+                                $_SESSION['duracion_contrato'] = $tipo_contrato['duracion'];
+                            }
+                        }
                         
                         // Regenerar ID de sesión
                         session_regenerate_id(true);
                         return true;
                     }
                 }
-                $stmt->close();
+                $stmt->close(); 
             }
             return false;
         } catch (Exception $e) {

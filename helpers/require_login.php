@@ -7,7 +7,7 @@
 
     // Verificar sesión
     if (!$auth->isLoggedIn()) {
-        header("Location: ../templates/induccionacces.php");
+        header("Location: ../templates/induccionacces.php"); 
         exit;
     }
 
