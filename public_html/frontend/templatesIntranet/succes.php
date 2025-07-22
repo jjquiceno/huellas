@@ -59,12 +59,16 @@ require_once '../../../helpers/require_login.php';
                 <div class="separador"></div>
                 <div class="boxItems">
                     <div class="menuItems_box">
+                        <p class="ppp" referencia="inicio">
+                            <i class="fa-solid fa-house"></i>
+                            <span class="BLACK regular menu-item">Inicio</span>
+                        </p>
                         <p class="ppp" referencia="induccion">
                             <i class="fa-solid fa-landmark"></i>
                             <span class="BLACK regular menu-item">Inducción</span>
                         </p>
                         <p class="ppp" referencia="documentos">
-                            <i class="fa-regular fa-file"></i>
+                            <i class="fa-solid fa-file"></i>
                             <span class="BLACK regular menu-item">Documentos<br>del empleado</span>
                         </p>
                         <p class="ppp" referencia="documentosReglamentarios">
@@ -72,7 +76,7 @@ require_once '../../../helpers/require_login.php';
                             <span class="BLACK regular menu-item">Documentos<br>reglamentarios</span>
                         </p>
                         <p class="ppp" referencia="novedades">
-                            <i class="fa-regular fa-newspaper"></i>
+                            <i class="fa-solid fa-newspaper"></i>
                             <span class="BLACK regular menu-item">Novedades<br>en Huellas</span>
                         </p>
                         <p class="ppp" referencia="celebremos">
@@ -100,7 +104,15 @@ require_once '../../../helpers/require_login.php';
         </div>
         <div class="main-container">
             <div class="main-header">
-                
+                <div class="container-searchBar">
+                    <div class="info-message" data-validate = "La identificacion es requerida">
+                        <input class="caja_text regular" type="text" name="identificacion" required>
+                        <label class="label lightI" for="identificacion"><i class="fa-solid fa-magnifying-glass fa-lg"></i></label>
+                    </div>
+                </div>
+                <div class="container-user">
+
+                </div>
             </div>
             <div class="main-content-fetch">
 
@@ -108,6 +120,11 @@ require_once '../../../helpers/require_login.php';
         </div>
     </section>
     <script>
+        fetch('inicio.php')
+            .then(response => response.text())
+            .then(data => {
+                document.querySelector('.main-content-fetch').innerHTML = data;
+            });
         const menu = document.querySelector('.menu')
         const menuToggle = document.querySelector('.menuToggle')
         const menuItems = document.querySelectorAll('.menu-item')

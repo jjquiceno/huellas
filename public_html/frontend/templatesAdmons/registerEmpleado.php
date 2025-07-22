@@ -80,11 +80,26 @@
                         <div class="info-message" data-validate = "El cargo es requerido">
                             <select name="cargo_id" class="caja_text regular" required>
                                 <option value="">Cargo</option>
-                                <option value="01">Programador</option>
-                                <option value="02">Diseñadora</option>
-                                <option value="03">Asistente administrativo</option>
-                                <option value="04">Cuidadora</option>
-                                <option value="05">Psicologa</option>
+                                <option value="06">Médico General</option>
+                                <option value="07">Oficios Varios – Mayordomo</option>
+                                <option value="08">Contador</option>
+                                <option value="09">Director Financiero</option>
+                                <option value="10">Conductor</option>
+                                <option value="11">Auxiliar de Servicios de Mantenimiento</option>
+                                <option value="12">Manipulador de Alimentos</option>
+                                <option value="13">Servicios Generales</option>
+                                <option value="14">Líder Administrativo</option>
+                                <option value="15">Gerontólogo</option>
+                                <option value="16">Terapeuta Ocupacional</option>
+                                <option value="17">Trabajador Social</option>
+                                <option value="18">Fonoaudiólogo</option>
+                                <option value="19">Fisioterapeuta</option>
+                                <option value="20">Nutricionista</option>
+                                <option value="21">Psicólogo</option>
+                                <option value="22">Cuidador</option>
+                                <option value="23">Auxiliar de Enfermería</option>
+                                <option value="24">Líder de Enfermería</option>
+                                <option value="25">Director General</option>
                             </select>
                             <span></span>
                             <div class="separador-black"></div>

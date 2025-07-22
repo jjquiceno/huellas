@@ -34,12 +34,12 @@
     width: 60%;
     margin: 10px 0;
 }
-.separador-black{
+/* .separador-black{
     border: 1px solid black;
     width: 60%;
     margin: 0 auto; 
     transition: .3s ease;
-}
+} */
 
 /* estilos del menu */
 .menu{
@@ -127,21 +127,73 @@
     display: none;
 }
 
-/* estilos del contenedor principal */
 .main-container{
     flex: 1;
     overflow: hidden;
 }
 .main-header{
     height: 10vh;
-    /* background: linear-gradient(to right, #ffffff00, #f2ca0042); */
     border-radius: 0 10px 10px 0;
     border-bottom: solid #f2ca00ab;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3vw;
+}
+.main-header > div{
+    /* border: solid black; */
+    width: 40%;
+    height: 80%;
 }
 .main-content-fetch{
     height: 90vh;
     overflow-y: scroll;
+    padding: 1vh 3vw;
 }
-
+.container-searchBar{
+    display: flex;
+    align-items: center;
+}
+.info-message{
+    width: 90%;
+    height: 90%;
+}
+.caja_text{
+    width: 15%;
+    height: 100%;
+    border-radius: 10px;
+    border: none;
+    padding: 0 15px;
+    /* background-color: #f2ca0042; */
+    font-size: 1rem;
+    color: black;
+    outline: none;
+    transition: .3s ease;
+    position: relative;
+}
+.label{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    color: black;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: .3s ease-in-out;
+}
+.caja_text:focus ~ .label{
+    left: 92%;
+    font-size: 0.7rem; 
+    padding: 0 2px;
+}
+.caja_text:focus{
+    width: 100%;
+    background-color: #f2ca0042;
+}
+input:valid ~ .label{
+    left: 90%;
+    font-size: 1rem; 
+    padding: 0 2px;
+}
 
 
