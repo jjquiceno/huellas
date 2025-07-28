@@ -37,8 +37,8 @@ class Auth {
                         $_SESSION['user_id'] = $user['nombre_usuario'];
                         $_SESSION['last_activity'] = time();
 
-                        $sql = "SELECT identificacion, tipo_identificacion_id, nombre, fecha_nacimiento, fecha_ingreso, nombre_usuario, cargo_id, tipo_contrato_id, salario FROM empleados WHERE nombre_usuario = ?";
-                        if($stmt = $this->conn->prepare($sql)) {
+                        $sql_empleado = "SELECT identificacion, tipo_identificacion_id, nombre, fecha_nacimiento, fecha_ingreso, nombre_usuario, cargo_id, tipo_contrato_id, salario FROM empleados WHERE nombre_usuario = ?";
+                        if($stmt = $this->conn->prepare($sql_empleado)) {
                             $stmt->bind_param("s", $user['nombre_usuario']);
                             $stmt->execute();
                             $result = $stmt->get_result();
@@ -57,8 +57,8 @@ class Auth {
                             }
                         }
 
-                        $sql = "SELECT * FROM tipo_contrato WHERE tipo_contrato_id = ?";
-                        if($stmt = $this->conn->prepare($sql)) {
+                        $sql_contrato = "SELECT * FROM tipo_contrato WHERE tipo_contrato_id = ?";
+                        if($stmt = $this->conn->prepare($sql_contrato)) {
                             $stmt->bind_param("s", $empleado['tipo_contrato_id']);
                             $stmt->execute();
                             $result = $stmt->get_result();
@@ -68,6 +68,18 @@ class Auth {
                                 $_SESSION['tipo_contrato'] = $tipo_contrato['tipo'];
                                 $_SESSION['termino_contrato'] = $tipo_contrato['termino'];
                                 $_SESSION['duracion_contrato'] = $tipo_contrato['duracion'];
+                            }
+                        }
+
+                        $sql_cargo = "SELECT * FROM cargos WHERE cargo_id = ?";
+                        if($stmt = $this->conn->prepare($sql_cargo)) {
+                            $stmt->bind_param("s", $empleado['cargo_id']);
+                            $stmt->execute();
+                            $result = $stmt->get_result();
+                            
+                            if ($result->num_rows === 1) {
+                                $cargo = $result->fetch_assoc();
+                                $_SESSION['cargo'] = $cargo['cargo'];
                             }
                         }
                         

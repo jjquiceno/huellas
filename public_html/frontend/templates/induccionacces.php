@@ -61,7 +61,7 @@
                         <li><a class="header-link light" href="../../index.html" class="regular" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="100">Inicio</a></li>
                         <li><a class="header-link light" href="#" class="regular option" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="150">Nosotros</a></li>
                         <li><a class="header-link light" href="induccionacces.php">Induccion</a></li>
-                        <li><a class="header-link light" href="../templatesIntranet/registerEmpleado.php">Empleados</a></li>
+                        <li><a class="header-link light" href="../templatesAdmons/registerEmpleado.php">Empleados</a></li>
                         <li><a class="header-link light" href="docs.html" class="regular" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="300">Transparencia</a></li>
                         <li><a class="header-link light" href="contacto.php" class="regular" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="350">Contacto</a></li>
                     </ul>

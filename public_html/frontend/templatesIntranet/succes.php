@@ -106,12 +106,45 @@ require_once '../../../helpers/require_login.php';
             <div class="main-header">
                 <div class="container-searchBar">
                     <div class="info-message" data-validate = "La identificacion es requerida">
-                        <input class="caja_text regular" type="text" name="identificacion" required>
-                        <label class="label lightI" for="identificacion"><i class="fa-solid fa-magnifying-glass fa-lg"></i></label>
+                        <input class="caja_text regular" type="text" name="buscador" required>
+                        <label class="label lightI" for="buscador"><i class="fa-solid fa-magnifying-glass fa-lg"></i></label>
                     </div>
                 </div>
                 <div class="container-user">
-
+                    <div class="legend">
+                        <i class="fa-solid fa-circle-user fa-2xl" style="color: #f2ca00;"></i>
+                    </div>
+                    <div class="user-info">
+                        <div class="user">
+                            <span class="BLACK regular"><?php echo $_SESSION['username']; ?></span>
+                        </div>
+                        <div class="user">
+                            <span class="BLACK regular"><?php echo $_SESSION['cargo']; ?></span>
+                        </div>
+                    </div>
+                    <div class="arrow">
+                        <i class="fa-solid fa-angle-down fa-xl arrow-icon"></i>
+                    </div>
+                    <div class="user-absolute">
+                        <div>
+                            <p class="ppp" referencia="ajustesPerfil">
+                                <i class="fa-solid fa-user"></i>
+                                <span class="BLACK regular menu-item">Mi perfil</span>
+                            </p>
+                            <p class="ppp" referencia="ajustesPerfil">
+                                <i class="fa-solid fa-user"></i>
+                                <span class="BLACK regular menu-item">Ajustes</span>
+                            </p>
+                            <div class="separador-op"></div>
+                            <p class="ppp">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                                <a href="../../../backend/logout.php" class="BLACK regular menu-item">Cerrar sesión</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="logoH">
+                    <img style="width: 5vw;" src="../img/logos/LOGO HUELLAS.png" alt="logo">
                 </div>
             </div>
             <div class="main-content-fetch">
@@ -119,55 +152,7 @@ require_once '../../../helpers/require_login.php';
             </div>
         </div>
     </section>
-    <script>
-        fetch('inicio.php')
-            .then(response => response.text())
-            .then(data => {
-                document.querySelector('.main-content-fetch').innerHTML = data;
-            });
-        const menu = document.querySelector('.menu')
-        const menuToggle = document.querySelector('.menuToggle')
-        const menuItems = document.querySelectorAll('.menu-item')
-        const equis = document.querySelector('.equis')
-        const lineas = document.querySelector('.lineas')
-        const ppp = document.querySelectorAll('.ppp')
-
-        ppp.forEach(itemP => {
-            itemP.addEventListener('click', () => {
-                ppp.forEach(itemP => {
-                    itemP.classList.remove('selected')
-                })
-                itemP.classList.add('selected')
-                const referencia = itemP.getAttribute('referencia')
-                fetch(`${referencia}.php`)
-                    .then(response => response.text())
-                    .then(data => {
-                        document.querySelector('.main-content-fetch').innerHTML = data
-                    })
-            })
-        })
-        equis.style.opacity = '1'
-        lineas.style.opacity = '0'
-
-        menuToggle.addEventListener('click', () => {
-            menu.classList.toggle('active')
-            if(menu.classList.contains('active')){
-                equis.style.opacity = '0'
-                lineas.style.opacity = '1'
-            }else{
-                equis.style.opacity = '1'
-                lineas.style.opacity = '0' 
-            }
-            menuItems.forEach(item => {
-                item.classList.toggle('disapear')
-            })
-            setTimeout(() => {
-                menuItems.forEach(item => {
-                    item.classList.toggle('dis')
-                })
-            }, 300);
-        })
-    </script>
+    <script src="../js/succes.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
         AOS.init()

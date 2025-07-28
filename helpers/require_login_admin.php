@@ -9,7 +9,7 @@
     if (!$auth->isLoggedInAdmons() || !isset($_SESSION['rol']) || $_SESSION['rol'] !== 'admin') {
         // Opcional: puedes destruir la sesión para mayor seguridad
         session_destroy();
-        header("Location: ../templatesAdmons/adminLogin.php");
+        header("Location: ../templates/notAllowed.html");
         exit;
     }
 
