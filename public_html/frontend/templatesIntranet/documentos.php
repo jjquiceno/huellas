@@ -26,32 +26,39 @@ require_once '../../../helpers/require_login.php';
                             <div class="botones" style="display: flex; flex-direction: column; align-items: center;">
                                 <a class="download-btn" href="../../../backend/descargaPDF/download_pdf.php">
                                     <i class="fa-solid fa-file-pdf fa-xl"></i>
-                                    <p class="regular x1">Descargar con funciones</p>
+                                    <p class="regular x1">Descargar sin funciones</p>
                                 </a>
                                 <br>
                                 <a class="download-btn" href="../../../backend/descargaPDF/downloadFunciones.php">
                                     <i class="fa-solid fa-file-pdf fa-xl"></i>
-                                    <p class="regular x1">Descargar sin funciones</p>
+                                    <p class="regular x1">Descargar con funciones</p>
                                 </a>
                             </div>
                         </div>
                         ';
                     }else if($_SESSION['tipo_contrato_id'] == 'CPS789'){ 
                         echo '
-                        <div style="display: flex; flex-direction: column; align-items: center;">
+                        <div style="border: solid black; display: flex; flex-direction: column; align-items: center;">
                             <p class="regular x1" style="width: 80%; text-align: center;">Descarga tus certificados laborales como prestador de servicios</p>
                             <br>
-                            <a class="download-btn" href="../../../backend/descargaPDF/download_prestacion.php">
-                                <i class="fa-solid fa-file-pdf fa-xl"></i>
-                                <p class="regular x1">Descargar</p>
-                            </a>
+                            <div class="botones" style="display: flex; flex-direction: column; align-items: center;">
+                                <a class="download-btn" href="../../../backend/descargaPDF/download_prestacion.php">
+                                    <i class="fa-solid fa-file-pdf fa-xl"></i>
+                                    <p class="regular x1">Descargar sin actividades</p>
+                                </a>
+                                <br>
+                                <a class="download-btn" href="../../../backend/descargaPDF/download_prestacion.php">
+                                    <i class="fa-solid fa-file-pdf fa-xl"></i>
+                                    <p class="regular x1">Descargar con actividades</p>
+                                </a>
+                            </div>
                         </div>
                         
                         ';
                     }
                 ?>
             </div>
-            <div class="colillas-box">
+            <!-- <div class="colillas-box">
                 <p class="bold x1-5">COLILLAS DE PAGO</p>
                 <div class="separador-izquierdo-black"></div>
                 <p class="regular x1" style="width: 80%; text-align: center;">Descarga tus colillas de pago</p>
@@ -60,11 +67,11 @@ require_once '../../../helpers/require_login.php';
                     <i class="fa-solid fa-file-pdf fa-xl"></i>
                     <p class="regular x1">Descargar</p>
                 </div>
-            </div>
+            </div> -->
         </div>
         
     </div>
-    <div class="formColillasContainer">
+    <!-- <div class="formColillasContainer">
         <div class="formColillas">
             <div class="formCheader">
                 <div>
@@ -78,12 +85,28 @@ require_once '../../../helpers/require_login.php';
                 </div>
             </div>
             <div class="formCform">
-                <form action="../../../backend/descargaPDF/download_colilla.php">
-                    
+                <form class="formF" action="../../../backend/descargaPDF/download_colilla.php">
+                    <div>
+                        <label for=""></label>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <label for=""></label>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <label for=""></label>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <label for=""></label>
+                        <input type="text">
+                    </div>
+                    <button type="submit">Descargar</button>
                 </form>
             </div>
         </div>
-    </div>  
+    </div>   -->
     <!-- <script src="../js/cform.js"></script> -->
 </body>
 </html>

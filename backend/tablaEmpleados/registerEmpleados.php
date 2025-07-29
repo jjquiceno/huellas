@@ -12,6 +12,7 @@
     $nombre_usuario = Validator::sanitizeUsername($_POST['nombre_usuario'] ?? '');
     $cargo_id = $_POST['cargo_id'] ?? '';
     $tipo_contrato_id = $_POST['tipo_contrato_id'] ?? '';
+    $duracion_contrato = $_POST['duracion_contrato'] ?? '';
     $salario = $_POST['salario'] ?? '';
 
     // Validar datos
@@ -106,10 +107,10 @@
             window.history.back();
         </script>";
     } else {
-        $sql = "INSERT INTO empleados (identificacion, tipo_identificacion_id, nombre, fecha_nacimiento, fecha_ingreso, nombre_usuario, cargo_id, tipo_contrato_id, salario) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO empleados (identificacion, tipo_identificacion_id, nombre, fecha_nacimiento, fecha_ingreso, nombre_usuario, cargo_id, tipo_contrato_id, duracion_contrato, salario) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         if ($stmt = $conexion->prepare($sql)) {
             // Vincular parámetros
-            $stmt->bind_param("isssssssi", $identificacion, $tipo_identificacion_id, $nombre, $fecha_nacimiento, $fecha_ingreso, $nombre_usuario, $cargo_id, $tipo_contrato_id, $salario);
+            $stmt->bind_param("issssssssi", $identificacion, $tipo_identificacion_id, $nombre, $fecha_nacimiento, $fecha_ingreso, $nombre_usuario, $cargo_id, $tipo_contrato_id, $duracion_contrato, $salario);
             
             // Ejecutar la consulta
             if ($stmt->execute()) {

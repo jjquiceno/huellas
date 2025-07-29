@@ -5,6 +5,12 @@ require_once __DIR__ . '/../fpdi/src/autoload.php';
 require_once __DIR__ . '/../conexion.php';
 
 use setasign\Fpdi\Fpdi;
+class CustomPDF extends Fpdi {
+    function Header() {
+        // Imagen de fondo que cubre toda la hoja A4
+        $this->Image(__DIR__ . '/fondoF.jpg', 0, 0, 210, 297);
+    }
+}
 
 // Verifica si el usuario está logueado
 if (!isset($_SESSION['username'])) {
@@ -60,13 +66,10 @@ if (!$cargo) {
 }
 
 // Crear el PDF usando FPDI y la plantilla base
-$pdf = new Fpdi();
+$pdf = new CustomPDF();
+$pdf->SetMargins(23, 50, 23);
+$pdf->SetAutoPageBreak(true, 50); 
 $pdf->AddPage();
-
-// Cargar el PDF base
-$pdf->setSourceFile(__DIR__ . '/certificado1.pdf');
-$tplIdx = $pdf->importPage(1);
-$pdf->useTemplate($tplIdx, 0, 0, 210); // 210mm = ancho A4
 
 // Escribir los datos del usuario sobre la plantilla
 $pdf->SetFont('Times','',12);

@@ -71,7 +71,7 @@ require_once '../../../helpers/require_login.php';
                             <i class="fa-solid fa-file"></i>
                             <span class="BLACK regular menu-item">Documentos<br>del empleado</span>
                         </p>
-                        <p class="ppp" referencia="documentosReglamentarios">
+                        <p class="ppp" referencia="documentosReg">
                             <i class="fa-solid fa-book"></i>
                             <span class="BLACK regular menu-item">Documentos<br>reglamentarios</span>
                         </p>
@@ -79,17 +79,17 @@ require_once '../../../helpers/require_login.php';
                             <i class="fa-solid fa-newspaper"></i>
                             <span class="BLACK regular menu-item">Novedades<br>en Huellas</span>
                         </p>
-                        <p class="ppp" referencia="celebremos">
-                            <i class="fa-solid fa-star"></i>
-                            <span class="BLACK regular menu-item">Celebremos<br>tu día</span>
+                        <p class="ppp" referencia="cuponera">
+                            <i class="fa-solid fa-ticket"></i>
+                            <span class="BLACK regular menu-item">Cuponera</span>
                         </p>
                     </div>
                     <div class="menuItems_box">
                         <div class="separador"></div>
-                        <p class="ppp" referencia="ajustesPerfil">
+                        <!-- <p class="ppp" referencia="ajustesPerfil">
                             <i class="fa-solid fa-user"></i>
                             <span class="BLACK regular menu-item">Ajustes<br>del perfil</span>
-                        </p>
+                        </p> -->
                         <p class="ppp" referencia="notificaciones">
                             <i class="fa-solid fa-bell"></i>
                             <span class="BLACK regular menu-item">Notificaciones</span>

@@ -105,11 +105,19 @@
                             <div class="separador-black"></div>
                         </div>
                         <div class="info-message" data-validate = "El tipo de contrato es requerido">
-                            <select name="tipo_contrato_id" class="caja_text regular" required>
+                            <select id="tipo_contrato" name="tipo_contrato_id" class="caja_text regular" required>
                                 <option value="">Tipo de Contrato</option>
-                                <option value="CPS789">Contrato por prestacion de servicios</option>
-                                <option value="CTV145">Contrato vinculado</option>
+                                <option value="CPS789">prestacion de servicios termino fijo</option>                                
+                                <option value="CPSIN2">prestacion de servicios termino indefinido</option>
+                                <option value="CTV145">vinculado termino indefinido</option>                                
+                                <option value="CTVF32">vinculado termino fijo</option>
                             </select>
+                            <span></span>
+                            <div class="separador-black"></div>
+                        </div>
+                        <div id="duracion_contrato_div" class="info-message" data-validate="La duracion del contrato es requerida">
+                            <input id="duracion_contrato" class="caja_text regular" type="number" name="duracion_contrato">
+                            <label class="label lightI" for="duracion_contrato">Duracion del contrato(meses)</label>
                             <span></span>
                             <div class="separador-black"></div>
                         </div>
@@ -123,6 +131,27 @@
                             <input type="submit" value="enviar" name="enviar" class="enviar bold">
                         </div>
                     </form>
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            const tipo_contrato = document.getElementById('tipo_contrato');
+                            const duracion_contrato_div = document.getElementById('duracion_contrato_div');
+                            const duracion_contrato_input = document.getElementById('duracion_contrato');
+
+                            function toggleDuracion(){
+                                const contratosFijos = ['CPS789', 'CTVF32'];
+                                if (contratosFijos.includes(tipo_contrato.value)) {
+                                    duracion_contrato_div.style.display = 'block'; 
+                                    duracion_contrato_input.required = true; 
+                                }else{
+                                    duracion_contrato_div.style.display = 'none';
+                                    duracion_contrato_input.required = false;
+                                    duracion_contrato_input.value = null;
+                                }
+                            }
+                            tipo_contrato.addEventListener('change', toggleDuracion);
+                            toggleDuracion();
+                        })
+                    </script>
                 </div>
             </div>
         </div>
