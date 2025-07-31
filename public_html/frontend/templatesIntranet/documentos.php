@@ -38,7 +38,7 @@ require_once '../../../helpers/require_login.php';
                         ';
                     }else if($_SESSION['tipo_contrato_id'] == 'CPS789'){ 
                         echo '
-                        <div style="border: solid black; display: flex; flex-direction: column; align-items: center;">
+                        <div style="display: flex; flex-direction: column; align-items: center;">
                             <p class="regular x1" style="width: 80%; text-align: center;">Descarga tus certificados laborales como prestador de servicios</p>
                             <br>
                             <div class="botones" style="display: flex; flex-direction: column; align-items: center;">

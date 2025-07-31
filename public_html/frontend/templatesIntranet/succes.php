@@ -1,15 +1,6 @@
 <?php
-// require_once '../../../config.php';
-// require_once '../../../auth.php';
-// $auth = new Auth($conexion);
-// if (!$auth->isLoggedIn()) {
-//     header("Location: ../templatesinduccionacces.php");
-//     exit;
-// }
-// $user_id = $auth->getUserId();
 require_once '../../../helpers/require_login.php';
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>

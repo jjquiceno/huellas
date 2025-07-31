@@ -394,3 +394,60 @@ input:valid ~ .label{
 .formF div input{
     width: 70%;
 } */
+
+/* estilos de la pagina documentos reglamentarios */
+.containerReg{
+    margin-top: 3vh;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    gap: 2vh;
+}
+.btns{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+}
+.visor{
+    width: 60%;
+    position: relative;
+}
+.btn-document{
+    width: 90%;
+    cursor: pointer;
+    transition: .3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 2vh;
+    border-radius: 10px;
+    background-color: beige;
+    box-shadow: -3px 3px 0 rgba(0, 0, 0, 0.25); 
+    color: black;
+    text-decoration: none;   
+}
+.btn-document:hover{
+    background-color: rgba(245, 245, 220, 0.692);
+    box-shadow: -6px 6px 0 rgba(0, 0, 0, 0.25);
+}
+.btn-document.selected{
+    background-color: rgb(250, 250, 207);
+    box-shadow: -6px 6px 0 rgba(0, 0, 0, 0.25);
+}
+.pdf-viewer{
+    width: 100%;
+    height: 85vh;
+    position: sticky;
+    top: 0;
+    right: 0;
+    border: none;
+    border-radius: 20px;
+}
+.angleD{
+    transition: .3s ease;
+}
+.angleD.active{
+    transform: rotate(180deg);
+    transition: .3s ease;
+}

@@ -8,17 +8,16 @@ const userAbsoluteToggle = document.querySelector('.arrow')
 const userAbsolute = document.querySelector('.user-absolute')
 const arrowIcon = document.querySelector('.arrow-icon')
 
-fetch('documentos.php')
+fetch('documentosReg.php')
     .then(response => response.text())
     .then(data => {
         document.querySelector('.main-content-fetch').innerHTML = data;
 
-        // script para el formualrio de colillas
-        const oldScript = document.getElementById('cform-script');
+        const oldScript = document.getElementById('FetchScript');
         if (oldScript) oldScript.remove();
         const script = document.createElement('script');
-        script.src = '../js/cform.js'; 
-        script.id = 'cform-script';
+        script.src = `../js/documentosReg.js`;
+        script.id = 'FetchScript';
         document.body.appendChild(script);
     });
 
@@ -49,6 +48,14 @@ ppp.forEach(itemP => {
             .then(response => response.text())
             .then(data => {
                 document.querySelector('.main-content-fetch').innerHTML = data
+                
+                // script para el formualrio de colillas
+                const oldScript = document.getElementById('FetchScript');
+                if (oldScript) oldScript.remove();
+                const script = document.createElement('script');
+                script.src = `../js/${referencia}.js`;
+                script.id = 'FetchScript';
+                document.body.appendChild(script);
             })
     })
 })
