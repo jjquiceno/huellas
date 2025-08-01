@@ -201,27 +201,26 @@
     align-items: center;
     justify-content: end;
 }
-.info-message{
+.container-searchBar .info-message{
     width: 90%;
     height: 90%;
     display: flex;
     align-items: center;
     justify-content: end;
 }
-.caja_text{
+.container-searchBar .info-message .caja_text{
     width: 15%;
     height: 100%;
     border-radius: 10px;
     border: none;
     padding: 0 15px;
-    /* background-color: #f2ca0042; */
     font-size: 1rem;
     color: black;
     outline: none;
     transition: .3s ease;
     position: relative;
 }
-.label{
+.container-searchBar .info-message .label{
     position: absolute;
     top: 50%;
     right: 3%;
@@ -231,20 +230,19 @@
     pointer-events: none;
     transition: .3s ease-in-out;
 }
-.caja_text:focus ~ .label{
-    /* left: 92%; */
+.container-searchBar .info-message .caja_text:focus ~ .label{
     font-size: 0.7rem; 
     padding: 0 2px;
 }
-.caja_text:focus{
+.container-searchBar .info-message .caja_text:focus{
     width: 100%;
     background-color: #f2ca0042;
 }
-input:valid{
+.container-searchBar .info-message input:valid{
     width: 100%;
     background-color: #f2ca0042;
 }
-input:valid ~ .label{
+.container-searchBar .info-message input:valid ~ .label{
     left: 90%;
     font-size: 1rem; 
     padding: 0 2px;

@@ -10,6 +10,8 @@ require_once '../../../helpers/require_login_admin.php';
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';"> -->
     <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="../css/intranetHome.css">
+    <link rel="stylesheet" href="../css/admonsHome.css">
+    <!-- <link rel="stylesheet" href="../css/induccionacces.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <title>Página de Éxito</title>
 </head>
@@ -24,21 +26,21 @@ require_once '../../../helpers/require_login_admin.php';
                 <div class="separador"></div>
                 <div class="boxItems">
                     <div class="menuItems_box">
-                        <p class="ppp" referencia="inicio">
+                        <p class="ppp" referencia="register">
                             <i class="fa-solid fa-house"></i>
                             <span class="BLACK regular menu-item">Registrar un empleado nuevo</span>
                         </p>
-                        <p class="ppp" referencia="induccion">
-                            <i class="fa-solid fa-landmark"></i>
+                        <p class="ppp" referencia="registerEmpleado">
+                            <i class="fa-solid fa-database"></i>
                             <span class="BLACK regular menu-item">ver todos los empleados</span>
                         </p>
                         <p class="ppp" referencia="induccion">
-                            <i class="fa-solid fa-landmark"></i>
+                            <i class="fa-solid fa-database"></i>
                             <span class="BLACK regular menu-item">ver tabla de cargos</span>
                         </p>
                         <p class="ppp" referencia="induccion">
-                            <i class="fa-solid fa-landmark"></i>
-                            <span class="BLACK regular menu-item">ver tabla de </span>
+                            <i class="fa-solid fa-database"></i>
+                            <span class="BLACK regular menu-item">ver tabla de roles</span>
                         </p>
                     </div>
                     <div class="menuItems_box">
