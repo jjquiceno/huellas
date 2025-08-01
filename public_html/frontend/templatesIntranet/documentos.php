@@ -4,12 +4,12 @@ require_once '../../../helpers/require_login.php';
 <!DOCTYPE html>
 <html lang="en">
 <body>
-    <div class="tittleFetch">
+    <div class="tittleFetch" data-aos="fade-down" data-aos-delay="100">
         <h1 class="regular x2">Bienvenido <span class="black" style="letter-spacing: 2px"><?php echo $_SESSION['username']; ?></span></h1>
         <div class="separador-black"></div>
         <p class="light x1-5">Consulta tus documentos laborales</p>
     </div>
-    <div class="container">
+    <div class="container" data-aos="fade-down" data-aos-delay="200">
         <div class="container-int">
             <p class="light">Aqui puedes consultar, visualizar y descargar tus certificados laborales tanto como prestador de servicios o como vinculado, asi mismo puedes descargar tus colillas de pago y mantenerte al dia.</p>
         </div>

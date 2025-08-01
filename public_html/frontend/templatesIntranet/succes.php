@@ -43,34 +43,34 @@ require_once '../../../helpers/require_login.php';
     <section class="dashboard">
         <div class="menu">
             <div class="menu-int">
-                <div class="menuToggle">
+                <div class="menuToggle" data-aos="fade-down">
                     <i class="fa-solid fa-xmark fa-2xl equis"></i>
                     <i class="fa-solid fa-bars fa-2xl lineas"></i>
                 </div>
                 <div class="separador"></div>
                 <div class="boxItems">
                     <div class="menuItems_box">
-                        <p class="ppp" referencia="inicio">
+                        <p class="ppp" referencia="inicio" data-aos="fade-down" data-aos-delay="100">
                             <i class="fa-solid fa-house"></i>
                             <span class="BLACK regular menu-item">Inicio</span>
                         </p>
-                        <p class="ppp" referencia="induccion">
+                        <p class="ppp" referencia="induccion" data-aos="fade-down" data-aos-delay="200">
                             <i class="fa-solid fa-landmark"></i>
                             <span class="BLACK regular menu-item">Inducción</span>
                         </p>
-                        <p class="ppp" referencia="documentos">
+                        <p class="ppp" referencia="documentos" data-aos="fade-down" data-aos-delay="300">
                             <i class="fa-solid fa-file"></i>
                             <span class="BLACK regular menu-item">Documentos<br>del empleado</span>
                         </p>
-                        <p class="ppp" referencia="documentosReg">
+                        <p class="ppp" referencia="documentosReg" data-aos="fade-down" data-aos-delay="400">
                             <i class="fa-solid fa-book"></i>
                             <span class="BLACK regular menu-item">Documentos<br>reglamentarios</span>
                         </p>
-                        <p class="ppp" referencia="novedades">
+                        <p class="ppp" referencia="novedades" data-aos="fade-down" data-aos-delay="500">
                             <i class="fa-solid fa-newspaper"></i>
                             <span class="BLACK regular menu-item">Novedades<br>en Huellas</span>
                         </p>
-                        <p class="ppp" referencia="cuponera">
+                        <p class="ppp" referencia="cuponera" data-aos="fade-down" data-aos-delay="600">
                             <i class="fa-solid fa-ticket"></i>
                             <span class="BLACK regular menu-item">Cuponera</span>
                         </p>
@@ -95,7 +95,7 @@ require_once '../../../helpers/require_login.php';
         </div>
         <div class="main-container">
             <div class="main-header">
-                <div class="container-searchBar">
+                <div class="container-searchBar" data-aos="fade-down" data-aos-delay="100">
                     <div class="info-message" data-validate = "La identificacion es requerida">
                         <input class="caja_text regular" type="text" name="buscador" required>
                         <label class="label lightI" for="buscador"><i class="fa-solid fa-magnifying-glass fa-lg"></i></label>
@@ -103,14 +103,14 @@ require_once '../../../helpers/require_login.php';
                 </div>
                 <div class="container-user">
                     <div class="legend">
-                        <i class="fa-solid fa-circle-user fa-2xl" style="color: #f2ca00;"></i>
+                        <i class="fa-solid fa-circle-user fa-2xl" style="color: #f2ca00;" data-aos="fade-down" data-aos-delay="200"></i>
                     </div>
                     <div class="user-info">
                         <div class="user">
-                            <span class="BLACK regular"><?php echo $_SESSION['username']; ?></span>
+                            <span class="BLACK regular" data-aos="fade-down" data-aos-delay="300"><?php echo $_SESSION['username']; ?></span>
                         </div>
                         <div class="user">
-                            <span class="BLACK regular"><?php echo $_SESSION['cargo']; ?></span>
+                            <span class="BLACK regular" data-aos="fade-down" data-aos-delay="400"><?php echo $_SESSION['cargo']; ?></span>
                         </div>
                     </div>
                     <div class="arrow">

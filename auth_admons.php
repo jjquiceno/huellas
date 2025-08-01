@@ -14,7 +14,7 @@ class AuthAdmons {
     public function loginAdmons($username, $password) {
         try {
             // Primero verificar si el usuario existe
-            $sql = "SELECT nombre_usuario, identificacion, contrasena, correo FROM admons WHERE nombre_usuario = ?";
+            $sql = "SELECT nombre_usuario, nombre, identificacion, contrasena, correo FROM admons WHERE nombre_usuario = ?";
             if($stmt = $this->conn->prepare($sql)) {
                 $stmt->bind_param("s", $username);
                 $stmt->execute();
@@ -33,7 +33,7 @@ class AuthAdmons {
                     if (password_verify($password, $user['contrasena'])) {
                         // Actualizar sesión
                         $_SESSION['loggedin'] = true;
-                        $_SESSION['username'] = $username;
+                        $_SESSION['username'] = $user['nombre'];
                         $_SESSION['user_id'] = $user['nombre_usuario'];
                         $_SESSION['rol'] = 'admin';
                         $_SESSION['last_activity'] = time();

@@ -4,12 +4,12 @@ require_once '../../../helpers/require_login.php';
 <!DOCTYPE html>
 <html lang="en">
 <body>
-    <div class="tittleFetch">
+    <div class="tittleFetch" data-aos="fade-down" data-aos-delay="100">
         <h1 class="regular x2">Consulta nuestros documentos Reglamentarios</h1>
         <div class="separador-black"></div>
         <p class="light x1-5">Consulta nuestras politicas y nuestro reglamento interno del trabajo</p>
     </div>
-    <div class="containerReg">
+    <div class="containerReg" data-aos="fade-down" data-aos-delay="200">
         <div class="btns">
             <div class="btn-document" data-log="REGLAMENTOINTERNO">
                 <i class="fa-solid fa-file-invoice fa-2xl"></i>

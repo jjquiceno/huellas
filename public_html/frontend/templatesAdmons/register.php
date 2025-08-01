@@ -3,14 +3,14 @@ require_once __DIR__. '/../../../helpers/require_login_admin.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<!-- <head>
     <link rel="icon" href="../img/logos/LOGO HUELLAS.png">
     <title>REGISTRAR USUARIOS</title>
     <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="../css/induccionacces.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
+</head> -->
 <body>
     <section class="container">
         <div class="home">
@@ -66,3 +66,7 @@ require_once __DIR__. '/../../../helpers/require_login_admin.php';
     </script>
 </body>
 </html>
+<?php
+$conexion->close();
+?>
+

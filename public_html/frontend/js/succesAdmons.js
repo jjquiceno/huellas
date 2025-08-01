@@ -4,52 +4,12 @@ const menuItems = document.querySelectorAll('.menu-item')
 const equis = document.querySelector('.equis')
 const lineas = document.querySelector('.lineas')
 const ppp = document.querySelectorAll('.ppp')
-const userAbsoluteToggle = document.querySelector('.arrow')
-const userAbsolute = document.querySelector('.user-absolute')
-const arrowIcon = document.querySelector('.arrow-icon')
 
-fetch('inicio.php')
+fetch('register.php')
     .then(response => response.text())
     .then(data => {
         document.querySelector('.main-content-fetch').innerHTML = data;
-
-        // Remover script anterior si existe
-        const oldScript = document.getElementById('FetchScript');
-        if (oldScript) oldScript.remove();
-        
-        // Crear y cargar el script
-        const script = document.createElement('script');
-        script.src = `../js/inicio.js`;
-        script.id = 'FetchScript';
-        
-        // Cuando el script se cargue, inicializar el slider
-        script.onload = function() {
-            // Pequeño retraso para asegurar que el DOM esté listo
-            setTimeout(() => {
-                if (typeof window.initSliderInicio === 'function') {
-                    window.initSliderInicio();
-                }
-            }, 100);
-        };
-        
-        document.body.appendChild(script);
     });
-
-userAbsolute.style.display = 'none'
-userAbsoluteToggle.addEventListener('click', () => {
-    if(userAbsolute.style.display == 'none'){
-        userAbsolute.style.display = 'block'
-        setTimeout(() => {
-            userAbsolute.classList.toggle('active')
-        }, 300);
-    }else{
-        userAbsolute.classList.toggle('active')
-        setTimeout(() => {
-            userAbsolute.style.display = 'none'
-        }, 300);
-    }
-    arrowIcon.classList.toggle('active')
-})
 
 ppp.forEach(itemP => {
     itemP.addEventListener('click', () => {
