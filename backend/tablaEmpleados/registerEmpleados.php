@@ -1,8 +1,15 @@
 <?php
+    header('Content-Type: application/json');
     include "../conexion.php"; 
 
     require_once '../../helpers/Validator.php';
     
+    // Función para responder en JSON
+    function sendResponse($success, $message = '') {
+        echo json_encode(['success' => $success, 'message' => $message]);
+        exit;
+    }
+
     // Obtener datos originales
     $identificacion = $_POST['identificacion'] ?? '';
     $tipo_identificacion_id = $_POST['tipo_identificacion_id'] ?? '';
@@ -17,125 +24,65 @@
 
     // Validar datos
     if (!Validator::validateIdentificacion($identificacion)) {
-        echo "
-            <script>
-                alert('La identificacion debe tener al menos 8 caracteres y no puede tener caracteres especiales');
-                window.history.back();
-            </script>";
-        exit;
+        sendResponse(false, 'La identificacion debe tener al menos 8 caracteres y no puede tener caracteres especiales');
     }
     if(!Validator::validateTipoIdentificacion($tipo_identificacion_id)){
-        echo "
-            <script>
-                alert('El tipo de identificacion es requerido');
-                window.history.back();
-            </script>";
-        exit;
+        sendResponse(false, 'El tipo de identificacion es requerido');
     }
     if(!Validator::validateNombre($nombre)){
-        echo "
-            <script>
-                alert('El nombre es requerido');
-                window.history.back();
-            </script>";
-        exit;
+        sendResponse(false, 'El nombre es requerido');
     }
     if(!Validator::validateFechaNacimiento($fecha_nacimiento)){
-        echo "
-            <script>
-                alert('La fecha de nacimiento es requerida');
-                window.history.back();
-            </script>";
-        exit;
+        sendResponse(false, 'La fecha de nacimiento es requerida');
     }
     if(!Validator::validateFechaIngreso($fecha_ingreso)){
-        echo "
-            <script>
-                alert('La fecha de ingreso es requerida');
-                window.history.back();
-            </script>";
-        exit;
+        sendResponse(false, 'La fecha de ingreso es requerida');
     }
-    if(!Validator::validateCargo($cargo_id)){
-        echo "
-            <script>
-                alert('El tipo de contrato es requerido');
-                window.history.back();
-            </script>";
-        exit;
-    }
+    // if(!Validator::validateNombreUsuario($nombre_usuario)){
+    //     sendResponse(false, 'El nombre de usuario es requerido');
+    // }
     if(!Validator::validateTipoContrato($tipo_contrato_id)){
-        echo "
-            <script>
-                alert('El tipo de contrato es requerido');
-                window.history.back();
-            </script>";
-        exit;
+        sendResponse(false, 'El tipo de contrato es requerido');
     }
     if(!Validator::validateSalario($salario)){
-        echo "
-            <script>
-                alert('El salario es requerido o debe ser mayor a 0');
-                window.history.back();
-            </script>";
-        exit;
+        sendResponse(false, 'El salario es requerido');
     } 
 
-    // Verificar si ya existe un usuario con estos datos
+    // Verificar si ya existe un empleado con estos datos
     $check_sql = "SELECT * FROM empleados WHERE identificacion = ? OR nombre_usuario = ?";
     if ($check_stmt = $conexion->prepare($check_sql)) {
-        $check_stmt->bind_param("is", $identificacion, $nombre_usuario);
+        $check_stmt->bind_param("ss", $identificacion, $nombre_usuario);
         $check_stmt->execute();
         $result = $check_stmt->get_result();
         
         if ($result->num_rows > 0) {
-            echo "
-            <script>
-                alert('Error: User already exists with this document or username');
-                window.history.back();
-            </script>";
             $check_stmt->close();
-            exit;
+            sendResponse(false, 'Error: Ya existe un empleado con esta identificación o nombre de usuario');
         }
         $check_stmt->close();
     }
 
     if (!$identificacion || !$tipo_identificacion_id || !$nombre || !$fecha_nacimiento || !$fecha_ingreso || !$nombre_usuario || !$cargo_id || !$tipo_contrato_id || !$salario) {
-        echo "
-        <script>
-            alert('All fields are required');
-            window.history.back();
-        </script>";
-    } else {
-        $sql = "INSERT INTO empleados (identificacion, tipo_identificacion_id, nombre, fecha_nacimiento, fecha_ingreso, nombre_usuario, cargo_id, tipo_contrato_id, duracion_contrato, salario) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        if ($stmt = $conexion->prepare($sql)) {
-            // Vincular parámetros
-            $stmt->bind_param("issssssssi", $identificacion, $tipo_identificacion_id, $nombre, $fecha_nacimiento, $fecha_ingreso, $nombre_usuario, $cargo_id, $tipo_contrato_id, $duracion_contrato, $salario);
-            
-            // Ejecutar la consulta
-            if ($stmt->execute()) {
-                echo "
-                <script>
-                    alert('New record created successfully');
-                    window.location.href = '../../public_html/frontend/templates/induccionacces.php';
-                </script>";
-            } else {
-                echo "
-                <script>
-                    alert('Error creating user: ' . $stmt->error . '\nQuery: ' . $sql);
-                </script>"; 
-            }
+        sendResponse(false, 'Todos los campos son obligatorios');
+    }
+
+    $sql = "INSERT INTO empleados (identificacion, tipo_identificacion_id, nombre, fecha_nacimiento, fecha_ingreso, nombre_usuario, cargo_id, tipo_contrato_id, duracion_contrato, salario) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    if ($stmt = $conexion->prepare($sql)) {
+        // Vincular parámetros
+        $stmt->bind_param("issssssssi", $identificacion, $tipo_identificacion_id, $nombre, $fecha_nacimiento, $fecha_ingreso, $nombre_usuario, $cargo_id, $tipo_contrato_id, $duracion_contrato, $salario);
+        
+        // Ejecutar la consulta
+        if ($stmt->execute()) {
             $stmt->close();
+            sendResponse(true, 'Empleado registrado exitosamente');
         } else {
-            echo "
-            <script>
-                alert('Error preparing statement: ' . $conexion->error);
-                window.history.back();
-            </script>";
+            $error = $stmt->error;
+            $stmt->close();
+            sendResponse(false, 'Error al registrar el empleado: ' . $error);
         }
+    } else {
+        sendResponse(false, 'Error al preparar la consulta: ' . $conexion->error);
     }
 
     $conexion->close();
 ?>
-
-    

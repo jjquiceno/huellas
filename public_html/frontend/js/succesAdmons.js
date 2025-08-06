@@ -4,11 +4,19 @@ const menuItems = document.querySelectorAll('.menu-item')
 const equis = document.querySelector('.equis')
 const lineas = document.querySelector('.lineas')
 const ppp = document.querySelectorAll('.ppp')
+const buttonFormReference = document.querySelector('.buttonFormR')
 
 fetch('register.php')
     .then(response => response.text())
     .then(data => {
         document.querySelector('.main-content-fetch').innerHTML = data;
+
+        const oldScript = document.getElementById('FetchScript');
+        if (oldScript) oldScript.remove();
+        const script = document.createElement('script');
+        script.src = `../js/register.js`;
+        script.id = 'FetchScript';
+        document.body.appendChild(script);
     });
 
 ppp.forEach(itemP => {
@@ -32,9 +40,9 @@ ppp.forEach(itemP => {
             })
     })
 })
+
 equis.style.opacity = '1'
 lineas.style.opacity = '0'
-
 menuToggle.addEventListener('click', () => {
     menu.classList.toggle('active')
     if(menu.classList.contains('active')){

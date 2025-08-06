@@ -1,8 +1,15 @@
 <?php
+    header('Content-Type: application/json');
     include "conexion.php"; 
 
     require_once '../helpers/Validator.php';
     
+    // Función para responder en JSON
+    function sendResponse($success, $message = '') {
+        echo json_encode(['success' => $success, 'message' => $message]);
+        exit;
+    }
+
     // Validar y limpiar datos
     $username = Validator::sanitizeUsername($_POST['username'] ?? '');
     $password = $_POST['password'] ?? '';
@@ -10,22 +17,12 @@
 
     // Validar contraseña
     if (!Validator::validatePassword($password)) {
-        echo "
-            <script>
-                alert('La contraseña debe tener al menos 8 caracteres');
-                window.history.back();
-            </script>";
-        exit;
+        sendResponse(false, 'La contraseña debe tener al menos 8 caracteres');
     }
 
     // Validar email
     if (!Validator::validateEmail($email)) {
-        echo "
-            <script>
-                alert('Email inválido');
-                window.history.back();
-            </script>";
-        exit;
+        sendResponse(false, 'Email inválido');
     }
 
     // Verificar si ya existe un usuario con estos datos
@@ -36,51 +33,33 @@
         $result = $check_stmt->get_result();
         
         if ($result->num_rows > 0) {
-            echo "
-            <script>
-                alert('Error: User already exists with this document, username or email');
-                window.history.back();
-            </script>";
             $check_stmt->close();
-            exit;
+            sendResponse(false, 'Ya existe un usuario con este nombre de usuario o correo electrónico');
         }
         $check_stmt->close();
     }
 
     if (!$username || !$email || !$password) {
-        echo "
-        <script>
-            alert('All fields are required');
-            window.history.back();
-        </script>";
-    } else {
-        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-        $sql = "INSERT INTO usuarios (nombre_usuario, email, contraseña) VALUES (?, ?, ?)";
-        if ($stmt = $conexion->prepare($sql)) {
-            // Vincular parámetros
-            $stmt->bind_param("sss", $username, $email, $hashed_password);
-            
-            // Ejecutar la consulta
-            if ($stmt->execute()) {
-                echo "
-                <script>
-                    alert('New record created successfully');
-                    window.location.href = '../public_html/frontend/templatesAdmons/registerEmpleado.php';
-                </script>";
-            } else {
-                echo "
-                <script>
-                    alert('Error creating user: ' . $stmt->error . '\nQuery: ' . $sql);
-                </script>"; 
-            }
+        sendResponse(false, 'Todos los campos son obligatorios');
+    }
+
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+    $sql = "INSERT INTO usuarios (nombre_usuario, email, contraseña) VALUES (?, ?, ?)";
+    if ($stmt = $conexion->prepare($sql)) {
+        // Vincular parámetros
+        $stmt->bind_param("sss", $username, $email, $hashed_password);
+        
+        // Ejecutar la consulta
+        if ($stmt->execute()) {
             $stmt->close();
+            sendResponse(true, 'Usuario creado exitosamente');
         } else {
-            echo "
-            <script>
-                alert('Error preparing statement: ' . $conexion->error);
-                window.history.back();
-            </script>";
+            $error = $stmt->error;
+            $stmt->close();
+            sendResponse(false, 'Error al crear el usuario: ' . $error);
         }
+    } else {
+        sendResponse(false, 'Error al preparar la consulta: ' . $conexion->error);
     }
 
     $conexion->close();

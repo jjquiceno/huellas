@@ -5,15 +5,9 @@
 <html lang="en">
 <body> 
     <div class="form-container">
-        <form method="post" class="form_form" action="../../../backend/tablaEmpleados/registerEmpleados.php">
+        <form id="registerEmpleadoForm" class="form_form">
             <div class="titule">
-                <h3 class="bold WHITE" style="width: fit-content; margin: auto;">REGISTRAR EMPLEADO</h3>
-            </div>
-            <div class="info-message" data-validate = "La identificacion es requerida">
-                <input class="caja_text regular" type="text" name="identificacion" required>
-                <label class="label lightI" for="identificacion">identificacion</label>
-                <span></span>
-                <div class="separador-black"></div>
+                <h3 class="bold" style="width: fit-content; margin: auto;">REGISTRAR EMPLEADO</h3>
             </div>
             <div class="info-message" data-validate = "El tipo de identificacion es requerido">
                 <select name="tipo_identificacion_id" class="caja_text regular" required>
@@ -22,6 +16,12 @@
                     <option value="CE798">CE</option>
                     <option value="TI548">TI</option>
                 </select>
+                <span></span>
+                <div class="separador-black"></div>
+            </div>
+            <div class="info-message" data-validate = "La identificacion es requerida">
+                <input class="caja_text regular" type="text" name="identificacion" required>
+                <label class="label lightI" for="identificacion">identificacion</label>
                 <span></span>
                 <div class="separador-black"></div>
             </div>

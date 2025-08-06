@@ -5,7 +5,7 @@ require_once __DIR__. '/../../../helpers/require_login_admin.php';
 <html lang="en">
 <body>  
     <div class="form-container">
-        <form method="post" class="form_form" action="../../../backend/register.php">
+        <form id="registerForm" class="form_form">
             <div class="titule">
                 <h3 class="bold" style="width: fit-content; margin: auto;">REGISTRA UN USUARIO</h3>
             </div>
@@ -27,8 +27,8 @@ require_once __DIR__. '/../../../helpers/require_login_admin.php';
                 <span></span>
                 <div class="separador-black"></div>
             </div>
-            <div class="e-b">
-                <input type="submit" value="enviar" name="enviar" class="enviar bold">
+            <div class="e-b ">
+                <button type="submit" class="enviar bold">enviar</button>
             </div>
         </form>
     </div>
@@ -37,4 +37,35 @@ require_once __DIR__. '/../../../helpers/require_login_admin.php';
 <?php
 $conexion->close();
 ?>
+<!-- <script>
+document.getElementById('registerForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const formData = new FormData(this);
+    try {
+        const response = await fetch('../../../backend/register.php', {
+            method: 'POST',
+            body: formData
+        });
+        const resultText = await response.text();
+        // Ejecuta el alert del backend si lo hay
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = resultText;
+        const alertScript = tempDiv.querySelector('script');
+        if (alertScript) {
+            eval(alertScript.textContent);
+        }
+        // Si el registro fue exitoso, carga la página de empleados
+        if (resultText.includes('New record created successfully')) {
+            fetch('registerEmpleado.php')
+                .then(res => res.text())
+                .then(data => {
+                    document.querySelector('.main-content-fetch').innerHTML = data;
+                    // Si necesitas cargar JS adicional, hazlo aquí
+                });
+        }
+    } catch (error) {
+        alert('Error al enviar el formulario');
+    }
+});
+</script> -->
 
