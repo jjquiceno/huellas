@@ -58,9 +58,6 @@ function loadModule(moduleName) {
         });
 }
 
-// Cargar el módulo inicial (register)
-loadModule('register');
-
 // Manejar clics en los elementos del menú
 ppp.forEach(itemP => {
     itemP.addEventListener('click', () => {

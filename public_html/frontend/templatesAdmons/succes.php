@@ -26,22 +26,22 @@ require_once '../../../helpers/require_login_admin.php';
                 <div class="separador"></div>
                 <div class="boxItems">
                     <div class="menuItems_box">
-                        <p class="ppp" referencia="register">
+                        <a href="succes.php" class="ppp2">
                             <i class="fa-solid fa-house"></i>
                             <span class="BLACK regular menu-item">Registrar un empleado nuevo</span>
-                        </p>
-                        <p class="ppp" referencia="registerEmpleado">
+                        </a>
+                        <a href="empleadosCRUD.php" class="ppp2">
                             <i class="fa-solid fa-database"></i>
-                            <span class="BLACK regular menu-item">ver todos los empleados</span>
-                        </p>
-                        <p class="ppp" referencia="induccion">
-                            <i class="fa-solid fa-database"></i>
-                            <span class="BLACK regular menu-item">ver tabla de cargos</span>
-                        </p>
-                        <p class="ppp" referencia="induccion">
+                            <span class="BLACK regular menu-item">ver tabla de empleados</span>
+                        </a>
+                        <a href="rolesCRUD.php" class="ppp2">
                             <i class="fa-solid fa-database"></i>
                             <span class="BLACK regular menu-item">ver tabla de roles</span>
-                        </p>
+                        </a>
+                        <a href="usuariosCRUD.php" class="ppp2">
+                            <i class="fa-solid fa-database"></i>
+                            <span class="BLACK regular menu-item">ver tabla de usuarios</span>
+                        </a>
                     </div>
                     <div class="menuItems_box">
                         <div class="separador"></div>

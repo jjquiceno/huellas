@@ -106,3 +106,6 @@
     </div>
 </body>
 </html>
+<?php
+$conexion->close();
+?>
