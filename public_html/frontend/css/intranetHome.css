@@ -138,6 +138,10 @@
     gap: 10px;
     text-align: left;
 }
+.ppp2{
+    text-decoration: none;
+    color: black;
+}
 .ppp, .ppp2{
     height: 7vh;
     display: flex;

@@ -1,3 +1,8 @@
+// Referencia al modal de edición
+const editModal = document.createElement('div');
+editModal.id = 'editRolModal';
+editModal.className = 'modal';
+
 // Función para manejar los clics en las celdas de funciones y botones
 document.addEventListener('click', function(e) {
     // Manejar clic en celdas de funciones

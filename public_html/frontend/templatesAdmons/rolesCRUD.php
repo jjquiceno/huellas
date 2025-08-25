@@ -1,58 +1,15 @@
 <?php
     require_once __DIR__. '/../../../helpers/require_login_admin.php';
 ?>
-<!-- <!DOCTYPE html>
-<html lang="en">
-<body>
-    <div class="containerTables">
-        <h2 class="bold textFi">Lista de Roles</h2>
-        <table class="regular empleadosTable cargosTable" border="1" cellpadding="8" cellspacing="0">
-            <thead>
-                <tr>
-                    <th>Id Cargo</th>
-                    <th>Nombre Cargo</th>
-                    <th>Funciones</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-            <?php
-            include __DIR__ . '/../../../backend/conexion.php';
-            $sql = "SELECT * FROM cargos";
-            $result = $conexion->query($sql);
-            if ($result && $result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                    echo "<tr data-rol-id='" . htmlspecialchars($row['cargo_id']) . "'>";
-                    echo "<td>" . htmlspecialchars($row['cargo_id']) . "</td>";
-                    echo "<td>" . htmlspecialchars($row['cargo']) . "</td>";
-                    echo "<td class='funcionesBox'>" . htmlspecialchars($row['funciones']) . "</td>";
-                    echo '
-                        <td>
-                            <button class="edit-btn">Editar</button> 
-                            <button class="delete-btn" data-rol-id="' . htmlspecialchars($row['cargo_id']) . '">Eliminar</button>
-                        </td>';
-                    echo "</tr>";
-                }
-            } else {
-                echo '<tr><td colspan="4">No hay roles registrados.</td></tr>';
-            }
-            ?>
-            </tbody>
-        </table>
-    </div>
-</body>
-</html> -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-Frame-Options" content="DENY">
-    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';"> -->
     <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="../css/intranetHome.css">
     <link rel="stylesheet" href="../css/admonsHome.css">
-    <!-- <link rel="stylesheet" href="../css/induccionacces.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <title>Página de Éxito</title>
 </head>
@@ -71,22 +28,6 @@
                             <i class="fa-solid fa-house"></i>
                             <span class="BLACK regular menu-item">Registrar un empleado nuevo</span>
                         </p>
-                        <!-- <p class="ppp" referencia="registerEmpleado">
-                            <i class="fa-solid fa-database"></i>
-                            <span class="BLACK regular menu-item">ver todos los empleados</span>
-                        </p> -->
-                        <!-- <p class="ppp" referencia="empleadosCRUD">
-                            <i class="fa-solid fa-database"></i>
-                            <span class="BLACK regular menu-item">ver tabla de empleados</span>
-                        </p>
-                        <p class="ppp" referencia="rolesCRUD">
-                            <i class="fa-solid fa-database"></i>
-                            <span class="BLACK regular menu-item">ver tabla de roles</span>
-                        </p>
-                        <p class="ppp" referencia="usuariosCRUD">
-                            <i class="fa-solid fa-database"></i>
-                            <span class="BLACK regular menu-item">ver tabla de usuarios</span>
-                        </p> -->
                         <a href="empleadosCRUD.php" class="ppp2">
                             <i class="fa-solid fa-database"></i>
                             <span class="BLACK regular menu-item">ver tabla de empleados</span>

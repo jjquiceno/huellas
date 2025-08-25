@@ -1,0 +1,292 @@
+[21-Aug-2025 18:38:06 Europe/Berlin] Received update request: Array
+(
+    [tipo_identificacion_id] => 
+    [nombre] => juan jose quiceno
+    [fecha_nacimiento] => 2025-07-16
+    [fecha_ingreso] => 2025-08-20
+    [nombre_usuario] => jjquiceno
+    [cargo_id] => 15
+    [tipo_contrato_id] => 
+    [duracion_contrato] => 5
+    [salario] => 1400000
+)
+
+[21-Aug-2025 18:38:06 Europe/Berlin] PHP Warning:  require_once(D:\HUELLASdelAYER\backend\tablaEmpleados/../../conexion.php): Failed to open stream: No such file or directory in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php on line 43
+[21-Aug-2025 18:38:06 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'D:\HUELLASdelAYER\backend\tablaEmpleados/../../conexion.php' (include_path='C:\xamppp\php\PEAR') in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php:43
+Stack trace:
+#0 {main}
+  thrown in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php on line 43
+[21-Aug-2025 18:38:13 Europe/Berlin] Received update request: Array
+(
+    [tipo_identificacion_id] => 
+    [nombre] => juan jose quiceno
+    [fecha_nacimiento] => 2025-07-16
+    [fecha_ingreso] => 2025-08-20
+    [nombre_usuario] => jjquiceno
+    [cargo_id] => 15
+    [tipo_contrato_id] => 
+    [duracion_contrato] => 5
+    [salario] => 1400000
+)
+
+[21-Aug-2025 18:38:13 Europe/Berlin] PHP Warning:  require_once(D:\HUELLASdelAYER\backend\tablaEmpleados/../../conexion.php): Failed to open stream: No such file or directory in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php on line 43
+[21-Aug-2025 18:38:13 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'D:\HUELLASdelAYER\backend\tablaEmpleados/../../conexion.php' (include_path='C:\xamppp\php\PEAR') in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php:43
+Stack trace:
+#0 {main}
+  thrown in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php on line 43
+[21-Aug-2025 18:38:20 Europe/Berlin] Received update request: Array
+(
+    [tipo_identificacion_id] => 
+    [nombre] => juan jose quiceno
+    [fecha_nacimiento] => 2025-07-16
+    [fecha_ingreso] => 2025-08-20
+    [nombre_usuario] => jjquiceno
+    [cargo_id] => 15
+    [tipo_contrato_id] => 
+    [duracion_contrato] => 5
+    [salario] => 1400000
+)
+
+[21-Aug-2025 18:38:20 Europe/Berlin] PHP Warning:  require_once(D:\HUELLASdelAYER\backend\tablaEmpleados/../../conexion.php): Failed to open stream: No such file or directory in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php on line 43
+[21-Aug-2025 18:38:20 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'D:\HUELLASdelAYER\backend\tablaEmpleados/../../conexion.php' (include_path='C:\xamppp\php\PEAR') in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php:43
+Stack trace:
+#0 {main}
+  thrown in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php on line 43
+[21-Aug-2025 18:40:45 Europe/Berlin] Received update request: Array
+(
+    [tipo_identificacion_id] => 
+    [nombre] => juan jose quiceno
+    [fecha_nacimiento] => 2025-07-16
+    [fecha_ingreso] => 2025-08-13
+    [nombre_usuario] => jjquiceno
+    [cargo_id] => 15
+    [tipo_contrato_id] => 
+    [duracion_contrato] => 5
+    [salario] => 1400000
+)
+
+[21-Aug-2025 18:40:45 Europe/Berlin] PHP Warning:  require_once(D:\HUELLASdelAYER\backend\tablaEmpleados/../../../conexion.php): Failed to open stream: No such file or directory in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php on line 43
+[21-Aug-2025 18:40:45 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'D:\HUELLASdelAYER\backend\tablaEmpleados/../../../conexion.php' (include_path='C:\xamppp\php\PEAR') in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php:43
+Stack trace:
+#0 {main}
+  thrown in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php on line 43
+[21-Aug-2025 18:44:12 Europe/Berlin] Received update request: Array
+(
+    [tipo_identificacion_id] => 
+    [nombre] => juan jose quiceno
+    [fecha_nacimiento] => 2025-07-16
+    [fecha_ingreso] => 2025-08-13
+    [nombre_usuario] => jjquiceno
+    [cargo_id] => 15
+    [tipo_contrato_id] => 
+    [duracion_contrato] => 5
+    [salario] => 1400000
+)
+
+[21-Aug-2025 18:44:12 Europe/Berlin] PHP Warning:  require_once(D:\HUELLASdelAYER\backend\tablaEmpleados/../../../conexion.php): Failed to open stream: No such file or directory in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php on line 43
+[21-Aug-2025 18:44:12 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'D:\HUELLASdelAYER\backend\tablaEmpleados/../../../conexion.php' (include_path='C:\xamppp\php\PEAR') in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php:43
+Stack trace:
+#0 {main}
+  thrown in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php on line 43
+[21-Aug-2025 18:45:16 Europe/Berlin] Received update request: Array
+(
+    [tipo_identificacion_id] => 
+    [nombre] => juan jose quiceno
+    [fecha_nacimiento] => 2025-07-16
+    [fecha_ingreso] => 2025-08-14
+    [nombre_usuario] => jjquiceno
+    [cargo_id] => 15
+    [tipo_contrato_id] => 
+    [duracion_contrato] => 5
+    [salario] => 1400000
+)
+
+[21-Aug-2025 18:45:16 Europe/Berlin] PHP Warning:  require_once(D:\HUELLASdelAYER\backend\tablaEmpleados/../../conexion.php): Failed to open stream: No such file or directory in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php on line 43
+[21-Aug-2025 18:45:16 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'D:\HUELLASdelAYER\backend\tablaEmpleados/../../conexion.php' (include_path='C:\xamppp\php\PEAR') in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php:43
+Stack trace:
+#0 {main}
+  thrown in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php on line 43
+[21-Aug-2025 18:45:45 Europe/Berlin] Received update request: Array
+(
+    [tipo_identificacion_id] => 
+    [nombre] => juan jose quiceno
+    [fecha_nacimiento] => 2025-07-16
+    [fecha_ingreso] => 2025-08-12
+    [nombre_usuario] => jjquiceno
+    [cargo_id] => 24
+    [tipo_contrato_id] => 
+    [duracion_contrato] => 5
+    [salario] => 1400000
+)
+
+[21-Aug-2025 18:45:45 Europe/Berlin] PHP Warning:  require_once(D:\HUELLASdelAYER\backend\tablaEmpleados/../../conexion.php): Failed to open stream: No such file or directory in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php on line 43
+[21-Aug-2025 18:45:45 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'D:\HUELLASdelAYER\backend\tablaEmpleados/../../conexion.php' (include_path='C:\xamppp\php\PEAR') in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php:43
+Stack trace:
+#0 {main}
+  thrown in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php on line 43
+[21-Aug-2025 18:46:50 Europe/Berlin] Received update request: Array
+(
+    [identificacion] => 1033180348
+    [tipo_identificacion_id] => 
+    [nombre] => juan jose quiceno
+    [fecha_nacimiento] => 2025-07-16
+    [fecha_ingreso] => 2025-08-13
+    [nombre_usuario] => jjquiceno
+    [cargo_id] => 24
+    [tipo_contrato_id] => 
+    [duracion_contrato] => 5
+    [salario] => 1400000
+)
+
+[21-Aug-2025 18:46:50 Europe/Berlin] PHP Warning:  require_once(D:\HUELLASdelAYER\backend\tablaEmpleados/../../conexion.php): Failed to open stream: No such file or directory in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php on line 43
+[21-Aug-2025 18:46:50 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'D:\HUELLASdelAYER\backend\tablaEmpleados/../../conexion.php' (include_path='C:\xamppp\php\PEAR') in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php:43
+Stack trace:
+#0 {main}
+  thrown in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php on line 43
+[21-Aug-2025 18:54:21 Europe/Berlin] Received update request: Array
+(
+    [identificacion] => 1033180348
+    [tipo_identificacion_id] => 
+    [nombre] => juan jose quiceno
+    [fecha_nacimiento] => 2025-07-16
+    [fecha_ingreso] => 2025-08-13
+    [nombre_usuario] => jjquiceno
+    [cargo_id] => 24
+    [tipo_contrato_id] => 
+    [duracion_contrato] => 5
+    [salario] => 1400000
+)
+
+[21-Aug-2025 18:54:21 Europe/Berlin] PHP Warning:  require_once(D:\HUELLASdelAYER\backend\tablaEmpleadosconexion.php): Failed to open stream: No such file or directory in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php on line 43
+[21-Aug-2025 18:54:21 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'D:\HUELLASdelAYER\backend\tablaEmpleadosconexion.php' (include_path='C:\xamppp\php\PEAR') in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php:43
+Stack trace:
+#0 {main}
+  thrown in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php on line 43
+[22-Aug-2025 15:31:20 Europe/Berlin] Received update request: Array
+(
+    [identificacion] => 1033180348
+    [tipo_identificacion_id] => 
+    [nombre] => juan jose quiceno
+    [fecha_nacimiento] => 2025-07-16
+    [fecha_ingreso] => 2025-08-13
+    [nombre_usuario] => jjquiceno
+    [cargo_id] => 15
+    [tipo_contrato_id] => 
+    [duracion_contrato] => 
+    [salario] => 1400000
+)
+
+[22-Aug-2025 15:31:21 Europe/Berlin] PHP Warning:  require_once(D:\HUELLASdelAYER\backend\tablaEmpleadosconexion.php): Failed to open stream: No such file or directory in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php on line 43
+[22-Aug-2025 15:31:21 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'D:\HUELLASdelAYER\backend\tablaEmpleadosconexion.php' (include_path='C:\xamppp\php\PEAR') in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php:43
+Stack trace:
+#0 {main}
+  thrown in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php on line 43
+[22-Aug-2025 15:36:04 Europe/Berlin] Received update request: Array
+(
+    [identificacion] => 1033180348
+    [tipo_identificacion_id] => 
+    [nombre] => juan jose quiceno
+    [fecha_nacimiento] => 2025-07-16
+    [fecha_ingreso] => 2025-08-18
+    [nombre_usuario] => jjquiceno
+    [cargo_id] => 14
+    [tipo_contrato_id] => 
+    [duracion_contrato] => 
+    [salario] => 1400000
+)
+
+[22-Aug-2025 15:36:04 Europe/Berlin] PHP Warning:  require_once(D:\HUELLASdelAYER\backend\tablaEmpleados../conexion.php): Failed to open stream: No such file or directory in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php on line 43
+[22-Aug-2025 15:36:04 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'D:\HUELLASdelAYER\backend\tablaEmpleados../conexion.php' (include_path='C:\xamppp\php\PEAR') in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php:43
+Stack trace:
+#0 {main}
+  thrown in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php on line 43
+[22-Aug-2025 15:41:00 Europe/Berlin] Received update request: Array
+(
+    [identificacion] => 1033180348
+    [tipo_identificacion_id] => 
+    [nombre] => juan jose quiceno
+    [fecha_nacimiento] => 2025-07-16
+    [fecha_ingreso] => 2025-08-11
+    [nombre_usuario] => jjquiceno
+    [cargo_id] => 12
+    [tipo_contrato_id] => 
+    [duracion_contrato] => 
+    [salario] => 1400000
+)
+
+[22-Aug-2025 15:41:00 Europe/Berlin] PHP Fatal error:  Uncaught Exception: Los siguientes campos son requeridos: tipo_identificacion_id, tipo_contrato_id, duracion_contrato in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php:77
+Stack trace:
+#0 {main}
+  thrown in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php on line 77
+[22-Aug-2025 15:44:56 Europe/Berlin] Received update request: Array
+(
+    [identificacion] => 1033180348
+    [tipo_identificacion_id] => 
+    [nombre] => juan jose quiceno
+    [fecha_nacimiento] => 2025-07-16
+    [fecha_ingreso] => 2025-08-11
+    [nombre_usuario] => jjquiceno
+    [cargo_id] => 12
+    [tipo_contrato_id] => 
+    [duracion_contrato] => 
+    [salario] => 1400000
+)
+
+[22-Aug-2025 15:44:56 Europe/Berlin] PHP Fatal error:  Uncaught Exception: Los siguientes campos son requeridos: tipo_identificacion_id, tipo_contrato_id, duracion_contrato in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php:77
+Stack trace:
+#0 {main}
+  thrown in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php on line 77
+[22-Aug-2025 15:46:58 Europe/Berlin] Received update request: Array
+(
+    [identificacion] => 1033180348
+    [tipo_identificacion_id] => 
+    [nombre] => juan jose quiceno
+    [fecha_nacimiento] => 2025-07-16
+    [fecha_ingreso] => 2025-08-12
+    [nombre_usuario] => jjquiceno
+    [cargo_id] => 12
+    [tipo_contrato_id] => 
+    [duracion_contrato] => 
+    [salario] => 1400000
+)
+
+[22-Aug-2025 15:46:58 Europe/Berlin] PHP Fatal error:  Uncaught Exception: Los siguientes campos son requeridos: tipo_identificacion_id, tipo_contrato_id, duracion_contrato in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php:77
+Stack trace:
+#0 {main}
+  thrown in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php on line 77
+[22-Aug-2025 15:56:26 Europe/Berlin] Received update request: Array
+(
+    [identificacion] => 1033180348
+    [tipo_identificacion_id] => 
+    [nombre] => juan jose quiceno
+    [fecha_nacimiento] => 2025-07-16
+    [fecha_ingreso] => 2025-08-13
+    [nombre_usuario] => jjquiceno
+    [cargo_id] => 12
+    [tipo_contrato_id] => 
+    [duracion_contrato] => 
+    [salario] => 1400000
+)
+
+[22-Aug-2025 15:56:26 Europe/Berlin] PHP Fatal error:  Uncaught Exception: Los siguientes campos son requeridos: tipo_identificacion_id, tipo_contrato_id, duracion_contrato in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php:77
+Stack trace:
+#0 {main}
+  thrown in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php on line 77
+[22-Aug-2025 16:02:20 Europe/Berlin] Received update request: Array
+(
+    [identificacion] => 1033180348
+    [tipo_identificacion_id] => 
+    [nombre] => juan jose quiceno
+    [fecha_nacimiento] => 2025-07-16
+    [fecha_ingreso] => 2025-08-19
+    [nombre_usuario] => jjquiceno
+    [cargo_id] => 12
+    [tipo_contrato_id] => 
+    [duracion_contrato] => 5
+    [salario] => 1400000
+)
+
+[22-Aug-2025 16:02:20 Europe/Berlin] PHP Fatal error:  Uncaught Exception: Los siguientes campos son requeridos: tipo_identificacion_id, tipo_contrato_id in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php:77
+Stack trace:
+#0 {main}
+  thrown in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php on line 77

@@ -3,86 +3,6 @@ const editModal = document.createElement('div');
 editModal.id = 'editEmployeeModal';
 editModal.className = 'modal';
 
-// Estilos para el modal
-const modalStyles = document.createElement('style');
-modalStyles.textContent = `
-    .modal {
-        display: none;
-        position: fixed;
-        z-index: 1000;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        overflow: auto;
-    }
-    
-    .modal-content {
-        background-color: #fefefe;
-        margin: 5% auto;
-        padding: 20px;
-        border: 1px solid #888;
-        width: 80%;
-        max-width: 700px;
-        border-radius: 8px;
-        position: relative;
-    }
-    
-    .close {
-        position: absolute;
-        right: 20px;
-        top: 10px;
-        font-size: 28px;
-        font-weight: bold;
-        cursor: pointer;
-    }
-    
-    .form-group {
-        margin-bottom: 15px;
-    }
-    
-    .form-group label {
-        display: block;
-        margin-bottom: 5px;
-        font-weight: bold;
-    }
-    
-    .form-group input,
-    .form-group select {
-        width: 100%;
-        padding: 8px;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        box-sizing: border-box;
-    }
-    
-    .form-actions {
-        margin-top: 20px;
-        text-align: right;
-    }
-    
-    .btn {
-        padding: 8px 16px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-weight: bold;
-    }
-    
-    .btn-primary {
-        background-color: #4CAF50;
-        color: white;
-    }
-    
-    .btn-secondary {
-        background-color: #f44336;
-        color: white;
-        margin-right: 10px;
-    }
-`;
-document.head.appendChild(modalStyles);
-
 // Contenido del modal
 editModal.innerHTML = `
     <div class="modal-content">
@@ -131,11 +51,11 @@ editModal.innerHTML = `
             <div class="form-group">
                 <label class="regular" for="edit_tipo_contrato_id">Tipo de Contrato:</label>
                 <select class="regular" id="edit_tipo_contrato_id" name="tipo_contrato_id" required>
-                    <option value="">Tipo Contrato</option>
-                    <option value="CPS789">prestacion de servicios termino fijo</option>                                
-                    <option value="CPSIN2">prestacion de servicios termino indefinido</option>
-                    <option value="CTV145">vinculado termino indefinido</option>                                
-                    <option value="CTVF32">vinculado termino fijo</option>
+                    <option value="">Seleccione un tipo de contrato</option>
+                    <option value="CPS789">Prestación de servicios término fijo</option>                                
+                    <option value="CPSIN2">Prestación de servicios término indefinido</option>
+                    <option value="CTV145">Vinculado término indefinido</option>                                
+                    <option value="CTVF32">Vinculado término fijo</option>
                 </select>
             </div>
             
@@ -156,7 +76,6 @@ editModal.innerHTML = `
         </form>
     </div>
 `;
-
 document.body.appendChild(editModal);
 
 // Cargar la lista de cargos
@@ -172,14 +91,27 @@ function cargarCargos() {
                 'Pragma': 'no-cache'
             }
         })
-        .then(response => {
+        .then(async response => {
+            const responseText = await response.text();
+            console.log('Raw response:', responseText);
+            
             if (!response.ok) {
-                return response.text().then(text => {
-                    console.error('Error en la respuesta:', text);
-                    throw new Error(`Error HTTP ${response.status}: ${response.statusText}`);
+                console.error('Error en la respuesta:', {
+                    status: response.status,
+                    statusText: response.statusText,
+                    headers: [...response.headers],
+                    body: responseText
                 });
+                throw new Error(`Error del servidor: ${response.status} ${response.statusText}`);
             }
-            return response.json();
+            
+            try {
+                return JSON.parse(responseText);
+            } catch (e) {
+                console.error('Error al analizar JSON:', e);
+                console.error('Respuesta recibida:', responseText);
+                throw new Error('La respuesta del servidor no es un JSON válido');
+            }
         })
         .then(data => {
             const select = document.getElementById('edit_cargo_id');
@@ -305,7 +237,7 @@ window.addEventListener('click', function(event) {
 });
 
 // Manejar el envío del formulario de edición
-document.getElementById('editEmployeeForm').addEventListener('submit', function(e) {
+document.getElementById('editEmployeeForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     
     const formData = new FormData(this);
@@ -316,46 +248,74 @@ document.getElementById('editEmployeeForm').addEventListener('submit', function(
         empleadoData[key] = value;
     });
     
-    // Convertir valores numéricos
-    empleadoData.duracion_contrato = parseInt(empleadoData.duracion_contrato);
-    empleadoData.salario = parseFloat(empleadoData.salario);
+    // Validar campos numéricos
+    if (empleadoData.duracion_contrato) {
+        empleadoData.duracion_contrato = parseInt(empleadoData.duracion_contrato);
+    }
+    
+    if (empleadoData.salario) {
+        empleadoData.salario = parseFloat(empleadoData.salario);
+    }
+    
+    // Convertir IDs a enteros
     empleadoData.tipo_identificacion_id = parseInt(empleadoData.tipo_identificacion_id);
     empleadoData.cargo_id = parseInt(empleadoData.cargo_id);
     empleadoData.tipo_contrato_id = parseInt(empleadoData.tipo_contrato_id);
     
     // Mostrar indicador de carga
     const submitButton = this.querySelector('button[type="submit"]');
-    const originalButtonText = submitButton.textContent;
+    const originalButtonText = submitButton.innerHTML;
     submitButton.disabled = true;
-    submitButton.textContent = 'Guardando...';
+    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Guardando...';
     
-    // Enviar datos al servidor
-    fetch('../../../backend/tablaEmpleados/update_empleado.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(empleadoData)
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
+    try {
+        // Enviar datos al servidor
+        const response = await fetch('../../../backend/tablaEmpleados/update_empleado.php', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(empleadoData)
+        });
+        
+        let responseData;
+        const responseText = await response.text();
+        
+        try {
+            responseData = JSON.parse(responseText);
+            console.log('Response parsed successfully:', responseData);
+        } catch (e) {
+            console.error('Error parsing JSON response:', e);
+            console.error('Full response text:', responseText);
+            console.error('Response headers:', [...response.headers].map(([k, v]) => `${k}: ${v}`).join('\n'));
+            throw new Error(`La respuesta del servidor no es un JSON válido: ${responseText.substring(0, 200)}...`);
+        }
+        
+        if (!response.ok) {
+            console.error('Error en la respuesta:', {
+                status: response.status,
+                statusText: response.statusText,
+                data: responseData
+            });
+            throw new Error(responseData.message || `Error del servidor: ${response.status} ${response.statusText}`);
+        }
+        
+        if (responseData.success) {
             alert('Empleado actualizado correctamente');
             editModal.style.display = 'none';
             // Recargar la página para ver los cambios
             window.location.reload();
         } else {
-            throw new Error(data.message || 'Error al actualizar el empleado');
+            throw new Error(responseData.message || 'Error al actualizar el empleado');
         }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert('Error al actualizar el empleado: ' + error.message);
-    })
-    .finally(() => {
+    } catch (error) {
+        console.error('Error al actualizar empleado:', error);
+        alert('Error al actualizar el empleado: ' + (error.message || 'Error desconocido'));
+    } finally {
         submitButton.disabled = false;
-        submitButton.textContent = originalButtonText;
-    });
+        submitButton.innerHTML = originalButtonText;
+    }
 });
 
 // Función para eliminar un usuario
