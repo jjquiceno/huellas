@@ -34,3 +34,28 @@ body{
     padding: 20px 0;
     text-align: center;
 }
+.loginOptions{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.loginOptions-int{
+    display: flex;
+    justify-content: left;
+    padding-left: 10px;
+    gap: 10px;
+    align-items: center;
+    width: 25%;
+    height: 8vh;
+    background-color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    color: black;
+    box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.747);
+    transition: .3s ease;
+}
+.loginOptions-int:hover{
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.747);
+    transform: scale(1.1);
+}
+
