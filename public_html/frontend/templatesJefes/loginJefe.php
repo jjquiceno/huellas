@@ -35,7 +35,7 @@
 <body>
     <section class="container" style="position: relative;">
         <div class="botonfloat">
-            <a href="../templates/induccionacces.php" class="regular x1-5">Regresar</a>
+            <a href="../templates/loginOptions.html" class="regular x1-5">Regresar</a>
         </div>
         <div class="append-content">
             <div class="form-padre">

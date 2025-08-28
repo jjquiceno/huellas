@@ -110,7 +110,7 @@ require_once '../../../helpers/require_login.php';
                             <span class="BLACK regular" data-aos="fade-down" data-aos-delay="300"><?php echo $_SESSION['username']; ?></span>
                         </div>
                         <div class="user">
-                            <span class="BLACK regular" data-aos="fade-down" data-aos-delay="400"><?php echo $_SESSION['cargo']; ?></span>
+                            <span class="BLACK regular" data-aos="fade-down" data-aos-delay="400"><?php echo isset($_SESSION['cargo']) ? htmlspecialchars($_SESSION['cargo']) : 'Cargo no especificado'; ?></span>
                         </div>
                     </div>
                     <div class="arrow">
@@ -143,7 +143,7 @@ require_once '../../../helpers/require_login.php';
             </div>
         </div>
     </section>
-    <script src="../js/succes.js"></script>
+    <script src="../js/empleados/succes.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
         AOS.init()

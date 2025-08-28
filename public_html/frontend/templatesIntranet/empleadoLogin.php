@@ -45,7 +45,7 @@
                         <br>
                         <div class="separador"></div>
                         <br>
-                        <p class="bold x3 WHITE" style="text-align: center;">¡INGRESA COMO ADMINISTRADOR!</p>
+                        <p class="bold x3 WHITE" style="text-align: center;">¡INGRESA COMO EMPLEADO!</p>
                         <br>
                         <div class="separador"></div>
                         <br>
@@ -53,18 +53,18 @@
                     </div>
                 </div>
                 <div class="form">
-                    <form method="post" class="form_form" action="../../../backend/tablaAdmons/loginAdmon.php">
+                    <form method="post" class="form_form" action="../../../backend/log-in.php">
                         <div class="titule">
                             <h3 class="bold WHITE" style="width: fit-content; margin: auto;">INGRESA</h3>
                         </div>
                         <div class="info-message" data-validate = "El nombre es requerido">
-                            <input class="caja_text regular" type="text" name="nombre_usuario" required>
+                            <input class="caja_text regular" type="text" name="username" required>
                             <label class="label lightI" for="nombre">usuario</label>
                             <span></span>
                             <div class="separador-black"></div>
                         </div>
                         <div class="info-message" data-validate="El corrreo es necesario">
-                            <input class="caja_text regular" type="text" name="contrasena" required>
+                            <input class="caja_text regular" type="text" name="password" required>
                             <label class="label lightI" for="email">contraseña</label>
                             <span></span>
                             <div class="separador-black"></div>

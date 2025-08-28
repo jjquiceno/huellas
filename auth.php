@@ -79,7 +79,7 @@ class Auth {
                             
                             if ($result->num_rows === 1) {
                                 $cargo = $result->fetch_assoc();
-                                $_SESSION['cargo'] = $cargo['cargo'];
+                                $_SESSION['cargo'] = $cargo['cargo']; 
                             }
                         }
                         
