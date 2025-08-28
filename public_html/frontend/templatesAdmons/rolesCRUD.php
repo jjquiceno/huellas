@@ -110,8 +110,8 @@
             </div>
         </div>
     </section>
-    <script src="../js/succesAdmonsCRUDS.js"></script>
-    <script src="../js/rolesCRUD.js"></script>
+    <script src="../js/administradores/succesAdmonsCRUDS.js"></script>
+    <script src="../js/administradores/rolesCRUD.js"></script>
 </body>
 </html>
 <?php

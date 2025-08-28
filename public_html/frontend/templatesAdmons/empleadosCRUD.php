@@ -126,8 +126,8 @@
             </div>
         </div>
     </section>
-    <script src="../js/succesAdmonsCRUDS.js"></script>
-    <script src="../js/empleadosCRUD.js"></script>
+    <script src="../js/administradores/succesAdmonsCRUDS.js"></script>
+    <script src="../js/administradores/empleadosCRUD.js"></script>
 </body>
 </html>
 <?php

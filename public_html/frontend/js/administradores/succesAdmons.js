@@ -30,7 +30,7 @@ function loadModule(moduleName) {
             // Crear y cargar el script del módulo
             return new Promise((resolve, reject) => {
                 const script = document.createElement('script');
-                script.src = `../js/${moduleName}.js`;
+                script.src = `../js/administradores/${moduleName}.js`;
                 script.id = scriptId;
                 
                 script.onload = function() {

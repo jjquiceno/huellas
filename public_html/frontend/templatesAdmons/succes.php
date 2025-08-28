@@ -77,7 +77,7 @@ require_once '../../../helpers/require_login_admin.php';
             </div>
         </div>
     </section>
-    <script src="../js/succesAdmons.js"></script>
+    <script src="../js/administradores/succesAdmons.js"></script>
 </body>
 </html>
 <?php

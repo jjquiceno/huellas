@@ -151,8 +151,8 @@
             </div>
         </div>
     </section>
-    <script src="../js/succesAdmonsCRUDS.js"></script>
-    <script src="../js/usuariosCRUD.js"></script>
+    <script src="../js/administradores/succesAdmonsCRUDS.js"></script>
+    <script src="../js/administradores/usuariosCRUD.js"></script>
 </body>
 </html>
 <?php
