@@ -10,6 +10,7 @@ require_once '../../../helpers/require_login_jefe.php';
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';"> -->
     <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="../css/intranetHome.css">
+    <link rel="stylesheet" href="../css/jefes/jefesHome.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <title>Página de Éxito</title>
@@ -54,26 +55,18 @@ require_once '../../../helpers/require_login_jefe.php';
                             <i class="fa-solid fa-house"></i>
                             <span class="BLACK regular menu-item">Inicio</span>
                         </p>
-                        <p class="ppp" referencia="induccion" data-aos="fade-down" data-aos-delay="200">
-                            <i class="fa-solid fa-landmark"></i>
-                            <span class="BLACK regular menu-item">Inducción</span>
-                        </p>
-                        <p class="ppp" referencia="documentos" data-aos="fade-down" data-aos-delay="300">
-                            <i class="fa-solid fa-file"></i>
-                            <span class="BLACK regular menu-item">Documentos<br>del empleado</span>
-                        </p>
                         <p class="ppp" referencia="documentosReg" data-aos="fade-down" data-aos-delay="400">
                             <i class="fa-solid fa-book"></i>
                             <span class="BLACK regular menu-item">Documentos<br>reglamentarios</span>
                         </p>
-                        <p class="ppp" referencia="novedades" data-aos="fade-down" data-aos-delay="500">
+                        <p class="ppp" referencia="crearEvento" data-aos="fade-down" data-aos-delay="500">
                             <i class="fa-solid fa-newspaper"></i>
-                            <span class="BLACK regular menu-item">Novedades<br>en Huellas</span>
+                            <span class="BLACK regular menu-item">Crear<br>un evento</span>
                         </p>
-                        <p class="ppp" referencia="cuponera" data-aos="fade-down" data-aos-delay="600">
+                        <!-- <p class="ppp" referencia="cuponera" data-aos="fade-down" data-aos-delay="600">
                             <i class="fa-solid fa-ticket"></i>
                             <span class="BLACK regular menu-item">Cuponera</span>
-                        </p>
+                        </p> -->
                     </div>
                     <div class="menuItems_box">
                         <div class="separador"></div>
@@ -143,7 +136,7 @@ require_once '../../../helpers/require_login_jefe.php';
             </div>
         </div>
     </section>
-    <script src="../js/succes.js"></script>
+    <script src="../js/jefes/succes.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
         AOS.init()

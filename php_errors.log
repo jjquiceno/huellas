@@ -308,3 +308,21 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php on line 77
+[01-Sep-2025 15:52:53 Europe/Berlin] Received update request: Array
+(
+    [identificacion] => 1033180348
+    [tipo_identificacion_id] => 
+    [nombre] => juan jose quiceno
+    [fecha_nacimiento] => 2025-07-16
+    [fecha_ingreso] => 2025-09-25
+    [nombre_usuario] => jjquiceno
+    [cargo_id] => 25
+    [tipo_contrato_id] => 
+    [duracion_contrato] => 6
+    [salario] => 1400000
+)
+
+[01-Sep-2025 15:52:53 Europe/Berlin] PHP Fatal error:  Uncaught Exception: Los siguientes campos son requeridos: tipo_identificacion_id, tipo_contrato_id in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php:77
+Stack trace:
+#0 {main}
+  thrown in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php on line 77

@@ -34,7 +34,8 @@ class AuthJefes {
                         // Actualizar sesión
                         $_SESSION['loggedin'] = true;
                         $_SESSION['username'] = $user['nombre'];
-                        $_SESSION['user_id'] = $user['nombre_usuario'];
+                        $_SESSION['user_id'] = $user['id_jefe'];
+                        // $_SESSION['id_jefe'] = $user['id_jefe'];
                         $_SESSION['rol'] = 'jefe';
                         $_SESSION['last_activity'] = time();
                         
@@ -79,6 +80,7 @@ class AuthJefes {
     // Obtener ID del usuario
     public function getUserIdJefes() {
         return isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
+        // return isset($_SESSION['id_jefe']) ? $_SESSION['id_jefe'] : null;
     }
 }
 ?>
