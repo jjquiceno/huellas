@@ -2,7 +2,7 @@ cargarEventos();
     
 // Función para cargar los eventos
 function cargarEventos() {
-    fetch('/HUELLASdelAYER/api/obtener_eventos.php')
+    fetch('/HUELLASdelAYER/backend/tablaEventos/obtener_eventos.php')
         .then(async (response) => {
             if (!response.ok) {
                 const text = await response.text();

@@ -1,42 +1,15 @@
 <?php
 require_once '../../../helpers/require_login.php';
 ?>
-<div class="cuponera-container">
+<!-- <div class="cuponera-container">
     <h2 class="regular x2">Cuponera de Beneficios</h2>
     
-    <!-- <div class="filtros-cuponera">
-        <div class="filtro-categoria">
-            <label for="categoria" class="regular">Categoría:</label>
-            <select id="categoria" class="regular" disabled>
-                <option value="">Todas las categorías</option>
-                <option value="comida">Comida</option>
-                <option value="belleza">Belleza</option>
-                <option value="moda">Moda</option>
-                <option value="tecnologia">Tecnología</option>
-                <option value="entretenimiento">Entretenimiento</option>
-            </select>
-        </div>
-        
-        <div class="filtro-orden">
-            <label for="ordenar" class="regular">Ordenar por:</label>
-            <select id="ordenar" class="regular" disabled>
-                <option value="recientes">Más recientes</option>
-                <option value="populares">Más populares</option>
-                <option value="descuento">Mayor descuento</option>
-            </select>
-        </div>
-    </div> -->
-    
     <div class="lista-cupones">
-        <!-- Cupón 1 -->
         <div class="cupon-card">
             <div class="cupon-encabezado">
                 <div class="descuento">Día de la familia</div>
                 <div class="validez">Válido hasta: 30/11/2023</div>
             </div>
-            <!-- <div class="cupon-imagen">
-                <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Frevistavive.com%2Fque-es-la-familia%2F&psig=AOvVaw3viPz7wWpZ-vVy93MgBj2M&ust=1756821789772000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCPieq6rdt48DFQAAAAAdAAAAABAE" alt="Restaurante Ejemplo">
-            </div> -->
             <div class="cupon-contenido">
                 <h3 class="cupon-titulo">Día de la familia</h3>
                 <p class="cupon-descripcion">Pasa un dia con tus seres queridos</p>
@@ -44,17 +17,11 @@ require_once '../../../helpers/require_login.php';
                 <button class="btn-cupon" disabled>Redimir cupón</button>
             </div>
         </div>
-        
-        <!-- Cupón 2 -->
         <div class="cupon-card destacado">
-            <!-- <div class="etiqueta-destacado">¡Nuevo!</div> -->
             <div class="cupon-encabezado">
                 <div class="descuento">Cumpleaños</div>
                 <div class="validez">Válido hasta: 15/12/2023</div>
             </div>
-            <!-- <div class="cupon-imagen">
-                <img src="https://via.placeholder.com/300x150?text=Cine+Ejemplo" alt="Cine Ejemplo">
-            </div> -->
             <div class="cupon-contenido">
                 <h3 class="cupon-titulo">Cumpleaños</h3>
                 <p class="cupon-descripcion">Pasa un dia con tus seres queridos</p>
@@ -62,16 +29,11 @@ require_once '../../../helpers/require_login.php';
                 <button class="btn-cupon" disabled>Redimir cupón</button>
             </div>
         </div>
-        
-        <!-- Cupón 3 -->
         <div class="cupon-card">
             <div class="cupon-encabezado">
                 <div class="descuento">Amor y Amistad</div>
                 <div class="validez">Válido hasta: 31/12/2023</div>
             </div>
-            <!-- <div class="cupon-imagen">
-                <img src="https://via.placeholder.com/300x150?text=Tienda+Ejemplo" alt="Tienda de Ropa">
-            </div> -->
             <div class="cupon-contenido">
                 <h3 class="cupon-titulo">Amor y Amistad</h3>
                 <p class="cupon-descripcion">Pasa un dia con tus seres queridos</p>
@@ -80,10 +42,31 @@ require_once '../../../helpers/require_login.php';
             </div>
         </div>
     </div>
+</div> -->
+<div class="cuponera-emp-container">
+    <h2 class="regular x2">Mis cupones</h2>
+    <div id="listaCuponesEmp" class="grid-cupones-emp">
+        <!-- <div class="cargando">Cargando cupones...</div> -->
+    </div>
+    <p class="nota">Para redimir, acércate con tu jefe. Si un cupón no está disponible, verás el motivo (vigencia, límite, etc.).</p>
 </div>
 
+
 <style>
-.cuponera-container {
+.cuponera-emp-container { max-width: 1100px; margin: 20px auto; padding: 16px; }
+.grid-cupones-emp { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+.cup-card { background: #fff; border: 1px solid #eee; border-radius: 12px; padding: 14px; box-shadow: 0 6px 16px rgba(0,0,0,0.06); }
+.cup-h { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.cup-title { color: #222; font-size: 1.05rem; }
+.cup-body { color: #444; display: grid; gap: 6px; margin-bottom: 10px; }
+.badge { display: inline-block; padding: 4px 8px; border-radius: 10px; font-size: .85rem; }
+.badge.ok { background: #ecfdf5; color: #065f46; border: 1px solid #34d399; }
+.badge.warn { background: #fff7ed; color: #9a3412; border: 1px solid #fdba74; }
+.motivos { font-size: .9rem; color: #7a4500; }
+.cup-foot .btn { background: #f2ca00; color: #222; border: none; border-radius: 8px; padding: 8px 12px; cursor: pointer; font-weight: 600; }
+.cup-foot .btn:disabled { opacity: .6; cursor: not-allowed; }
+@media (max-width: 768px) { .grid-cupones-emp { grid-template-columns: 1fr; } }
+/* .cuponera-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
@@ -214,7 +197,6 @@ select {
     cursor: not-allowed;
 }
 
-/* Estilos responsivos */
 @media (max-width: 768px) {
     .lista-cupones {
         grid-template-columns: 1fr;
@@ -224,5 +206,5 @@ select {
         flex-direction: column;
         gap: 10px;
     }
-}
+} */
 </style>

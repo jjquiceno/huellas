@@ -63,10 +63,14 @@ require_once '../../../helpers/require_login_jefe.php';
                             <i class="fa-solid fa-newspaper"></i>
                             <span class="BLACK regular menu-item">Crear<br>un evento</span>
                         </p>
-                        <!-- <p class="ppp" referencia="cuponera" data-aos="fade-down" data-aos-delay="600">
+                        <p class="ppp" referencia="ManageCuponera" data-aos="fade-down" data-aos-delay="600">
                             <i class="fa-solid fa-ticket"></i>
-                            <span class="BLACK regular menu-item">Cuponera</span>
-                        </p> -->
+                            <span class="BLACK regular menu-item">Gestionar<br>cuponera</span>
+                        </p>
+                        <p class="ppp" referencia="ManageEventos" data-aos="fade-down" data-aos-delay="600">
+                            <i class="fa-solid fa-ticket"></i>
+                            <span class="BLACK regular menu-item">Gestionar<br>eventos</span>
+                        </p>
                     </div>
                     <div class="menuItems_box">
                         <div class="separador"></div>
