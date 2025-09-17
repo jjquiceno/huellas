@@ -29,12 +29,12 @@ async function cargarCupones() {
       return;
     }
     lista.innerHTML = data.map(c => `
-      <div class="card">
-        <div><b>#${c.id}</b> ${c.title}</div>
-        <div>${c.description || ''}</div>
-        <div>Vigencia: ${c.start_at || '-'} a ${c.end_at || '-'}</div>
-        <div>Global: ${c.max_global_redemptions ?? '∞'} | Por usuario: ${c.per_user_limit ?? '∞'}</div>
-        <div>Activo: ${c.active ? 'Sí' : 'No'}</div>
+      <div class="card"> 
+        <div class="card-title bold"><b>#${c.id} </b> ${c.title}</div>
+        <div class="card-description regular">${c.description || ''}</div>
+        <div class="card-validity regular"><b>Vigencia:</b> ${c.start_at || '-'} a ${c.end_at || '-'}</div>
+        <div class="card-limits regular"><b>Global:</b> ${c.max_global_redemptions ?? '∞'} | Por usuario: ${c.per_user_limit ?? '∞'}</div>
+        <div class="card-active regular"><b>Activo:</b> ${c.active ? 'Sí' : 'No'}</div>
       </div>
     `).join('');
   } catch (e) {

@@ -7,11 +7,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-Frame-Options" content="DENY">
-    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';"> -->
     <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="../css/intranetHome.css">
     <link rel="stylesheet" href="../css/admonsHome.css">
-    <!-- <link rel="stylesheet" href="../css/induccionacces.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <title>Página de Éxito</title>
 </head>
@@ -53,10 +51,10 @@
                     </div>
                     <div class="menuItems_box">
                         <div class="separador"></div>
-                        <p class="ppp">
+                        <a href="../../../backend/logout.php" class="ppp2">
                             <i class="fa-solid fa-right-from-bracket"></i>
-                            <a href="../../../backend/logout.php" class="BLACK regular menu-item">Cerrar sesión</a>
-                        </p>
+                            <span class="BLACK regular menu-item">Cerrar sesión</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -81,61 +79,28 @@
                 </div>
             </div>
             <div class="main-content-fetch">
-                <div class="containerTables">
-                    <h2 class="bold textFi">Lista de Empleados</h2>
-                    <table class="regular empleadosTable" border="1" cellpadding="8" cellspacing="0">
-                        <thead>
-                            <tr>
-                                <th>Identificación</th>
-                                <th>Tipo Identificación</th>
-                                <th>Nombre</th>
-                                <th>Fecha Nacimiento</th>
-                                <th>Fecha Ingreso</th>
-                                <th>Nombre Usuario</th>
-                                <th>Cargo</th>
-                                <th>Tipo Contrato</th>
-                                <th>Duración Contrato</th>
-                                <th>Salario</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        <?php
-                        include __DIR__ . '/../../../backend/conexion.php';
-                        $sql = "SELECT * FROM empleados";
-                        $result = $conexion->query($sql);
-                        if ($result && $result->num_rows > 0) {
-                            while($row = $result->fetch_assoc()) {
-                                echo "<tr>";
-                                echo "<td>" . htmlspecialchars($row['identificacion']) . "</td>";
-                                echo "<td>" . htmlspecialchars($row['tipo_identificacion_id']) . "</td>";
-                                echo "<td>" . htmlspecialchars($row['nombre']) . "</td>";
-                                echo "<td>" . htmlspecialchars($row['fecha_nacimiento']) . "</td>";
-                                echo "<td>" . htmlspecialchars($row['fecha_ingreso']) . "</td>";
-                                echo "<td>" . htmlspecialchars($row['nombre_usuario']) . "</td>";
-                                echo "<td>" . htmlspecialchars($row['cargo_id']) . "</td>";
-                                echo "<td>" . htmlspecialchars($row['tipo_contrato_id']) . "</td>";
-                                echo "<td>" . htmlspecialchars($row['duracion_contrato']) . "</td>";
-                                echo "<td>" . htmlspecialchars($row['salario']) . "</td>";
-                                echo '
-                                    <td>
-                                        <button class="edit-btn">Editar</button> 
-                                        <button class="delete-btn" data-id="' . htmlspecialchars($row['identificacion']) . '">Eliminar</button>
-                                    </td>';
-                                echo "</tr>";
-                            }
-                        } else {
-                            echo '<tr><td colspan="11">No hay empleados registrados.</td></tr>';
-                        }
-                        ?>
-                        </tbody>
-                    </table>
-                </div>
+                <form action="../../../backend/tablaJefes/registerJefe.php" method="post">
+                    <label for="nombre_usuario">Nombre de usuario:</label>
+                    <input type="text" id="nombre_usuario" name="nombre_usuario" required>
+
+                    <label for="contrasena">Contraseña:</label>
+                    <input type="password" id="contrasena" name="contrasena" required>
+
+                    <label for="correo">Email:</label>
+                    <input type="email" id="correo" name="correo" required>
+
+                    <label for="identificacion">Identificacion:</label>
+                    <input type="text" id="identificacion" name="identificacion" required>
+
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                    
+                    <button type="submit">Registrarse</button>
+                </form>
             </div>
         </div>
     </section>
     <script src="../js/administradores/succesAdmonsCRUDS.js"></script>
-    <script src="../js/administradores/empleadosCRUD.js"></script>
 </body>
 </html>
 <?php

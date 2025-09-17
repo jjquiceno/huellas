@@ -16,7 +16,6 @@ try {
                 ec.id AS employee_coupon_id,
                 ec.coupon_id,
                 ec.status,
-                ec.code,
                 ec.assigned_at,
                 ec.expires_at,
                 ec.redeemed_at,
@@ -42,22 +41,31 @@ try {
     $now = new DateTime('now');
 
     while ($row = $res->fetch_assoc()) {
-    // Contar redenciones globales del cupón
-    $qGlobal = $conexion->prepare("SELECT COUNT(*) c
-      FROM coupon_redemptions r
-      JOIN employee_coupons ec2 ON ec2.id = r.employee_coupon_id
-      WHERE ec2.coupon_id = ?");
-    $qGlobal->bind_param("i", $row['coupon_id']);
-    $qGlobal->execute();
-    $globalCount = (int)$qGlobal->get_result()->fetch_assoc()['c'];
+    // Contar redenciones globales del cupón (resiliente)
+    try {
+      $qGlobal = $conexion->prepare("SELECT COUNT(*) c
+        FROM coupon_redemptions r
+        JOIN employee_coupons ec2 ON ec2.id = r.employee_coupon_id
+        WHERE ec2.coupon_id = ?");
+      $qGlobal->bind_param("i", $row['coupon_id']);
+      $qGlobal->execute();
+      $globalCount = (int)$qGlobal->get_result()->fetch_assoc()['c'];
+    } catch (Exception $e2) {
+      // Si la tabla de redenciones aún no existe o falla la consulta, asumir 0 para no romper la API
+      $globalCount = 0;
+    }
 
-    // Contar redenciones del empleado para esta asignación
-    $qUser = $conexion->prepare("SELECT COUNT(*) c
-      FROM coupon_redemptions
-      WHERE employee_coupon_id = ?");
-    $qUser->bind_param("i", $row['employee_coupon_id']);
-    $qUser->execute();
-    $userCount = (int)$qUser->get_result()->fetch_assoc()['c'];
+    // Contar redenciones del empleado para esta asignación (resiliente)
+    try {
+      $qUser = $conexion->prepare("SELECT COUNT(*) c
+        FROM coupon_redemptions
+        WHERE employee_coupon_id = ?");
+      $qUser->bind_param("i", $row['employee_coupon_id']);
+      $qUser->execute();
+      $userCount = (int)$qUser->get_result()->fetch_assoc()['c'];
+    } catch (Exception $e3) {
+      $userCount = 0;
+    }
 
     // Reglas de canje
     $active = (int)$row['active'] === 1;
@@ -75,7 +83,6 @@ try {
       'employee_coupon_id'     => (int)$row['employee_coupon_id'],
       'coupon_id'              => (int)$row['coupon_id'],
       'status'                 => $row['status'],
-      'code'                   => $row['code'],
       'assigned_at'            => $row['assigned_at'],
       'expires_at'             => $row['expires_at'],
       'redeemed_at'            => $row['redeemed_at'],
@@ -97,5 +104,6 @@ try {
   echo json_encode($out);
 } catch (Exception $e) {
   http_response_code(500);
-  echo json_encode(['success' => false, 'message' => 'Error al listar cupones del empleado']);
+  // Incluir el mensaje de error para depuración. Si no deseas exponerlo en prod, cámbialo por un log en servidor.
+  echo json_encode(['success' => false, 'message' => 'Error al listar cupones del empleado', 'error' => $e->getMessage()]);
 }

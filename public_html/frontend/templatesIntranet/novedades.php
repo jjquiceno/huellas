@@ -14,9 +14,10 @@ require_once '../../../helpers/require_login.php';
 
 <script>
 // Cargar eventos cuando se carga la página de novedades
-document.addEventListener('DOMContentLoaded', function() {
-    cargarEventosNovedades();
-});
+// document.addEventListener('DOMContentLoaded', function() {
+// });
+cargarEventosNovedades();
+
 
 function cargarEventosNovedades() {
     const listaEventos = document.getElementById('lista-eventos');
@@ -60,7 +61,7 @@ function cargarEventosNovedades() {
                             <img src="../../../uploads/eventos/${evento.imagen_url}" alt="${evento.titulo}" loading="lazy">
                         </div>
                         <div class="evento-contenido-novedades">
-                            <h3 class="regular x125">${evento.titulo}</h3>
+                            <h3 class="bold x125">${evento.titulo}</h3>
                             <p class="regular evento-descripcion-novedades">${evento.descripcion}</p>
                             <div class="evento-meta-novedades">
                                 <div class="fecha-evento-novedades">

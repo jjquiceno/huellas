@@ -19,7 +19,7 @@ document.getElementById('registerForm').addEventListener('submit', async functio
                     const oldScript = document.getElementById('FetchScript');
                     if (oldScript) oldScript.remove();
                     const script = document.createElement('script');
-                    script.src = `../js/registerEmpleado.js`;
+                    script.src = `../js/administradores/registerEmpleado.js`;
                     script.id = 'FetchScript';
                     document.body.appendChild(script);
                 });

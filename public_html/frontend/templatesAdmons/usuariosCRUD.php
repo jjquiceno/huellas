@@ -66,9 +66,13 @@
                 <div class="separador"></div>
                 <div class="boxItems">
                     <div class="menuItems_box">
-                        <a href="succes.php" class="ppp2">
+                    <a href="succes.php" class="ppp2">
                             <i class="fa-solid fa-house"></i>
                             <span class="BLACK regular menu-item">Registrar un empleado nuevo</span>
+                        </a>
+                        <a href="registerJefe.php" class="ppp2">
+                            <i class="fa-solid fa-house"></i>
+                            <span class="BLACK regular menu-item">Registrar un líder nuevo</span>
                         </a>
                         <a href="empleadosCRUD.php" class="ppp2">
                             <i class="fa-solid fa-database"></i>
@@ -81,6 +85,10 @@
                         <a href="usuariosCRUD.php" class="ppp2">
                             <i class="fa-solid fa-database"></i>
                             <span class="BLACK regular menu-item">ver tabla de usuarios</span>
+                        </a>
+                        <a href="lideresCRUD.php" class="ppp2">
+                            <i class="fa-solid fa-database"></i>
+                            <span class="BLACK regular menu-item">ver tabla de líderes</span>
                         </a>
                     </div>
                     <div class="menuItems_box">

@@ -65,6 +65,17 @@ ppp.forEach(itemP => {
                 
                 const oldScript = document.getElementById('FetchScript');
                 if (oldScript) oldScript.remove();
+
+                // Si la vista es 'cuponera', la lógica ya está definida inline en succes.php
+                // simplemente invoca el cargador y evita cargar otro script.
+                if (referencia === 'cuponera') {
+                    if (typeof window.cargarCuponesEmpleado === 'function') {
+                        window.cargarCuponesEmpleado();
+                        return;
+                    }
+                }
+
+                // Para otras vistas, carga el script correspondiente dinámicamente
                 const script = document.createElement('script');
                 script.src = `../js/empleados/${referencia}.js`;
                 script.id = 'FetchScript';

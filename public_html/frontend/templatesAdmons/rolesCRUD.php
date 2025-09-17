@@ -23,11 +23,15 @@
                 </div>
                 <div class="separador"></div>
                 <div class="boxItems">
-                <div class="menuItems_box">
-                        <p class="ppp" referencia="register">
+                    <div class="menuItems_box">
+                        <a href="succes.php" class="ppp2">
                             <i class="fa-solid fa-house"></i>
                             <span class="BLACK regular menu-item">Registrar un empleado nuevo</span>
-                        </p>
+                        </a>
+                        <a href="registerJefe.php" class="ppp2">
+                            <i class="fa-solid fa-house"></i>
+                            <span class="BLACK regular menu-item">Registrar un líder nuevo</span>
+                        </a>
                         <a href="empleadosCRUD.php" class="ppp2">
                             <i class="fa-solid fa-database"></i>
                             <span class="BLACK regular menu-item">ver tabla de empleados</span>
@@ -40,13 +44,17 @@
                             <i class="fa-solid fa-database"></i>
                             <span class="BLACK regular menu-item">ver tabla de usuarios</span>
                         </a>
+                        <a href="lideresCRUD.php" class="ppp2">
+                            <i class="fa-solid fa-database"></i>
+                            <span class="BLACK regular menu-item">ver tabla de líderes</span>
+                        </a>
                     </div>
                     <div class="menuItems_box">
                         <div class="separador"></div>
-                        <p class="ppp">
+                        <a href="../../../backend/logout.php" class="ppp2">
                             <i class="fa-solid fa-right-from-bracket"></i>
-                            <a href="../../../backend/logout.php" class="BLACK regular menu-item">Cerrar sesión</a>
-                        </p>
+                            <span class="BLACK regular menu-item">Cerrar sesión</span>
+                        </a>
                     </div>
                 </div>
             </div>
