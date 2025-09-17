@@ -147,6 +147,12 @@ body{
     margin: 0 auto;
     transition: .3s ease;
 }
+.separador-white{
+    border: 1px solid white;
+    width: 60%;
+    margin: 0 auto;
+    transition: .3s ease;
+}
 .separador-corto{
     border: 1px solid #f2ca007c;
     width: 30%;

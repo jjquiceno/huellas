@@ -49,6 +49,10 @@ require_once '../../../helpers/require_login.php';
                             <i class="fa-solid fa-ticket"></i>
                             <span class="BLACK regular menu-item">Cuponera</span>
                         </p>
+                        <p class="ppp" referencia="cursos" data-aos="fade-down" data-aos-delay="600">
+                            <i class="fa-solid fa-ticket"></i>
+                            <span class="BLACK regular menu-item">Cursos</span>
+                        </p>
                     </div>
                     <div class="menuItems_box">
                         <div class="separador"></div>
