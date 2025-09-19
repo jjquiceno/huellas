@@ -7,6 +7,13 @@
 
     // Verificar sesión
     if (!$auth->isLoggedIn()) {
+        // Si es una solicitud AJAX, devolver JSON 401 en lugar de redirigir a HTML
+        if (function_exists('isAjaxRequest') && isAjaxRequest()) {
+            http_response_code(401);
+            header('Content-Type: application/json; charset=UTF-8');
+            echo json_encode(['success' => false, 'message' => 'No autenticado']);
+            exit;
+        }
         header("Location: ../templates/notAllowed.html"); 
         exit;
     }

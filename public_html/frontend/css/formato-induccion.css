@@ -1,3 +1,6 @@
+body{
+    position: relative;
+}
 .container-Induccion{
     width: 100%;
     height: fit-content;
@@ -8,10 +11,27 @@
     z-index: 2;
 }
 .title-border{
-    border-top: solid white;
-    border-bottom: solid white;
+    border-top: solid black;
+    border-bottom: solid black;
     width: fit-content;
     margin: 0 auto;
+}
+h2{
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    margin-bottom: .5rem;
+}
+ol{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    width: 70%;
+    margin: auto;
+}
+.indicador-list{
+    font-weight: bold;
+    font-size: 1rem;
 }
 .headerInduccion{
     width: 100%;
@@ -113,12 +133,7 @@
 #a-2 > div div{
     width: 25%;
     padding: 0 1rem;
-    border-right: solid 3px white;
-}
-#a-2 > div div h2{
-    text-transform: uppercase;
-    font-size: 1.1rem;
-    margin-bottom: .5rem;
+    border-right: solid 3px black;
 }
 #a-2 > div > :nth-child(4){
     border-right: none;
@@ -144,11 +159,6 @@
     width: 70%;
     margin: auto;
 }
-#a-3 > div h2{
-    font-size: 1.1rem;
-    margin-bottom: .5rem;
-    text-transform: uppercase;
-}
 #a-4{
     margin: 1.5rem 0;
     width: 100%;
@@ -169,19 +179,101 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    padding: 1.5rem 0;
 }
 #a-4-1 > div{
     width: 50%;
-    padding: 1.5rem;
-    border-right: solid white;
+    padding: 0 1.5rem;
+    border-right: solid black;
 }
 #a-4-1 > div:nth-child(2){
     border-right: none;
 }
-#a-4-1 > div > ol{
+#a-4-2 > div{
+    display: flex;
+    padding: 1rem 0;
+}
+#a-4-2 > div > div{
+    width: 50%;
+    padding: 0 5rem;
+}
+#a-4-2 > div > div:nth-child(2){
+    border-left: solid black;
+}
+#a-5{
+    margin: 1.5rem 0;
+    width: 100%;
+    border-radius: 25px;
+    background-color: #8dc52c8a;
+    text-align: center;
+    padding: 2rem;
+}
+#a-5 p{
+    width: 70%;
+    margin: .5rem auto;
+}
+#nota{
+    border: 1px solid red;
+    border-radius: 25px;
+    background-color: rgba(255, 0, 0, 0.336);
+    padding: 1rem;
+}
+.dot{
+    font-size: .4rem;
+
+    transform: translate(-50%, -50%);
+}
+
+/* quizes */
+#modal-quiz-container-1{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    min-height: 100vh;
+    height: fit-content;
+    background-color: rgba(0, 0, 0, 0.637);
+    backdrop-filter: blur(5px);
+    z-index: 100;
+    opacity: 0;
+    transition: .2s ease;
+}
+#modal-quiz-container-1.active{
+    opacity: 1;
+    
+}
+#quizContainer{
+    width: 60%;
+    height: 90vh;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+    background-color: beige;
+    border-radius: 25px;
+    padding: 2rem;
+    overflow-y: scroll;
+    font-family: mont-regular;
+}
+#quizContainer form{
     display: flex;
     flex-direction: column;
-    gap: .8rem;
-    width: 70%;
-    margin: auto;
+    gap: 1rem;
+    /* height: 30%; */
+}
+.containerR{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 25px;
+    background-color: white;
+}
+.pregunta{
+    text-align: left;
 }
