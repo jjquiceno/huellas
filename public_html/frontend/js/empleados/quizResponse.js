@@ -31,17 +31,22 @@ formulario.addEventListener('submit', function(e) {
     })
     .then(data => {
         if (data.success) {
-            mostrarMensaje('Ha respondido con exito todas las preguntas', 'exito');
+            mostrarMensaje(
+                'Ha respondido con exito todas las preguntas,<br>para descargar su certificado ingrese a su perfil', 
+                // <br><a class="ppp download-btn" referencia="userProfile" href="../../../frontend/templatesIntranet/succes.php">ir al perfil</a>
+                'exito',
+                { allowHTML: true }
+            );
             formulario.reset();
             // Opcional: Redirigir o actualizar la lista de eventos
             // setTimeout(() => { window.location.href = 'eventos.php'; }, 1500);
         } else {
-            mostrarMensaje(data.message || 'Error al crear el evento', 'error');
+            mostrarMensaje(data.message || 'Error al crear el evento', 'error', { allowHTML: false });
         }
     })
     .catch(error => {
         console.error('Error:', error);
-        mostrarMensaje('Error en la conexión o respuesta no válida', 'error');
+        mostrarMensaje('Error en la conexión o respuesta no válida', 'error', { allowHTML: false });
     })
     .finally(() => {
         botonEnviar.disabled = false;
@@ -49,13 +54,21 @@ formulario.addEventListener('submit', function(e) {
     });
 });
 
-function mostrarMensaje(mensaje, tipo) {
-    mensajeDiv.textContent = mensaje;
+function mostrarMensaje(mensaje, tipo, { allowHTML = false } = {}) {
+    if (allowHTML) {
+        mensajeDiv.innerHTML = mensaje;
+    } else {
+        mensajeDiv.textContent = mensaje;
+    }
     mensajeDiv.className = 'mensaje ' + tipo;
     mensajeDiv.style.display = 'block';
+    setTimeout(() => {
+        mensajeDiv.classList.add('active');
+    }, 100);
     
     // Ocultar el mensaje después de 5 segundos
     setTimeout(() => {
+        mensajeDiv.classList.remove('active');
         mensajeDiv.style.display = 'none';
-    }, 5000);
+    }, 50000);
 }

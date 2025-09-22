@@ -225,7 +225,7 @@ ol{
 }
 
 /* quizes */
-#modal-quiz-container-1{
+.containerModal-quizes{
     display: none;
     justify-content: center;
     align-items: center;
@@ -243,9 +243,11 @@ ol{
 }
 #modal-quiz-container-1.active{
     opacity: 1;
-    
 }
-#quizContainer{
+#modal-quiz-container-completed.active{
+    opacity: 1;
+}
+.quizContainer{
     width: 60%;
     height: 90vh;
     /* display: flex;
@@ -257,7 +259,7 @@ ol{
     overflow-y: scroll;
     font-family: mont-regular;
 }
-#quizContainer form{
+.quizContainer form{
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -276,4 +278,20 @@ ol{
 }
 .pregunta{
     text-align: left;
+}
+#mensaje{
+    display: none;
+    text-align: center;
+    font-family: mont-regular;
+    position: fixed;
+    top: 10%;
+    left: 5%;
+    border-radius: 25px;
+    padding: 2rem;
+    background-color: beige;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.199);
+    opacity: 0;
+}
+#mensaje.active{
+    opacity: 1;
 }

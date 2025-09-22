@@ -98,6 +98,12 @@ try {
     $response['message'] = $response['success']
         ? 'Ha respondido correctamente todas las preguntas'
         : 'Algunas respuestas son incorrectas';
+    if ($response['success'] == true) {
+        $response['status'] = 'si';
+        $stmt = $conexion->prepare("UPDATE empleados SET induccionGeneral = ? WHERE identificacion = ?");
+        $stmt->bind_param('si', $response['status'], $_SESSION['identificacion']);
+        $stmt->execute();
+    }
 
 } catch (Exception $e) {
     http_response_code(400);

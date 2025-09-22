@@ -36,8 +36,10 @@ class Auth {
                         $_SESSION['username'] = $username;
                         $_SESSION['user_id'] = $user['nombre_usuario'];
                         $_SESSION['last_activity'] = time();
+                        $_SESSION['email'] = $user['email'];
+                        $_SESSION['rol'] = 'empleado';
 
-                        $sql_empleado = "SELECT identificacion, tipo_identificacion_id, nombre, fecha_nacimiento, fecha_ingreso, nombre_usuario, cargo_id, tipo_contrato_id, salario FROM empleados WHERE nombre_usuario = ?";
+                        $sql_empleado = "SELECT * FROM empleados WHERE nombre_usuario = ?";
                         if($stmt = $this->conn->prepare($sql_empleado)) {
                             $stmt->bind_param("s", $user['nombre_usuario']);
                             $stmt->execute();
@@ -54,6 +56,7 @@ class Auth {
                                 $_SESSION['cargo_id'] = $empleado['cargo_id'];
                                 $_SESSION['tipo_contrato_id'] = $empleado['tipo_contrato_id'];
                                 $_SESSION['salario'] = $empleado['salario'];
+                                $_SESSION['induccionGeneral'] = $empleado['induccionGeneral'];
                             }
                         }
 

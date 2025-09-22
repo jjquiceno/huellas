@@ -16,7 +16,7 @@ require_once '../../../../helpers/require_login.php';
 <body>
     <div class="container-Induccion">
         <div class="headerInduccion">
-            <i class="fa-solid fa-angle-left fa-2xl InBack"></i>
+            <i class="fa-solid fa-angle-left fa-2xl InBack" onclick="window.history.back()"></i>
             <div class="user">
                 <p class="bold x1"><?php echo $_SESSION['username']; ?></p>
                 <p class="regular x1"><?php echo $_SESSION['cargo']; ?></p>
@@ -248,9 +248,10 @@ require_once '../../../../helpers/require_login.php';
             </div>
         </div>
     </div>
-    <div id="modal-quiz-container-1">
+    <div id="modal-quiz-container-1" class="containerModal-quizes">
+        <i class="fa-solid fa-xmark cerrarVentanas" id="cerrarVentanas"></i>
         <div id="mensaje"></div>
-        <div id="quizContainer">
+        <div class="quizContainer">
             <div class="previeQ containerR">
                 <h2 class="bold">Esta a punto de realizar un breve cuestionario para certificar que usted ha realizado la induccion general para la fundacion huellas del ayer</h2>
                 <p class="regular x1">Tenga presente que para poder desacrgar su certificado, debera responder correctamente todas las preguntas que encontrara a continuación, llegado el caso de que no responda correctamente debera intentar responder nuevamente el cuestionario</p>
@@ -346,6 +347,14 @@ require_once '../../../../helpers/require_login.php';
                     </div>
                 </form>
             </div>
+        </div>
+    </div>
+    <div id="modal-quiz-container-completed" class="containerModal-quizes"> 
+        <i class="fa-solid fa-xmark cerrarVentanas" id="cerrarVentanas"></i>
+        <div id="mensaje"></div>
+        <div class="quizContainer">
+            <h2>ya has completado eesta induccion</h2>
+            <p>para descargar tu certificado consulta la pagina de tu perfil</p>
         </div>
     </div>
     <script src="../../js/empleados/quizResponse.js"></script>
