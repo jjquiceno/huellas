@@ -98,7 +98,7 @@
                 echo "
                 <script>
                     alert('New record created successfully');
-                    window.location.href = '../public_html/frontend/templatesJefes/registerJefe.php';
+                    // window.location.href = '../public_html/frontend/templatesJefes/registerJefe.php';
                 </script>";
             } else {
                 echo "

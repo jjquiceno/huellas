@@ -34,6 +34,10 @@ require_once '../../../helpers/require_login_admin.php';
                             <i class="fa-solid fa-house"></i>
                             <span class="BLACK regular menu-item">Registrar un líder nuevo</span>
                         </a>
+                        <a href="registerCargo.php" class="ppp2">
+                            <i class="fa-solid fa-house"></i>
+                            <span class="BLACK regular menu-item">Registrar un cargo nuevo</span>
+                        </a>
                         <a href="empleadosCRUD.php" class="ppp2">
                             <i class="fa-solid fa-database"></i>
                             <span class="BLACK regular menu-item">ver tabla de empleados</span>

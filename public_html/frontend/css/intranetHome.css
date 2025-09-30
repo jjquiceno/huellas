@@ -975,8 +975,12 @@
     gap: 1rem;
 }
 .avatar{
-    border: solid black;
     display: flex;
     align-items: center;
     gap: 1rem;
+}
+
+/* estilos de la pagina de cursos */
+.cursos-container{
+    width: 100%;
 }

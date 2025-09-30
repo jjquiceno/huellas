@@ -71,6 +71,29 @@ try {
     if ($stmt->execute()) {
         $response['success'] = true;
         $response['message'] = 'Evento creado exitosamente';
+
+        // Intentar crear notificaciones para todos los empleados (no interrumpe si falla)
+        // Crear tabla si no existe
+        $conexion->query("CREATE TABLE IF NOT EXISTS employee_notifications (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            empleado_id INT NOT NULL,
+            type VARCHAR(64) NOT NULL,
+            title VARCHAR(255) NOT NULL,
+            body TEXT NULL,
+            link VARCHAR(128) NULL,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            read_at DATETIME NULL,
+            INDEX idx_emp (empleado_id),
+            INDEX idx_read (read_at)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;");
+
+        // Insertar una notificación por empleado con SELECT para evitar bucles en PHP
+        if ($notif = $conexion->prepare("INSERT INTO employee_notifications (empleado_id, type, title, body, link)
+            SELECT identificacion, 'evento_creado', CONCAT('Nuevo evento: ', ?), ?, 'inicio' FROM empleados")) {
+            $notif->bind_param("ss", $_POST['titulo'], $_POST['descripcion']);
+            // Ejecutar e ignorar el resultado/errores para no afectar la creación del evento
+            $notif->execute();
+        }
     } else {
         // Si hay un error, eliminar la imagen subida
         if (file_exists($rutaImagen)) {

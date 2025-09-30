@@ -67,6 +67,7 @@ require_once '../../../helpers/require_login.php';
                             <i class="fa-solid fa-file-pdf"></i>
                             Certificado sin funciones
                         </a>
+                        <br>
                         <a href="../../../backend/descargaPDF/downloadFunciones.php" class="download-btn regular">
                             <i class="fa-solid fa-file-pdf"></i>
                             Certificado con funciones

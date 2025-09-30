@@ -7,6 +7,7 @@ const ppp = document.querySelectorAll('.ppp')
 const userAbsoluteToggle = document.querySelector('.arrow')
 const userAbsolute = document.querySelector('.user-absolute')
 const arrowIcon = document.querySelector('.arrow-icon')
+const ppp3 = document.querySelectorAll('.ppp3')
 
 fetch('inicio.php')
     .then(response => response.text())
@@ -83,6 +84,34 @@ ppp.forEach(itemP => {
             })
     })
 })
+// ppp3.forEach(itemP => {
+//     itemP.addEventListener('click', () => { 
+//         const referencia = itemP.getAttribute('referencia')
+//         fetch(`${referencia}.php`)
+//             .then(response => response.text())
+//             .then(data => {
+//                 document.querySelector('.main-content-fetch').innerHTML = data
+                
+//                 const oldScript = document.getElementById('FetchScript');
+//                 if (oldScript) oldScript.remove();
+
+//                 // Si la vista es 'cuponera', la lógica ya está definida inline en succes.php
+//                 // simplemente invoca el cargador y evita cargar otro script.
+//                 if (referencia === 'cuponera') {
+//                     if (typeof window.cargarCuponesEmpleado === 'function') {
+//                         window.cargarCuponesEmpleado();
+//                         return;
+//                     }
+//                 }
+
+//                 // Para otras vistas, carga el script correspondiente dinámicamente
+//                 const script = document.createElement('script');
+//                 script.src = `../js/empleados/${referencia}.js`;
+//                 script.id = 'FetchScript';
+//                 document.body.appendChild(script);
+//             })
+//     })
+// })
 equis.style.opacity = '1'
 lineas.style.opacity = '0'
 

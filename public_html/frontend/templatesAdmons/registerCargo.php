@@ -1,10 +1,10 @@
 <?php
-    require_once __DIR__. '/../../../helpers/require_login_admin.php';
+require_once __DIR__. '/../../../helpers/require_login_admin.php';
 ?>
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';"> -->
@@ -33,6 +33,10 @@
                         <a href="registerJefe.php" class="ppp2">
                             <i class="fa-solid fa-house"></i>
                             <span class="BLACK regular menu-item">Registrar un líder nuevo</span>
+                        </a>
+                        <a href="registerCargo.php" class="ppp2">
+                            <i class="fa-solid fa-house"></i>
+                            <span class="BLACK regular menu-item">Registrar un cargo nuevo</span>
                         </a>
                         <a href="empleadosCRUD.php" class="ppp2">
                             <i class="fa-solid fa-database"></i>
@@ -81,55 +85,37 @@
                 </div>
             </div>
             <div class="main-content-fetch">
-                <div class="containerTables">
-                    <h2 class="bold textFi">Lista de Empleados</h2>
-                    <table class="regular empleadosTable" border="1" cellpadding="8" cellspacing="0">
-                        <thead>
-                            <tr>
-                                <th>Id_jefe</th>
-                                <th>Identificacion</th>
-                                <th>Nombre</th>
-                                <th>Correo</th>
-                                <th>Nombre de Usuario</th>
-                                <th>Contraseña</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        <?php
-                        include __DIR__ . '/../../../backend/conexion.php';
-                        $sql = "SELECT * FROM jefes";
-                        $result = $conexion->query($sql);
-                        if ($result && $result->num_rows > 0) {
-                            while($row = $result->fetch_assoc()) {
-                                echo "<tr>";
-                                echo "<td>" . htmlspecialchars($row['id_jefe']) . "</td>";
-                                echo "<td>" . htmlspecialchars($row['identificacion']) . "</td>";
-                                echo "<td>" . htmlspecialchars($row['nombre']) . "</td>";
-                                echo "<td>" . htmlspecialchars($row['correo']) . "</td>";
-                                echo "<td>" . htmlspecialchars($row['nombre_usuario']) . "</td>";
-                                echo "<td><button class='change-password-btn'>Cambiar contraseña</button></td>";
-                                echo '
-                                    <td>
-                                        <button class="edit-btn">Editar</button> 
-                                        <button class="delete-btn" data-id="' . htmlspecialchars($row['id_jefe']) . '">Eliminar</button>
-                                    </td>';
-                                echo "</tr>";
-                            }
-                        } else {
-                            echo '<tr><td colspan="11">No hay empleados registrados.</td></tr>';
-                        }
-                        ?>
-                        </tbody>
-                    </table>
+                <div class="form-container">
+                    <form id="registerCargo" class="form_form">
+                        <div class="titule">
+                            <h3 class="bold" style="width: fit-content; margin: auto;">REGISTRA UN CARGO</h3>
+                        </div>
+                        <div class="info-message" data-validate="El password es necesario">
+                            <input class="caja_text regular" type="text" name="cargo" id="cargo" required>
+                            <label class="label lightI" for="cargo">cargo</label>
+                            <span></span>
+                            <div class="separador-black"></div>
+                        </div>
+                        <div class="info-message" data-validate="El correo es necesario">
+                            <input class="caja_text regular" type="text" name="funciones" id="funciones" required>
+                            <label class="label lightI" for="funciones">funciones</label>
+                            <span></span>
+                            <div class="separador-black"></div>
+                        </div>
+                        <div class="e-b ">
+                            <button type="submit" class="enviar bold">enviar</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
     <script src="../js/administradores/succesAdmonsCRUDS.js"></script>
-    <script src="../js/administradores/empleadosCRUD.js"></script>
+    <script src="../js/administradores/registerCargo.js"></script>
 </body>
 </html>
 <?php
 $conexion->close();
 ?>
+
+

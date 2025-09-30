@@ -24,7 +24,7 @@ require_once '../../../helpers/require_login.php';
                             <p class="regular x1" style="width: 80%; text-align: center;">Descarga tus certificados laborales como vinculado</p>
                             <br>
                             <div class="botones" style="display: flex; flex-direction: column; align-items: center;">
-                                <a class="download-btn" href="../../../backend/descargaPDF/download_pdf.php">
+                                <a class="download-btn" href="../../../backend/descargaPDF/downloadSinFunciones.php">
                                     <i class="fa-solid fa-file-pdf fa-xl"></i>
                                     <p class="regular x1">Descargar sin funciones</p>
                                 </a>
@@ -42,7 +42,7 @@ require_once '../../../helpers/require_login.php';
                             <p class="regular x1" style="width: 80%; text-align: center;">Descarga tus certificados laborales como prestador de servicios</p>
                             <br>
                             <div class="botones" style="display: flex; flex-direction: column; align-items: center;">
-                                <a class="download-btn" href="../../../backend/descargaPDF/download_prestacion.php">
+                                <a class="download-btn" href="../../../backend/descargaPDF/downloadPresSin.php">
                                     <i class="fa-solid fa-file-pdf fa-xl"></i>
                                     <p class="regular x1">Descargar sin actividades</p>
                                 </a>

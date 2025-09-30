@@ -45,7 +45,7 @@
                         <br>
                         <div class="separador"></div>
                         <br>
-                        <p class="bold x3 WHITE" style="text-align: center;">¡INGRESA COMO Jefe!</p>
+                        <p class="bold x3 WHITE" style="text-align: center;">¡INGRESA COMO LÍDER!</p>
                         <br>
                         <div class="separador"></div>
                         <br>
@@ -64,8 +64,8 @@
                             <div class="separador-black"></div>
                         </div>
                         <div class="info-message" data-validate="El corrreo es necesario">
-                            <input class="caja_text regular" type="text" name="contrasena" required>
-                            <label class="label lightI" for="email">contraseña</label>
+                            <input class="caja_text regular" type="password" name="contrasena" required>
+                            <label class="label lightI" for="contrasena">contraseña</label>
                             <span></span>
                             <div class="separador-black"></div>
                         </div>

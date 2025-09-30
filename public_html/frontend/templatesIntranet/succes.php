@@ -198,7 +198,7 @@ require_once '../../../helpers/require_login.php';
                     ${motivos.length ? `<div class="motivos lightI">Motivos: ${motivos.join(' · ')}</div>` : ''}
                 </div>
                 <div class="cup-foot">
-                    <button class="btn" ${c.redeemable ? '' : 'disabled'} title="${c.redeemable ? 'Solicitar redención con el jefe' : 'No disponible'}">
+                    <button class="btn solicitar-redencion" data-employee-coupon-id="${c.employee_coupon_id}" data-coupon-id="${c.coupon_id}" ${c.redeemable ? '' : 'disabled'} title="${c.redeemable ? 'Solicitar redención con el jefe' : 'No disponible'}">
                     Solicitar redención
                     </button>
                 </div>
@@ -215,6 +215,37 @@ require_once '../../../helpers/require_login.php';
         // Ejecutar al cargar el DOM
         // document.addEventListener('DOMContentLoaded', cargarCuponesEmpleado);
         cargarCuponesEmpleado();
+
+        // Delegación de eventos para solicitar redención
+        document.addEventListener('click', async (ev) => {
+          const btn = ev.target.closest('.solicitar-redencion');
+          if (!btn) return;
+          if (btn.disabled) return;
+          try {
+            const empCouponId = btn.getAttribute('data-employee-coupon-id');
+            const couponId = btn.getAttribute('data-coupon-id');
+            if (!empCouponId || !couponId) return;
+
+            const original = btn.textContent;
+            btn.textContent = 'Enviando...';
+            btn.disabled = true;
+
+            const fd = new FormData();
+            fd.append('employee_coupon_id', empCouponId);
+            fd.append('coupon_id', couponId);
+
+            const resp = await fetchJSON(`${API_EMP}/solicitar_redencion.php`, { method: 'POST', body: fd });
+            if (!resp.success) throw new Error(resp.message || 'No se pudo crear la solicitud');
+
+            btn.textContent = 'Solicitud enviada';
+            btn.title = 'Tu jefe revisará la solicitud';
+          } catch (err) {
+            console.error(err);
+            alert(err.message || 'Error al enviar la solicitud');
+            btn.disabled = false;
+            btn.textContent = original || 'Solicitar redención';
+          }
+        });
     </script>
 </body>
 </html>

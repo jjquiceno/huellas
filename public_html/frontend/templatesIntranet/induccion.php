@@ -25,7 +25,7 @@ require_once '../../../helpers/require_login.php';
                         <br>
                         <a class="download-btn" href="">
                             <i class="fa-solid fa-book-tanakh"></i>
-                            <p class="regular x1">Induccion algo</p>
+                            <p class="regular x1">Induccion</p>
                         </a>
                         <br>
                         <a class="download-btn" href="">

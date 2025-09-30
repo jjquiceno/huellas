@@ -64,8 +64,8 @@
                             <div class="separador-black"></div>
                         </div>
                         <div class="info-message" data-validate="El corrreo es necesario">
-                            <input class="caja_text regular" type="text" name="password" required>
-                            <label class="label lightI" for="email">contraseña</label>
+                            <input class="caja_text regular" type="password" name="password" required>
+                            <label class="label lightI" for="password">contraseña</label>
                             <span></span>
                             <div class="separador-black"></div>
                         </div>
