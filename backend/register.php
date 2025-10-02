@@ -1,8 +1,8 @@
 <?php
     header('Content-Type: application/json');
-    include "conexion.php"; 
+    require_once __DIR__ . "/conexion.php"; 
 
-    require_once '../helpers/Validator.php';
+    require_once __DIR__ . "/../helpers/Validator.php";
     
     // Función para responder en JSON
     function sendResponse($success, $message = '') {

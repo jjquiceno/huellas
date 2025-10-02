@@ -7,7 +7,7 @@ console.log("registerEmpleado.js cargado");
          e.preventDefault();
          const formData = new FormData(this);
          try {
-             const response = await fetch('../../../backend/tablaEmpleados/registerEmpleados.php', {
+             const response = await fetch('../../apis/admons/registerEmpleados.php', {
                  method: 'POST',
                  body: formData
              });

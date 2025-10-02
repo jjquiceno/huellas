@@ -1,9 +1,6 @@
-// Slider JS puro para .sliderInicio
-
 window.initSliderInicio = function() {
-    // Verificar que el slider exista en el DOM
     const slider = document.querySelector('.sliderInicio');
-    if (!slider) return; // Salir si no se encuentra el slider
+    if (!slider) return;
     
     // Limpiar cualquier evento duplicado
     const oldPrevBtn = slider.querySelector('.prev');
@@ -150,7 +147,7 @@ if (document.readyState === 'loading') {
         if(!cont) return;
         cont.innerHTML = '<div class="cargando">Cargando novedades...</div>';
         try{
-            const res = await fetch('/HUELLASdelAYER/backend/tablaEventos/obtener_eventos.php');
+            const res = await fetch('../../apis/eventos/obtener_eventos.php');
             const txt = await res.text();
             if(!res.ok) throw new Error(`HTTP ${res.status}: ${txt.substring(0,200)}`);
             let eventos; try{ eventos = JSON.parse(txt); } catch { throw new Error(`Respuesta no-JSON: ${txt.substring(0,200)}`); }

@@ -46,9 +46,9 @@ class Validator {
             return false;
         }
         // Convertir a timestamps para comparar correctamente
-        if(strtotime($fecha_nacimiento) > strtotime(date("Y-m-d"))){
-            return false;
-        }
+        // if(strtotime($fecha_nacimiento) > strtotime(date("Y-m-d"))){
+        //     return false;
+        // }
         return true;
     }
 
@@ -58,9 +58,9 @@ class Validator {
             return false;
         }
         // Convertir a timestamps para comparar correctamente
-        if(strtotime($fecha_ingreso) > strtotime(date("Y-m-d"))){
-            return false;
-        }
+        // if(strtotime($fecha_ingreso) > strtotime(date("Y-m-d"))){
+        //     return false;
+        // }
         return true;
     }
 

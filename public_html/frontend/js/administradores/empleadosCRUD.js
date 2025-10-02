@@ -82,7 +82,7 @@ document.body.appendChild(editModal);
 function cargarCargos() {
     return new Promise((resolve, reject) => {
         console.log('Iniciando carga de cargos...');
-        const url = '../../../backend/tablaEmpleados/get_cargos.php';
+        const url = '../../apis/admons/get_cargos.php';
         const timestamp = new Date().getTime(); // Para prevenir caché
         
         fetch(`${url}?t=${timestamp}`, {
@@ -253,14 +253,10 @@ document.getElementById('editEmployeeForm').addEventListener('submit', async fun
         empleadoData.duracion_contrato = parseInt(empleadoData.duracion_contrato);
     }
     
-    if (empleadoData.salario) {
-        empleadoData.salario = parseFloat(empleadoData.salario);
-    }
-    
     // Convertir IDs a enteros
-    empleadoData.tipo_identificacion_id = parseInt(empleadoData.tipo_identificacion_id);
-    empleadoData.cargo_id = parseInt(empleadoData.cargo_id);
-    empleadoData.tipo_contrato_id = parseInt(empleadoData.tipo_contrato_id);
+    // empleadoData.tipo_identificacion_id = parseInt(empleadoData.tipo_identificacion_id);
+    // empleadoData.cargo_id = parseInt(empleadoData.cargo_id);
+    // empleadoData.tipo_contrato_id = parseInt(empleadoData.tipo_contrato_id);
     
     // Mostrar indicador de carga
     const submitButton = this.querySelector('button[type="submit"]');
@@ -270,7 +266,7 @@ document.getElementById('editEmployeeForm').addEventListener('submit', async fun
     
     try {
         // Enviar datos al servidor
-        const response = await fetch('../../../backend/tablaEmpleados/update_empleado.php', {
+        const response = await fetch('../../apis/admons/update_empleado.php', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -322,7 +318,7 @@ document.getElementById('editEmployeeForm').addEventListener('submit', async fun
 function eliminarEmpleado(usuarioId, rowElement) {
     console.log('Intentando eliminar empleado con ID:', usuarioId);
     
-    fetch('../../../backend/tablaEmpleados/delete_empleado.php', {
+    fetch('../../apis/admons/delete_empleado.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

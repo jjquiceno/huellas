@@ -28,8 +28,12 @@ require_once '../../../helpers/require_login_admin.php';
                     <div class="menuItems_box">
                         <a href="succes.php" class="ppp2">
                             <i class="fa-solid fa-house"></i>
-                            <span class="BLACK regular menu-item">Registrar un empleado nuevo</span>
+                            <span class="BLACK regular menu-item">Registrar un usuario nuevo</span>
                         </a>
+                        <!-- <a href="registerEmpleado.php" class="ppp2">
+                            <i class="fa-solid fa-house"></i>
+                            <span class="BLACK regular menu-item">Registrar un empleado nuevo</span>
+                        </a> -->
                         <a href="registerJefe.php" class="ppp2">
                             <i class="fa-solid fa-house"></i>
                             <span class="BLACK regular menu-item">Registrar un líder nuevo</span>
@@ -59,7 +63,7 @@ require_once '../../../helpers/require_login_admin.php';
                         <div class="separador"></div>
                         <p class="ppp">
                             <i class="fa-solid fa-right-from-bracket"></i>
-                            <a href="../../../backend/logout.php" class="BLACK regular menu-item">Cerrar sesión</a>
+                            <a href="../../apis/logout.php" class="BLACK regular menu-item">Cerrar sesión</a>
                         </p>
                     </div>
                 </div>

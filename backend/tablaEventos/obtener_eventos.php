@@ -1,9 +1,10 @@
 <?php
 header('Content-Type: application/json');
-require_once '../../config.php';
-require_once '../../helpers/require_login.php';
+require_once '../../../config.php';
+require_once '../../../helpers/require_login.php';
 
-$usuario_id = isset($_SESSION['user_id']) ? (int)$_SESSION['user_id'] : 0;
+// Usar la identificación del empleado almacenada en sesión (coincide con empleados.identificacion)
+$empleado_identificacion = isset($_SESSION['identificacion']) ? (int)$_SESSION['identificacion'] : 0;
 
 try {
     // Consulta para obtener los eventos con información de likes
@@ -17,7 +18,7 @@ try {
               ORDER BY e.fecha_evento DESC, e.fecha_creacion DESC";
     
     $stmt = $conexion->prepare($query);
-    $stmt->bind_param("i", $usuario_id);
+    $stmt->bind_param("i", $empleado_identificacion);
     $stmt->execute();
     $result = $stmt->get_result();
     

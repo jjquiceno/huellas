@@ -53,7 +53,7 @@ function applyInitialStyles() {
 
 // Función para eliminar un cargo
 function eliminarCargo(cargo_id, rowElement) {
-    fetch('../../../backend/roles/delete_cargo.php', {
+    fetch('../../apis/admons/delete_cargo.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

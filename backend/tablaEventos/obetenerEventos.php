@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: application/json');
-require_once '../../config.php';
-require_once '../../helpers/require_login.php';
+require_once '../../../config.php';
+require_once '../../../helpers/require_login.php';
 
 $response = [];
 $usuario_id = $_SESSION['user_id'];

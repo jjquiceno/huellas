@@ -16,7 +16,7 @@ document.addEventListener('click', function(e) {
 
 // Función para eliminar un usuario
 function eliminarUsuario(usuarioId, rowElement) {
-    fetch('../../../backend/usuarios/delete_usuario.php', {
+    fetch('../../apis/admons/delete_usuario.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

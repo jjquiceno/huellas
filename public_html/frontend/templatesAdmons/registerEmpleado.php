@@ -104,6 +104,9 @@
             </div>
         </form>
     </div>
+    <!-- <script src="../js/administradores/registerEmpleado.js"></script>
+    <script src="../js/administradores/registerUsuario.js"></script>
+    <script src="../js/administradores/succesAdmons.js"></script> -->
 </body>
 </html>
 <?php

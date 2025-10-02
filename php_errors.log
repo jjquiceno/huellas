@@ -326,3 +326,323 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php on line 77
+[30-Sep-2025 18:29:39 Europe/Berlin] Received update request: Array
+(
+    [identificacion] => 1033180348
+    [tipo_identificacion_id] => 
+    [nombre] => juan jose quiceno
+    [fecha_nacimiento] => 2025-07-16
+    [fecha_ingreso] => 2025-09-16
+    [nombre_usuario] => jjquiceno
+    [cargo_id] => 19
+    [tipo_contrato_id] => 
+    [duracion_contrato] => 5
+    [salario] => 1400000
+)
+
+[30-Sep-2025 18:29:39 Europe/Berlin] PHP Fatal error:  Uncaught Exception: Los siguientes campos son requeridos: tipo_identificacion_id, tipo_contrato_id in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php:77
+Stack trace:
+#0 {main}
+  thrown in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php on line 77
+[30-Sep-2025 18:29:55 Europe/Berlin] Received update request: Array
+(
+    [identificacion] => 1033180348
+    [tipo_identificacion_id] => 
+    [nombre] => juan jose quiceno
+    [fecha_nacimiento] => 2025-07-16
+    [fecha_ingreso] => 2025-09-16
+    [nombre_usuario] => jjquiceno
+    [cargo_id] => 19
+    [tipo_contrato_id] => 
+    [duracion_contrato] => 5
+    [salario] => 1400000
+)
+
+[30-Sep-2025 18:29:55 Europe/Berlin] PHP Fatal error:  Uncaught Exception: Los siguientes campos son requeridos: tipo_identificacion_id, tipo_contrato_id in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php:77
+Stack trace:
+#0 {main}
+  thrown in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php on line 77
+[30-Sep-2025 18:37:32 Europe/Berlin] Received update request: Array
+(
+    [identificacion] => 123456789
+    [tipo_identificacion_id] => 
+    [nombre] => mariana
+    [fecha_nacimiento] => 2025-09-17
+    [fecha_ingreso] => 2025-09-16
+    [nombre_usuario] => vida
+    [cargo_id] => 22
+    [tipo_contrato_id] => 
+    [duracion_contrato] => 5
+    [salario] => 4000000
+)
+
+[30-Sep-2025 18:37:32 Europe/Berlin] PHP Fatal error:  Uncaught Exception: Los siguientes campos son requeridos: tipo_identificacion_id, tipo_contrato_id in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php:77
+Stack trace:
+#0 {main}
+  thrown in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php on line 77
+[30-Sep-2025 21:10:29 Europe/Berlin] Received update request: Array
+(
+    [identificacion] => 123456789
+    [tipo_identificacion_id] => 
+    [nombre] => mariana
+    [fecha_nacimiento] => 2025-09-17
+    [fecha_ingreso] => 2025-09-16
+    [nombre_usuario] => vida
+    [cargo_id] => 22
+    [tipo_contrato_id] => 
+    [duracion_contrato] => 5
+    [salario] => 4000000
+)
+
+[30-Sep-2025 21:10:29 Europe/Berlin] PHP Fatal error:  Uncaught Exception: Los siguientes campos son requeridos: tipo_identificacion_id, tipo_contrato_id in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php:77
+Stack trace:
+#0 {main}
+  thrown in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php on line 77
+[30-Sep-2025 21:31:05 Europe/Berlin] Received update request: Array
+(
+    [identificacion] => 123456789
+    [tipo_identificacion_id] => CC132
+    [nombre] => mariana
+    [fecha_nacimiento] => 2025-09-17
+    [fecha_ingreso] => 2025-09-16
+    [nombre_usuario] => vida
+    [cargo_id] => 22
+    [tipo_contrato_id] => CPS789
+    [duracion_contrato] => 3
+    [salario] => 4000000
+)
+
+[30-Sep-2025 21:31:05 Europe/Berlin] Processing update for employee ID: 123456789
+[30-Sep-2025 21:31:05 Europe/Berlin] Data to update: Array
+(
+    [identificacion] => 123456789
+    [tipo_identificacion_id] => CC132
+    [nombre] => mariana
+    [fecha_nacimiento] => 2025-09-17
+    [fecha_ingreso] => 2025-09-16
+    [nombre_usuario] => vida
+    [cargo_id] => 22
+    [tipo_contrato_id] => CPS789
+    [duracion_contrato] => 3
+    [salario] => 4000000
+)
+
+[30-Sep-2025 21:31:05 Europe/Berlin] Preparing SQL: UPDATE empleados SET 
+        tipo_identificacion_id = ?, 
+        nombre = ?, 
+        fecha_nacimiento = ?, 
+        fecha_ingreso = ?, 
+        nombre_usuario = ?, 
+        cargo_id = ?, 
+        tipo_contrato_id = ?, 
+        duracion_contrato = ?, 
+        salario = ? 
+        WHERE identificacion = ?
+[30-Sep-2025 21:31:05 Europe/Berlin] Binding parameters - Types: sssssisids
+[30-Sep-2025 21:31:05 Europe/Berlin] Parameter values: Array
+(
+    [0] => CC132
+    [1] => mariana
+    [2] => 2025-09-17
+    [3] => 2025-09-16
+    [4] => vida
+    [5] => 22
+    [6] => CPS789
+    [7] => 3
+    [8] => 4000000
+    [9] => 123456789
+)
+
+[30-Sep-2025 21:31:05 Europe/Berlin] Update successful: Array
+(
+    [success] => 1
+    [message] => Empleado actualizado correctamente
+    [affected_rows] => 1
+)
+
+[01-Oct-2025 18:15:23 Europe/Berlin] Received update request: Array
+(
+    [identificacion] => 1033180348
+    [tipo_identificacion_id] => CC132
+    [nombre] => juan jose quiceno
+    [fecha_nacimiento] => 2025-07-16
+    [fecha_ingreso] => 2025-10-05
+    [nombre_usuario] => jjquiceno
+    [cargo_id] => 18
+    [tipo_contrato_id] => CPS789
+    [duracion_contrato] => 8
+    [salario] => 1400000
+)
+
+[01-Oct-2025 18:15:24 Europe/Berlin] Processing update for employee ID: 1033180348
+[01-Oct-2025 18:15:24 Europe/Berlin] Data to update: Array
+(
+    [identificacion] => 1033180348
+    [tipo_identificacion_id] => CC132
+    [nombre] => juan jose quiceno
+    [fecha_nacimiento] => 2025-07-16
+    [fecha_ingreso] => 2025-10-05
+    [nombre_usuario] => jjquiceno
+    [cargo_id] => 18
+    [tipo_contrato_id] => CPS789
+    [duracion_contrato] => 8
+    [salario] => 1400000
+)
+
+[01-Oct-2025 18:15:24 Europe/Berlin] Preparing SQL: UPDATE empleados SET 
+        tipo_identificacion_id = ?, 
+        nombre = ?, 
+        fecha_nacimiento = ?, 
+        fecha_ingreso = ?, 
+        nombre_usuario = ?, 
+        cargo_id = ?, 
+        tipo_contrato_id = ?, 
+        duracion_contrato = ?, 
+        salario = ? 
+        WHERE identificacion = ?
+[01-Oct-2025 18:15:24 Europe/Berlin] Binding parameters - Types: sssssisids
+[01-Oct-2025 18:15:24 Europe/Berlin] Parameter values: Array
+(
+    [0] => CC132
+    [1] => juan jose quiceno
+    [2] => 2025-07-16
+    [3] => 2025-10-05
+    [4] => jjquiceno
+    [5] => 18
+    [6] => CPS789
+    [7] => 8
+    [8] => 1400000
+    [9] => 1033180348
+)
+
+[01-Oct-2025 18:15:24 Europe/Berlin] Update successful: Array
+(
+    [success] => 1
+    [message] => Empleado actualizado correctamente
+    [affected_rows] => 1
+)
+
+[01-Oct-2025 18:15:39 Europe/Berlin] Received update request: Array
+(
+    [identificacion] => 2147483647
+    [tipo_identificacion_id] => CC132
+    [nombre] => ledy vasquez
+    [fecha_nacimiento] => 2000-06-23
+    [fecha_ingreso] => 2025-09-23
+    [nombre_usuario] => ledy
+    [cargo_id] => 14
+    [tipo_contrato_id] => CTV145
+    [duracion_contrato] => 7
+    [salario] => 5000000
+)
+
+[01-Oct-2025 18:15:39 Europe/Berlin] Processing update for employee ID: 2147483647
+[01-Oct-2025 18:15:39 Europe/Berlin] Data to update: Array
+(
+    [identificacion] => 2147483647
+    [tipo_identificacion_id] => CC132
+    [nombre] => ledy vasquez
+    [fecha_nacimiento] => 2000-06-23
+    [fecha_ingreso] => 2025-09-23
+    [nombre_usuario] => ledy
+    [cargo_id] => 14
+    [tipo_contrato_id] => CTV145
+    [duracion_contrato] => 7
+    [salario] => 5000000
+)
+
+[01-Oct-2025 18:15:39 Europe/Berlin] Preparing SQL: UPDATE empleados SET 
+        tipo_identificacion_id = ?, 
+        nombre = ?, 
+        fecha_nacimiento = ?, 
+        fecha_ingreso = ?, 
+        nombre_usuario = ?, 
+        cargo_id = ?, 
+        tipo_contrato_id = ?, 
+        duracion_contrato = ?, 
+        salario = ? 
+        WHERE identificacion = ?
+[01-Oct-2025 18:15:39 Europe/Berlin] Binding parameters - Types: sssssisids
+[01-Oct-2025 18:15:39 Europe/Berlin] Parameter values: Array
+(
+    [0] => CC132
+    [1] => ledy vasquez
+    [2] => 2000-06-23
+    [3] => 2025-09-23
+    [4] => ledy
+    [5] => 14
+    [6] => CTV145
+    [7] => 7
+    [8] => 5000000
+    [9] => 2147483647
+)
+
+[01-Oct-2025 18:15:39 Europe/Berlin] Update successful: Array
+(
+    [success] => 1
+    [message] => Empleado actualizado correctamente
+    [affected_rows] => 1
+)
+
+[01-Oct-2025 18:15:51 Europe/Berlin] Received update request: Array
+(
+    [identificacion] => 123456789
+    [tipo_identificacion_id] => CC132
+    [nombre] => mariana
+    [fecha_nacimiento] => 2025-09-17
+    [fecha_ingreso] => 2025-09-16
+    [nombre_usuario] => vida
+    [cargo_id] => 22
+    [tipo_contrato_id] => CPS789
+    [duracion_contrato] => 5
+    [salario] => 4000000
+)
+
+[01-Oct-2025 18:15:51 Europe/Berlin] Processing update for employee ID: 123456789
+[01-Oct-2025 18:15:51 Europe/Berlin] Data to update: Array
+(
+    [identificacion] => 123456789
+    [tipo_identificacion_id] => CC132
+    [nombre] => mariana
+    [fecha_nacimiento] => 2025-09-17
+    [fecha_ingreso] => 2025-09-16
+    [nombre_usuario] => vida
+    [cargo_id] => 22
+    [tipo_contrato_id] => CPS789
+    [duracion_contrato] => 5
+    [salario] => 4000000
+)
+
+[01-Oct-2025 18:15:51 Europe/Berlin] Preparing SQL: UPDATE empleados SET 
+        tipo_identificacion_id = ?, 
+        nombre = ?, 
+        fecha_nacimiento = ?, 
+        fecha_ingreso = ?, 
+        nombre_usuario = ?, 
+        cargo_id = ?, 
+        tipo_contrato_id = ?, 
+        duracion_contrato = ?, 
+        salario = ? 
+        WHERE identificacion = ?
+[01-Oct-2025 18:15:51 Europe/Berlin] Binding parameters - Types: sssssisids
+[01-Oct-2025 18:15:51 Europe/Berlin] Parameter values: Array
+(
+    [0] => CC132
+    [1] => mariana
+    [2] => 2025-09-17
+    [3] => 2025-09-16
+    [4] => vida
+    [5] => 22
+    [6] => CPS789
+    [7] => 5
+    [8] => 4000000
+    [9] => 123456789
+)
+
+[01-Oct-2025 18:15:51 Europe/Berlin] Update successful: Array
+(
+    [success] => 1
+    [message] => Empleado actualizado correctamente
+    [affected_rows] => 1
+)
+

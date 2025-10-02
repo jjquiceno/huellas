@@ -1,6 +1,6 @@
 <?php 
-require_once '../config.php';
-require_once '../auth.php';
+require_once '../../config.php';
+require_once '../../auth.php';
 
 if (isAjaxRequest()) {
     header('content-type: application/json');
@@ -16,6 +16,6 @@ header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
 header('Cache-Control: post-check=0, pre-check=0', false);
 header('Pragma: no-cache');
 
-header("Location: ../public_html/index.html");
+header("Location: ../../public_html/index.html");
 exit;
 ?>

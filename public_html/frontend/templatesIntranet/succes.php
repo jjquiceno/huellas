@@ -66,7 +66,7 @@ require_once '../../../helpers/require_login.php';
                         </p>
                         <p class="ppp">
                             <i class="fa-solid fa-right-from-bracket"></i>
-                            <a href="../../../backend/logout.php" class="BLACK regular menu-item">Cerrar sesión</a>
+                            <a href="../../apis/logout.php" class="BLACK regular menu-item">Cerrar sesión</a>
                         </p>
                     </div>
                 </div>
@@ -101,10 +101,10 @@ require_once '../../../helpers/require_login.php';
                                 <i class="fa-solid fa-user"></i>
                                 <span class="BLACK regular menu-item">Mi perfil</span>
                             </p>
-                            <p class="ppp" referencia="ajustesPerfil">
+                            <!-- <p class="ppp" referencia="ajustesPerfil">
                                 <i class="fa-solid fa-user"></i>
-                                <span class="BLACK regular menu-item ppp" referencia="ajustesPerfil">Ajustes</span>
-                            </p>
+                                <span class="BLACK regular menu-item">Ajustes</span>
+                            </p> -->
                             <div class="separador-op"></div>
                             <p class="ppp">
                                 <i class="fa-solid fa-right-from-bracket"></i>

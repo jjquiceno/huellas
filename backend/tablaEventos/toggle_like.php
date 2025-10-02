@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: application/json');
-require_once '../../config.php';
-require_once '../../helpers/require_login.php';
+require_once '../../../config.php';
+require_once '../../../helpers/require_login.php';
 
 $response = ['success' => false, 'message' => ''];
 
@@ -21,7 +21,11 @@ try {
     }
     
     $evento_id = (int)$input['evento_id'];
-    $empleado_id = $_SESSION['user_id'];
+    // Usar la identificacion del empleado almacenada en sesión
+    $empleado_id = isset($_SESSION['identificacion']) ? (int)$_SESSION['identificacion'] : 0;
+    if ($empleado_id === 0) {
+        throw new Exception('Sesión inválida: identificación no disponible');
+    }
     
     // Verificar si ya existe un like del usuario para este evento
     $stmt = $conexion->prepare("SELECT id FROM eventos_likes WHERE evento_id = ? AND empleado_id = ?");

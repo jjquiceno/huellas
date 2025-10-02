@@ -74,7 +74,9 @@ foreach ($requiredFields as $field) {
 }
 
 if (!empty($missingFields)) {
-    throw new Exception('Los siguientes campos son requeridos: ' . implode(', ', $missingFields));
+    http_response_code(400);
+    echo json_encode(['success' => false, 'message' => 'Los siguientes campos son requeridos: ' . implode(', ', $missingFields)]);
+    exit;
 }
 
 // Log the data being processed
@@ -100,12 +102,16 @@ $stmt = $conexion->prepare($sql);
 if (!$stmt) {
     $error = $conexion->error;
     error_log('Error preparing statement: ' . $error);
-    throw new Exception('Error al preparar la consulta: ' . $error);
+    http_response_code(500);
+    echo json_encode(['success' => false, 'message' => 'Error al preparar la consulta: ' . $error]);
+    $conexion->close();
+    exit;
 }
 
 try {
     // Log the parameter types and values
-    $types = "isssssiids";
+    // tipos: s(tipo_identificacion_id), s(nombre), s(fecha_nacimiento), s(fecha_ingreso), s(nombre_usuario), i(cargo_id), s(tipo_contrato_id), i(duracion_contrato), d(salario), s(identificacion)
+    $types = "sssssisids";
     $params = [
         $data['tipo_identificacion_id'],
         $data['nombre'],

@@ -1,46 +1,6 @@
 <?php
     require_once __DIR__. '/../../../helpers/require_login_admin.php';
 ?>
-<!-- <!DOCTYPE html>
-<html lang="en">
-<body>
-    <div class="containerTables">
-        <h2 class="bold textFi">Lista de Usuarios</h2>
-        <table class="regular empleadosTable" border="1" cellpadding="8" cellspacing="0">
-            <thead>
-                <tr>
-                    <th>Nombre Usuario</th>
-                    <th>Contraseña</th>
-                    <th>Email</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-            <?php
-            include __DIR__ . '/../../../backend/conexion.php';
-            $sql = "SELECT * FROM usuarios";
-            $result = $conexion->query($sql);
-            if ($result && $result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                    echo "<tr data-usuario-id='" . htmlspecialchars($row['nombre_usuario']) . "'>";
-                    echo "<td>" . htmlspecialchars($row['nombre_usuario']) . "</td>";
-                    echo "<td><button class='change-password-btn'>Cambiar contraseña</button></td>";
-                    echo "<td>" . htmlspecialchars($row['email']) . "</td>";
-                    echo '<td>';
-                    echo '<button class="edit-btn">Editar</button> ';
-                    echo '<button class="delete-btn" data-id="' . htmlspecialchars($row['nombre_usuario']) . '">Eliminar</button>';
-                    echo '</td>';
-                    echo "</tr>";
-                }
-            } else {
-                echo '<tr><td colspan="4">No hay usuarios registrados.</td></tr>';
-            }
-            ?>
-            </tbody>
-        </table>
-    </div>
-</body>
-</html> -->
 <!DOCTYPE html>
 <html lang="es">
 <head>

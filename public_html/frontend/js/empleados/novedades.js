@@ -2,7 +2,7 @@ cargarEventos();
     
 // Función para cargar los eventos
 function cargarEventos() {
-    fetch('/HUELLASdelAYER/backend/tablaEventos/obtener_eventos.php')
+    fetch('../../apis/eventos/obtener_eventos.php')
         .then(async (response) => {
             if (!response.ok) {
                 const text = await response.text();
@@ -72,7 +72,7 @@ function toggleLike(eventoId, boton) {
     icono.classList.toggle('fa-solid');
     icono.classList.toggle('fa-regular');
 
-    fetch('/HUELLASdelAYER/api/toggle_like.php', {
+    fetch('../../apis/eventos/toggle_like.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
