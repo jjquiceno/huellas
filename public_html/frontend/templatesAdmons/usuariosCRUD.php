@@ -94,7 +94,7 @@
                         </thead>
                         <tbody>
                         <?php
-                        include __DIR__ . '/../../../backend/conexion.php';
+                        include __DIR__ . '/../../apis/conexion.php';
                         $sql = "SELECT * FROM usuarios";
                         $result = $conexion->query($sql);
                         if ($result && $result->num_rows > 0) {

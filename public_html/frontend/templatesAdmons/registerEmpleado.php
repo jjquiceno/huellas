@@ -33,26 +33,85 @@
             </div>
             <div class="info-message" data-validate="La fecha de nacimiento es requerida">
                 <input class="caja_text regular" type="date" name="fecha_nacimiento" required>
-                <label class="label lightI" for="fecha_nacimiento">Fecha de Nacimiento</label>
+                <label class="label lightI labelActive" for="fecha_nacimiento">Fecha de Nacimiento</label>
                 <span></span>
                 <div class="separador-black"></div>
             </div>
             <div class="info-message" data-validate="La fecha de ingreso es requerida">
                 <input class="caja_text regular" type="date" name="fecha_ingreso" required>
-                <label class="label lightI" for="fecha_ingreso">Fecha de Ingreso</label>
+                <label class="label lightI labelActive" for="fecha_ingreso">Fecha de Ingreso</label>
+                <span></span>
+                <div class="separador-black"></div>
+            </div>
+            <div class="info-message" data-validate="el celular es requerido">
+                <input class="caja_text regular" type="text" name="celular" required>
+                <label class="label lightI" for="celular">celular</label>
+                <span></span>
+                <div class="separador-black"></div>
+            </div>
+            <div class="info-message" data-validate="la dirección es requerido">
+                <input class="caja_text regular" type="text" name="direccion" required>
+                <label class="label lightI" for="direccion">direccion</label>
+                <span></span>
+                <div class="separador-black"></div>
+            </div>
+            <div class="info-message" data-validate="la EPS es requerida">
+                <input class="caja_text regular" type="text" name="eps" id="eps" required>
+                <label class="label lightI" for="eps">EPS</label>
+                <span></span>
+                <div class="separador-black"></div>
+            </div>
+            <div class="info-message" data-validate="la AFP es requerida">
+                <input class="caja_text regular" type="text" name="afp" id="afp" required>
+                <label class="label lightI" for="afp">AFP</label>
+                <span></span>
+                <div class="separador-black"></div>
+            </div>
+            <div class="info-message" data-validate="la ARL es requerida">
+                <input class="caja_text regular" type="text" name="arl" id="arl" required>
+                <label class="label lightI" for="arl">ARL</label>
+                <span></span>
+                <div class="separador-black"></div>
+            </div>
+            <div class="info-message" data-validate="la CAJA es requerida">
+                <input class="caja_text regular" type="text" name="caja" id="caja" required>
+                <label class="label lightI" for="caja">CAJA</label>
                 <span></span>
                 <div class="separador-black"></div>
             </div>
             <div class="info-message" data-validate="El nombre de usuario es requerido">
-                <input class="caja_text regular" type="text" name="nombre_usuario" required>
-                <label class="label lightI" for="nombre_usuario">Nombre de Usuario</label>
+                <!-- <input class="caja_text regular" type="text" name="nombre_usuario" required> -->
+                <select name="nombre_usuario" class="caja_text regular" required>
+                    <option value="">Nombre de Usuario</option>
+                    <?php
+                    include __DIR__ . '/../../../backend/conexion.php';
+                    $sql = "SELECT * FROM usuarios";
+                    $result = $conexion->query($sql);
+                    if ($result && $result->num_rows > 0) {
+                        while($row = $result->fetch_assoc()) {
+                            echo "<option value='" . htmlspecialchars($row['nombre_usuario']) . "'>" . htmlspecialchars($row['nombre_usuario']) . "</option>";
+                        }
+                    }
+                    ?>
+                </select>
+                <!-- <label class="label lightI" for="nombre_usuario">Nombre de Usuario</label> -->
                 <span></span>
                 <div class="separador-black"></div>
             </div>
             <div class="info-message" data-validate = "El cargo es requerido">
                 <select name="cargo_id" class="caja_text regular" required>
                     <option value="">Cargo</option>
-                    <option value="06">Médico General</option>
+                    <?php
+                    include __DIR__ . '/../../../backend/conexion.php';
+                    $sql = "SELECT * FROM cargos";
+                    $result = $conexion->query($sql);
+                    if ($result && $result->num_rows > 0) {
+                        while($row = $result->fetch_assoc()) {
+                            echo "<option value='" . htmlspecialchars($row['cargo_id']) . "'>" . htmlspecialchars($row['cargo']) . "</option>";
+                        }
+                    }
+                    ?>
+                    <!-- <option value="06">Médico General</option>
                     <option value="07">Oficios Varios – Mayordomo</option>
                     <option value="08">Contador</option>
                     <option value="09">Director Financiero</option>
@@ -71,7 +130,7 @@
                     <option value="22">Cuidador</option>
                     <option value="23">Auxiliar de Enfermería</option>
                     <option value="24">Líder de Enfermería</option>
-                    <option value="25">Director General</option>
+                    <option value="25">Director General</option> -->
                 </select>
                 <span></span>
                 <div class="separador-black"></div>

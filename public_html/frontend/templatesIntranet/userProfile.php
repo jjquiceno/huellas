@@ -88,12 +88,14 @@ require_once '../../../helpers/require_login.php';
             <br>
             <h3 class="regular x15">Certificados de inducción</h3>
             <?php
-            if($_SESSION['induccionGeneral'] === 'si'){
+            if($_SESSION['induccionGeneral'] == 'si'){
                 echo '
-                    <a href="../../../backend/descargaPDF/download_pdf.php" class="download-btn regular">
+                    <a href="../../../backend/descargaPDF/downloadCertificadoGeneral.php" class="download-btn regular">
                         <i class="fa-solid fa-file-pdf"></i>
                         Certificado de inducción General
                     </a>
+                    ' . $_SESSION['induccionGeneral'] . '
+                    
                 ';
             } else {
                 echo '

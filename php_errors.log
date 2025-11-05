@@ -646,3 +646,494 @@ Stack trace:
     [affected_rows] => 1
 )
 
+[09-Oct-2025 22:02:32 Europe/Berlin] Received update request: Array
+(
+    [identificacion] => 54689312
+    [tipo_identificacion_id] => CC132
+    [nombre] => gato
+    [fecha_nacimiento] => 2025-10-23
+    [fecha_ingreso] => 2025-10-21
+    [nombre_usuario] => gato
+    [cargo_id] => 21
+    [tipo_contrato_id] => CPS789
+    [duracion_contrato] => 5
+    [salario] => 5000000
+)
+
+[09-Oct-2025 22:02:32 Europe/Berlin] Processing update for employee ID: 54689312
+[09-Oct-2025 22:02:32 Europe/Berlin] Data to update: Array
+(
+    [identificacion] => 54689312
+    [tipo_identificacion_id] => CC132
+    [nombre] => gato
+    [fecha_nacimiento] => 2025-10-23
+    [fecha_ingreso] => 2025-10-21
+    [nombre_usuario] => gato
+    [cargo_id] => 21
+    [tipo_contrato_id] => CPS789
+    [duracion_contrato] => 5
+    [salario] => 5000000
+)
+
+[09-Oct-2025 22:02:32 Europe/Berlin] Preparing SQL: UPDATE empleados SET 
+        tipo_identificacion_id = ?, 
+        nombre = ?, 
+        fecha_nacimiento = ?, 
+        fecha_ingreso = ?, 
+        nombre_usuario = ?, 
+        cargo_id = ?, 
+        tipo_contrato_id = ?, 
+        duracion_contrato = ?, 
+        salario = ? 
+        WHERE identificacion = ?
+[09-Oct-2025 22:02:32 Europe/Berlin] Binding parameters - Types: sssssisids
+[09-Oct-2025 22:02:32 Europe/Berlin] Parameter values: Array
+(
+    [0] => CC132
+    [1] => gato
+    [2] => 2025-10-23
+    [3] => 2025-10-21
+    [4] => gato
+    [5] => 21
+    [6] => CPS789
+    [7] => 5
+    [8] => 5000000
+    [9] => 54689312
+)
+
+[09-Oct-2025 22:02:32 Europe/Berlin] Update successful: Array
+(
+    [success] => 1
+    [message] => Empleado actualizado correctamente
+    [affected_rows] => 1
+)
+
+[10-Oct-2025 18:06:18 Europe/Berlin] Received update request: Array
+(
+    [cargo_id] => 4
+    [cargo] => CUIDADORA55
+    [funciones] => Las personas cuidadoras del Programa deberán efectuar la detección de necesidades de insumos de cuidado de sus usuarios de forma mensual, de acuerdo a la disponibilidad del Centro de Ayudas Sociales y entregarlo consolidado, con el apoyo de los profesionales del programa.
+• Deben comunicar la fecha, lugar y hora estimada a las familias de los usuarios para que reclamen los insumos de cuidado.
+• Los cuidadores deben revisar la ficha de valoración del usuario, antes de brindar el apoyo. Esto para que planee las acciones de cuidado que realizara con este y con la familia.
+• Para hacer formal la asignación del cuidador, la familia, el cuidador del programa y coordinado de zona debe firmar un consentimiento informado. • El cuidador del programa debe reportar al coordinador de zona cuando hay incumplimiento del consentimiento informado por parte de la familia. Se debe hacer el seguimiento periódico.
+• Los cuidadores hacen acompañamiento al usuario en las necesidades básicas y de la vida diaria, en actividades instrumentales y se abstienen de realizar procedimientos invasivos o actividades para las cuales no están preparados y certificados.
+• La cuidadora realiza reconocimiento inicial y encuadre frente a los alcances y limitaciones con la familia y el ser cuidado de su labor.
+• Acompaña a las personas de cuidado dependiente asignadas previamente mediante acciones apoyo en las necesidades básicas diarias.
+• Brinda apoyo en la elaboración del plan de cuidado y las metas propuestas para cada usuario en acompañamiento de los profesionales del equipo de apoyo.
+• Desarrollar el plan de cuidado, realizando observaciones cuando el agente de cuidado ha tenidos cambios en sus condiciones de salud, informar al coordinador de zona asignado por el operador para que le plan de cuidado sea ajustado.
+• Ejecutar el cronograma de acompañamiento a los usuarios asignados previamente concertado con la familia y/o el usuario, en caso de cambios en el estado de salud informar al coordinador de la zona asignado por el operador.
+• Diligenciar las fichas y registros necesarios para recolectar y mantener información de los usuarios. (plan de cuidado, registro de apoyo).
+• Participar en encuentros con el equipo de apoyo para realizar evaluación y seguimiento a las acciones desarrolladas en el programa de cuidadores, incluyendo los avances de los usuarios en el cumplimiento de metas.
+• Presentar el soporte de las actividades realizadas, de acuerdo a la periodicidad que sea definida por el equipo de apoyo y comité dinamizador.
+• Acatar las normas, directrices y lineamientos técnicos del Programa de Cuidadores.
+• Trabajar de manera articulada con todo el equipo de la red, tanto de apoyo como el comité dinamizador.
+• Dar un trato amable y respetuoso a todas las familias que hacen parte del programa de cuidadores.
+• Participar en las actividades, reuniones, capacitaciones, ferias, entre otras, en las que sea requerido o aquellas necesarias para la adecuada operación del programa.
+• Informar oportunamente las anormalidades encontradas en su ejercicio.
+• Conservar relaciones de trabajo en equipo.
+)
+
+[10-Oct-2025 18:06:18 Europe/Berlin] Processing update for cargo ID: 4
+[10-Oct-2025 18:06:18 Europe/Berlin] Data to update: Array
+(
+    [cargo_id] => 4
+    [cargo] => CUIDADORA55
+    [funciones] => Las personas cuidadoras del Programa deberán efectuar la detección de necesidades de insumos de cuidado de sus usuarios de forma mensual, de acuerdo a la disponibilidad del Centro de Ayudas Sociales y entregarlo consolidado, con el apoyo de los profesionales del programa.
+• Deben comunicar la fecha, lugar y hora estimada a las familias de los usuarios para que reclamen los insumos de cuidado.
+• Los cuidadores deben revisar la ficha de valoración del usuario, antes de brindar el apoyo. Esto para que planee las acciones de cuidado que realizara con este y con la familia.
+• Para hacer formal la asignación del cuidador, la familia, el cuidador del programa y coordinado de zona debe firmar un consentimiento informado. • El cuidador del programa debe reportar al coordinador de zona cuando hay incumplimiento del consentimiento informado por parte de la familia. Se debe hacer el seguimiento periódico.
+• Los cuidadores hacen acompañamiento al usuario en las necesidades básicas y de la vida diaria, en actividades instrumentales y se abstienen de realizar procedimientos invasivos o actividades para las cuales no están preparados y certificados.
+• La cuidadora realiza reconocimiento inicial y encuadre frente a los alcances y limitaciones con la familia y el ser cuidado de su labor.
+• Acompaña a las personas de cuidado dependiente asignadas previamente mediante acciones apoyo en las necesidades básicas diarias.
+• Brinda apoyo en la elaboración del plan de cuidado y las metas propuestas para cada usuario en acompañamiento de los profesionales del equipo de apoyo.
+• Desarrollar el plan de cuidado, realizando observaciones cuando el agente de cuidado ha tenidos cambios en sus condiciones de salud, informar al coordinador de zona asignado por el operador para que le plan de cuidado sea ajustado.
+• Ejecutar el cronograma de acompañamiento a los usuarios asignados previamente concertado con la familia y/o el usuario, en caso de cambios en el estado de salud informar al coordinador de la zona asignado por el operador.
+• Diligenciar las fichas y registros necesarios para recolectar y mantener información de los usuarios. (plan de cuidado, registro de apoyo).
+• Participar en encuentros con el equipo de apoyo para realizar evaluación y seguimiento a las acciones desarrolladas en el programa de cuidadores, incluyendo los avances de los usuarios en el cumplimiento de metas.
+• Presentar el soporte de las actividades realizadas, de acuerdo a la periodicidad que sea definida por el equipo de apoyo y comité dinamizador.
+• Acatar las normas, directrices y lineamientos técnicos del Programa de Cuidadores.
+• Trabajar de manera articulada con todo el equipo de la red, tanto de apoyo como el comité dinamizador.
+• Dar un trato amable y respetuoso a todas las familias que hacen parte del programa de cuidadores.
+• Participar en las actividades, reuniones, capacitaciones, ferias, entre otras, en las que sea requerido o aquellas necesarias para la adecuada operación del programa.
+• Informar oportunamente las anormalidades encontradas en su ejercicio.
+• Conservar relaciones de trabajo en equipo.
+)
+
+[10-Oct-2025 18:06:18 Europe/Berlin] Preparing SQL: UPDATE cargos SET 
+        cargo = ?, 
+        funciones = ?
+        WHERE cargo_id = ?
+[10-Oct-2025 18:06:18 Europe/Berlin] Binding parameters - Types: ssi
+[10-Oct-2025 18:06:18 Europe/Berlin] Parameter values: Array
+(
+    [0] => CUIDADORA55
+    [1] => Las personas cuidadoras del Programa deberán efectuar la detección de necesidades de insumos de cuidado de sus usuarios de forma mensual, de acuerdo a la disponibilidad del Centro de Ayudas Sociales y entregarlo consolidado, con el apoyo de los profesionales del programa.
+• Deben comunicar la fecha, lugar y hora estimada a las familias de los usuarios para que reclamen los insumos de cuidado.
+• Los cuidadores deben revisar la ficha de valoración del usuario, antes de brindar el apoyo. Esto para que planee las acciones de cuidado que realizara con este y con la familia.
+• Para hacer formal la asignación del cuidador, la familia, el cuidador del programa y coordinado de zona debe firmar un consentimiento informado. • El cuidador del programa debe reportar al coordinador de zona cuando hay incumplimiento del consentimiento informado por parte de la familia. Se debe hacer el seguimiento periódico.
+• Los cuidadores hacen acompañamiento al usuario en las necesidades básicas y de la vida diaria, en actividades instrumentales y se abstienen de realizar procedimientos invasivos o actividades para las cuales no están preparados y certificados.
+• La cuidadora realiza reconocimiento inicial y encuadre frente a los alcances y limitaciones con la familia y el ser cuidado de su labor.
+• Acompaña a las personas de cuidado dependiente asignadas previamente mediante acciones apoyo en las necesidades básicas diarias.
+• Brinda apoyo en la elaboración del plan de cuidado y las metas propuestas para cada usuario en acompañamiento de los profesionales del equipo de apoyo.
+• Desarrollar el plan de cuidado, realizando observaciones cuando el agente de cuidado ha tenidos cambios en sus condiciones de salud, informar al coordinador de zona asignado por el operador para que le plan de cuidado sea ajustado.
+• Ejecutar el cronograma de acompañamiento a los usuarios asignados previamente concertado con la familia y/o el usuario, en caso de cambios en el estado de salud informar al coordinador de la zona asignado por el operador.
+• Diligenciar las fichas y registros necesarios para recolectar y mantener información de los usuarios. (plan de cuidado, registro de apoyo).
+• Participar en encuentros con el equipo de apoyo para realizar evaluación y seguimiento a las acciones desarrolladas en el programa de cuidadores, incluyendo los avances de los usuarios en el cumplimiento de metas.
+• Presentar el soporte de las actividades realizadas, de acuerdo a la periodicidad que sea definida por el equipo de apoyo y comité dinamizador.
+• Acatar las normas, directrices y lineamientos técnicos del Programa de Cuidadores.
+• Trabajar de manera articulada con todo el equipo de la red, tanto de apoyo como el comité dinamizador.
+• Dar un trato amable y respetuoso a todas las familias que hacen parte del programa de cuidadores.
+• Participar en las actividades, reuniones, capacitaciones, ferias, entre otras, en las que sea requerido o aquellas necesarias para la adecuada operación del programa.
+• Informar oportunamente las anormalidades encontradas en su ejercicio.
+• Conservar relaciones de trabajo en equipo.
+    [2] => 4
+)
+
+[10-Oct-2025 18:06:18 Europe/Berlin] Update successful: Array
+(
+    [success] => 1
+    [message] => Cargo actualizado correctamente
+    [affected_rows] => 1
+)
+
+[27-Oct-2025 16:50:58 Europe/Berlin] Received update request: Array
+(
+    [identificacion] => 54689312
+    [tipo_identificacion_id] => CC132
+    [nombre] => gato
+    [fecha_nacimiento] => 2025-10-23
+    [fecha_ingreso] => 2025-10-21
+    [celular] => 3042418863
+    [direccion] => calle 46 b sur #42-68
+    [eps] => SURA
+    [afp] => PORVENIR
+    [arl] => POSITIVA
+    [caja] => CONFAMA
+    [nombre_usuario] => gato
+    [cargo_id] => 21
+    [tipo_contrato_id] => CPS789
+    [duracion_contrato] => 5
+    [salario] => 5000000
+)
+
+[27-Oct-2025 16:50:59 Europe/Berlin] Processing update for employee ID: 54689312
+[27-Oct-2025 16:50:59 Europe/Berlin] Data to update: Array
+(
+    [identificacion] => 54689312
+    [tipo_identificacion_id] => CC132
+    [nombre] => gato
+    [fecha_nacimiento] => 2025-10-23
+    [fecha_ingreso] => 2025-10-21
+    [celular] => 3042418863
+    [direccion] => calle 46 b sur #42-68
+    [eps] => SURA
+    [afp] => PORVENIR
+    [arl] => POSITIVA
+    [caja] => CONFAMA
+    [nombre_usuario] => gato
+    [cargo_id] => 21
+    [tipo_contrato_id] => CPS789
+    [duracion_contrato] => 5
+    [salario] => 5000000
+)
+
+[27-Oct-2025 16:50:59 Europe/Berlin] Preparing SQL: UPDATE empleados SET 
+        tipo_identificacion_id = ?, 
+        nombre = ?, 
+        fecha_nacimiento = ?, 
+        fecha_ingreso = ?, 
+        celular = ?, 
+        direccion = ?, 
+        eps = ?, 
+        afp = ?, 
+        arl = ?, 
+        caja = ?, 
+        nombre_usuario = ?, 
+        cargo_id = ?, 
+        tipo_contrato_id = ?, 
+        duracion_contrato = ?, 
+        salario = ? 
+        WHERE identificacion = ?
+[27-Oct-2025 16:50:59 Europe/Berlin] Binding parameters - Types: ssssissssssssisids
+[27-Oct-2025 16:50:59 Europe/Berlin] Parameter values: Array
+(
+    [0] => CC132
+    [1] => gato
+    [2] => 2025-10-23
+    [3] => 2025-10-21
+    [4] => 3042418863
+    [5] => calle 46 b sur #42-68
+    [6] => SURA
+    [7] => PORVENIR
+    [8] => POSITIVA
+    [9] => CONFAMA
+    [10] => gato
+    [11] => 21
+    [12] => CPS789
+    [13] => 5
+    [14] => 5000000
+    [15] => 54689312
+)
+
+[27-Oct-2025 16:50:59 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php:144
+Stack trace:
+#0 D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php(144): mysqli_stmt->bind_param('ssssissssssssis...', 'CC132', 'gato', '2025-10-23', '2025-10-21', '3042418863', 'calle 46 b sur ...', 'SURA', 'PORVENIR', 'POSITIVA', 'CONFAMA', 'gato', '21', 'CPS789', 5, '5000000', '54689312')
+#1 D:\HUELLASdelAYER\public_html\apis\admons\update_empleado.php(2): require_once('D:\\HUELLASdelAY...')
+#2 {main}
+  thrown in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php on line 144
+[27-Oct-2025 16:52:03 Europe/Berlin] Received update request: Array
+(
+    [identificacion] => 2147483647
+    [tipo_identificacion_id] => CC132
+    [nombre] => ledy vasquez
+    [fecha_nacimiento] => 2000-06-23
+    [fecha_ingreso] => 2025-09-23
+    [celular] => 3042418863
+    [direccion] => calle 46 b sur #42-68
+    [eps] => SURA
+    [afp] => PORVENIR
+    [arl] => POSITIVA
+    [caja] => CONFAMA
+    [nombre_usuario] => ledy
+    [cargo_id] => 14
+    [tipo_contrato_id] => CTV145
+    [duracion_contrato] => 7
+    [salario] => 5000000
+)
+
+[27-Oct-2025 16:52:03 Europe/Berlin] Processing update for employee ID: 2147483647
+[27-Oct-2025 16:52:03 Europe/Berlin] Data to update: Array
+(
+    [identificacion] => 2147483647
+    [tipo_identificacion_id] => CC132
+    [nombre] => ledy vasquez
+    [fecha_nacimiento] => 2000-06-23
+    [fecha_ingreso] => 2025-09-23
+    [celular] => 3042418863
+    [direccion] => calle 46 b sur #42-68
+    [eps] => SURA
+    [afp] => PORVENIR
+    [arl] => POSITIVA
+    [caja] => CONFAMA
+    [nombre_usuario] => ledy
+    [cargo_id] => 14
+    [tipo_contrato_id] => CTV145
+    [duracion_contrato] => 7
+    [salario] => 5000000
+)
+
+[27-Oct-2025 16:52:03 Europe/Berlin] Preparing SQL: UPDATE empleados SET 
+        tipo_identificacion_id = ?, 
+        nombre = ?, 
+        fecha_nacimiento = ?, 
+        fecha_ingreso = ?, 
+        celular = ?, 
+        direccion = ?, 
+        eps = ?, 
+        afp = ?, 
+        arl = ?, 
+        caja = ?, 
+        nombre_usuario = ?, 
+        cargo_id = ?, 
+        tipo_contrato_id = ?, 
+        duracion_contrato = ?, 
+        salario = ? 
+        WHERE identificacion = ?
+[27-Oct-2025 16:52:03 Europe/Berlin] Binding parameters - Types: ssssissssssssisids
+[27-Oct-2025 16:52:04 Europe/Berlin] Parameter values: Array
+(
+    [0] => CC132
+    [1] => ledy vasquez
+    [2] => 2000-06-23
+    [3] => 2025-09-23
+    [4] => 3042418863
+    [5] => calle 46 b sur #42-68
+    [6] => SURA
+    [7] => PORVENIR
+    [8] => POSITIVA
+    [9] => CONFAMA
+    [10] => ledy
+    [11] => 14
+    [12] => CTV145
+    [13] => 7
+    [14] => 5000000
+    [15] => 2147483647
+)
+
+[27-Oct-2025 16:52:04 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php:144
+Stack trace:
+#0 D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php(144): mysqli_stmt->bind_param('ssssissssssssis...', 'CC132', 'ledy vasquez', '2000-06-23', '2025-09-23', '3042418863', 'calle 46 b sur ...', 'SURA', 'PORVENIR', 'POSITIVA', 'CONFAMA', 'ledy', '14', 'CTV145', 7, '5000000', '2147483647')
+#1 D:\HUELLASdelAYER\public_html\apis\admons\update_empleado.php(2): require_once('D:\\HUELLASdelAY...')
+#2 {main}
+  thrown in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php on line 144
+[27-Oct-2025 17:55:34 Europe/Berlin] Received update request: Array
+(
+    [identificacion] => 54689312
+    [tipo_identificacion_id] => CC132
+    [nombre] => gato
+    [fecha_nacimiento] => 2025-10-23
+    [fecha_ingreso] => 2025-10-21
+    [celular] => 3042418863
+    [direccion] => calle 46 b sur #42-68
+    [eps] => SURA
+    [afp] => PORVENIR
+    [arl] => POSITIVA
+    [caja] => CONFAMA
+    [nombre_usuario] => gato
+    [cargo_id] => 21
+    [tipo_contrato_id] => CPS789
+    [duracion_contrato] => 5
+    [salario] => 5000000
+)
+
+[27-Oct-2025 17:55:34 Europe/Berlin] Processing update for employee ID: 54689312
+[27-Oct-2025 17:55:34 Europe/Berlin] Data to update: Array
+(
+    [identificacion] => 54689312
+    [tipo_identificacion_id] => CC132
+    [nombre] => gato
+    [fecha_nacimiento] => 2025-10-23
+    [fecha_ingreso] => 2025-10-21
+    [celular] => 3042418863
+    [direccion] => calle 46 b sur #42-68
+    [eps] => SURA
+    [afp] => PORVENIR
+    [arl] => POSITIVA
+    [caja] => CONFAMA
+    [nombre_usuario] => gato
+    [cargo_id] => 21
+    [tipo_contrato_id] => CPS789
+    [duracion_contrato] => 5
+    [salario] => 5000000
+)
+
+[27-Oct-2025 17:55:34 Europe/Berlin] Preparing SQL: UPDATE empleados SET 
+        tipo_identificacion_id = ?, 
+        nombre = ?, 
+        fecha_nacimiento = ?, 
+        fecha_ingreso = ?, 
+        celular = ?, 
+        direccion = ?, 
+        eps = ?, 
+        afp = ?, 
+        arl = ?, 
+        caja = ?, 
+        nombre_usuario = ?, 
+        cargo_id = ?, 
+        tipo_contrato_id = ?, 
+        duracion_contrato = ?, 
+        salario = ? 
+        WHERE identificacion = ?
+[27-Oct-2025 17:55:34 Europe/Berlin] Binding parameters - Types: ssssissssssssisids
+[27-Oct-2025 17:55:34 Europe/Berlin] Parameter values: Array
+(
+    [0] => CC132
+    [1] => gato
+    [2] => 2025-10-23
+    [3] => 2025-10-21
+    [4] => 3042418863
+    [5] => calle 46 b sur #42-68
+    [6] => SURA
+    [7] => PORVENIR
+    [8] => POSITIVA
+    [9] => CONFAMA
+    [10] => gato
+    [11] => 21
+    [12] => CPS789
+    [13] => 5
+    [14] => 5000000
+    [15] => 54689312
+)
+
+[27-Oct-2025 17:55:34 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php:144
+Stack trace:
+#0 D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php(144): mysqli_stmt->bind_param('ssssissssssssis...', 'CC132', 'gato', '2025-10-23', '2025-10-21', '3042418863', 'calle 46 b sur ...', 'SURA', 'PORVENIR', 'POSITIVA', 'CONFAMA', 'gato', '21', 'CPS789', 5, '5000000', '54689312')
+#1 D:\HUELLASdelAYER\public_html\apis\admons\update_empleado.php(2): require_once('D:\\HUELLASdelAY...')
+#2 {main}
+  thrown in D:\HUELLASdelAYER\backend\tablaEmpleados\update_empleado.php on line 144
+[27-Oct-2025 20:50:24 Europe/Berlin] Received update request: Array
+(
+    [identificacion] => 54689312
+    [tipo_identificacion_id] => CC132
+    [nombre] => gato
+    [fecha_nacimiento] => 2025-10-23
+    [fecha_ingreso] => 2025-10-21
+    [celular] => 3042418863
+    [direccion] => calle 46 b sur #42-68
+    [eps] => SURA
+    [afp] => PORVENIR
+    [arl] => POSITIVA
+    [caja] => CONFAMA
+    [nombre_usuario] => gato
+    [cargo_id] => 21
+    [tipo_contrato_id] => CPS789
+    [duracion_contrato] => 5
+    [salario] => 5000000
+)
+
+[27-Oct-2025 20:50:24 Europe/Berlin] Processing update for employee ID: 54689312
+[27-Oct-2025 20:50:24 Europe/Berlin] Data to update: Array
+(
+    [identificacion] => 54689312
+    [tipo_identificacion_id] => CC132
+    [nombre] => gato
+    [fecha_nacimiento] => 2025-10-23
+    [fecha_ingreso] => 2025-10-21
+    [celular] => 3042418863
+    [direccion] => calle 46 b sur #42-68
+    [eps] => SURA
+    [afp] => PORVENIR
+    [arl] => POSITIVA
+    [caja] => CONFAMA
+    [nombre_usuario] => gato
+    [cargo_id] => 21
+    [tipo_contrato_id] => CPS789
+    [duracion_contrato] => 5
+    [salario] => 5000000
+)
+
+[27-Oct-2025 20:50:24 Europe/Berlin] Preparing SQL: UPDATE empleados SET 
+        tipo_identificacion_id = ?, 
+        nombre = ?, 
+        fecha_nacimiento = ?, 
+        fecha_ingreso = ?, 
+        celular = ?, 
+        direccion = ?, 
+        eps = ?, 
+        afp = ?, 
+        arl = ?, 
+        caja = ?, 
+        nombre_usuario = ?, 
+        cargo_id = ?, 
+        tipo_contrato_id = ?, 
+        duracion_contrato = ?, 
+        salario = ? 
+        WHERE identificacion = ?
+[27-Oct-2025 20:50:24 Europe/Berlin] Binding parameters - Types: ssssissssssisids
+[27-Oct-2025 20:50:24 Europe/Berlin] Parameter values: Array
+(
+    [0] => CC132
+    [1] => gato
+    [2] => 2025-10-23
+    [3] => 2025-10-21
+    [4] => 3042418863
+    [5] => calle 46 b sur #42-68
+    [6] => SURA
+    [7] => PORVENIR
+    [8] => POSITIVA
+    [9] => CONFAMA
+    [10] => gato
+    [11] => 21
+    [12] => CPS789
+    [13] => 5
+    [14] => 5000000
+    [15] => 54689312
+)
+
+[27-Oct-2025 20:50:24 Europe/Berlin] Update successful: Array
+(
+    [success] => 1
+    [message] => Empleado actualizado correctamente
+    [affected_rows] => 1
+)
+

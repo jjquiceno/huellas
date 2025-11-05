@@ -91,11 +91,18 @@
                                 <th>Nombre</th>
                                 <th>Fecha Nacimiento</th>
                                 <th>Fecha Ingreso</th>
+                                <th>Celular</th>
+                                <th>Direccion</th>
+                                <th>EPS</th>
+                                <th>AFP</th>
+                                <th>ARL</th>
+                                <th>CAJA</th>
                                 <th>Nombre Usuario</th>
                                 <th>Cargo</th>
                                 <th>Tipo Contrato</th>
                                 <th>Duración Contrato</th>
                                 <th>Salario</th>
+                                <th>Inducción General</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -112,11 +119,18 @@
                                 echo "<td>" . htmlspecialchars($row['nombre']) . "</td>";
                                 echo "<td>" . htmlspecialchars($row['fecha_nacimiento']) . "</td>";
                                 echo "<td>" . htmlspecialchars($row['fecha_ingreso']) . "</td>";
+                                echo "<td>" . htmlspecialchars($row['celular']) . "</td>";
+                                echo "<td>" . htmlspecialchars($row['direccion']) . "</td>";
+                                echo "<td>" . htmlspecialchars($row['eps']) . "</td>";
+                                echo "<td>" . htmlspecialchars($row['afp']) . "</td>";
+                                echo "<td>" . htmlspecialchars($row['arl']) . "</td>";
+                                echo "<td>" . htmlspecialchars($row['caja']) . "</td>";
                                 echo "<td>" . htmlspecialchars($row['nombre_usuario']) . "</td>";
                                 echo "<td>" . htmlspecialchars($row['cargo_id']) . "</td>";
                                 echo "<td>" . htmlspecialchars($row['tipo_contrato_id']) . "</td>";
                                 echo "<td>" . htmlspecialchars($row['duracion_contrato']) . "</td>";
                                 echo "<td>" . htmlspecialchars($row['salario']) . "</td>";
+                                echo "<td>" . htmlspecialchars($row['induccionGeneral']) . "</td>";
                                 echo '
                                     <td>
                                         <button class="edit-btn">Editar</button> 

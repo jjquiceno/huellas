@@ -14,7 +14,7 @@ editModal.innerHTML = `
             <div class="form-group">
                 <label class="regular" for="edit_tipo_identificacion">Tipo de Identificación:</label>
                 <select class="regular" id="edit_tipo_identificacion" name="tipo_identificacion_id" required>
-                    <option value="">Tipo Identificacion</option>
+                    <option valueedit="">Tipo Identificacion</option>
                     <option value="CC132">CC</option>
                     <option value="CE798">CE</option>
                     <option value="TI548">TI</option>
@@ -34,6 +34,36 @@ editModal.innerHTML = `
             <div class="form-group">
                 <label class="regular" for="edit_fecha_ingreso">Fecha de Ingreso:</label>
                 <input class="regular" type="date" id="edit_fecha_ingreso" name="fecha_ingreso" required>
+            </div>
+            
+            <div class="form-group">
+                <label class="regular" for="edit_celular">Celular:</label>
+                <input class="regular" type="number" id="edit_celular" name="celular" required>
+            </div>
+            
+            <div class="form-group">
+                <label class="regular" for="edit_direccion">Direccion:</label>
+                <input class="regular" type="text" id="edit_direccion" name="direccion" required>
+            </div>
+            
+            <div class="form-group">
+                <label class="regular" for="edit_eps">EPS:</label>
+                <input class="regular" type="text" id="edit_eps" name="eps" required>
+            </div>
+            
+            <div class="form-group">
+                <label class="regular" for="edit_afp">AFP:</label>
+                <input class="regular" type="text" id="edit_afp" name="afp" required>
+            </div>
+            
+            <div class="form-group">
+                <label class="regular" for="edit_arl">ARL:</label>
+                <input class="regular" type="text" id="edit_arl" name="arl" required>
+            </div>
+            
+            <div class="form-group">
+                <label class="regular" for="edit_caja">Caja:</label>
+                <input class="regular" type="text" id="edit_caja" name="caja" required>
             </div>
             
             <div class="form-group">
@@ -177,11 +207,33 @@ document.addEventListener('click', function(e) {
         }
     }
     
-    // Manejar clic en botón editar
+    // Manejar clic en botón editar (empleados o líderes)
     if (e.target.classList.contains('edit-btn')) {
         e.preventDefault();
         const button = e.target;
         const row = button.closest('tr');
+
+        // Heurística para diferenciar filas de líderes (jefes) vs empleados:
+        // Tabla de líderes tiene columnas: [0] id_jefe, [1] identificacion, [2] nombre, [3] correo, [4] nombre_usuario, [5] (btn cambiar pass), [6] acciones
+        // Además, contiene un botón .change-password-btn en la fila.
+        const isLeaderRow = !!row && row.cells.length >= 7 && row.querySelector('button.change-password-btn');
+        if (isLeaderRow) {
+            // Abrir modal de edición de líder (jefe)
+            const jefeData = {
+                id_jefe: (row.cells[0]?.textContent || '').trim(),
+                identificacion: (row.cells[1]?.textContent || '').trim(),
+                nombre: (row.cells[2]?.textContent || '').trim(),
+                correo: (row.cells[3]?.textContent || '').trim(),
+                nombre_usuario: (row.cells[4]?.textContent || '').trim()
+            };
+            // Rellenar y mostrar modal
+            ensureLeaderModals();
+            document.getElementById('edit_jefe_id').value = jefeData.id_jefe;
+            document.getElementById('edit_jefe_username').value = jefeData.nombre_usuario;
+            document.getElementById('edit_jefe_correo').value = jefeData.correo;
+            leaderEditModal.style.display = 'block';
+            return; // no seguir con flujo de empleados
+        }
         
         // Obtener datos de la fila
         const empleadoData = {
@@ -190,11 +242,17 @@ document.addEventListener('click', function(e) {
             nombre: row.cells[2].textContent.trim(),
             fecha_nacimiento: row.cells[3].textContent.trim(),
             fecha_ingreso: row.cells[4].textContent.trim(),
-            nombre_usuario: row.cells[5].textContent.trim(),
-            cargo_id: row.cells[6].textContent.trim(),
-            tipo_contrato_id: row.cells[7].textContent.trim(),
-            duracion_contrato: row.cells[8].textContent.trim(),
-            salario: row.cells[9].textContent.trim()
+            celular: row.cells[5].textContent.trim(),
+            direccion: row.cells[6].textContent.trim(),
+            eps: row.cells[7].textContent.trim(),
+            afp: row.cells[8].textContent.trim(),
+            arl: row.cells[9].textContent.trim(),
+            caja: row.cells[10].textContent.trim(),
+            nombre_usuario: row.cells[11].textContent.trim(),
+            cargo_id: row.cells[12].textContent.trim(),
+            tipo_contrato_id: row.cells[13].textContent.trim(),
+            duracion_contrato: row.cells[14].textContent.trim(),
+            salario: row.cells[15].textContent.trim()
         };
         
         // Llenar el formulario con los datos del empleado
@@ -203,6 +261,12 @@ document.addEventListener('click', function(e) {
         document.getElementById('edit_nombre').value = empleadoData.nombre;
         document.getElementById('edit_fecha_nacimiento').value = empleadoData.fecha_nacimiento;
         document.getElementById('edit_fecha_ingreso').value = empleadoData.fecha_ingreso;
+        document.getElementById('edit_celular').value = empleadoData.celular;
+        document.getElementById('edit_direccion').value = empleadoData.direccion;
+        document.getElementById('edit_eps').value = empleadoData.eps;
+        document.getElementById('edit_afp').value = empleadoData.afp;
+        document.getElementById('edit_arl').value = empleadoData.arl;
+        document.getElementById('edit_caja').value = empleadoData.caja;
         document.getElementById('edit_nombre_usuario').value = empleadoData.nombre_usuario;
         
         // Asegurarse de que los cargos se hayan cargado antes de establecer el valor
@@ -234,6 +298,143 @@ window.addEventListener('click', function(event) {
     if (event.target === editModal) {
         editModal.style.display = 'none';
     }
+});
+
+// ===================== Líderes (Jefes) =====================
+let leaderEditModal; let leaderPassModal; let leaderModalsReady = false;
+function ensureLeaderModals(){
+    if (leaderModalsReady) return;
+    // Modal Editar Líder
+    leaderEditModal = document.createElement('div');
+    leaderEditModal.className = 'modal';
+    leaderEditModal.id = 'leaderEditModal';
+    leaderEditModal.innerHTML = `
+      <div class="modal-content">
+        <span class="close" id="closeLeaderEdit">&times;</span>
+        <h2>Editar Líder</h2>
+        <form id="editLeaderForm">
+          <input type="hidden" id="edit_jefe_id" name="id_jefe">
+          <div class="form-group">
+            <label for="edit_jefe_username">Nombre de usuario</label>
+            <input type="text" id="edit_jefe_username" name="nuevo_nombre_usuario" required>
+          </div>
+          <div class="form-group">
+            <label for="edit_jefe_correo">Correo</label>
+            <input type="email" id="edit_jefe_correo" name="correo" required>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+            <button type="button" class="btn btn-secondary" id="cancelLeaderEdit">Cancelar</button>
+          </div>
+        </form>
+      </div>`;
+
+    // Modal Cambiar Contraseña Líder
+    leaderPassModal = document.createElement('div');
+    leaderPassModal.className = 'modal';
+    leaderPassModal.id = 'leaderPassModal';
+    leaderPassModal.innerHTML = `
+      <div class="modal-content">
+        <span class="close" id="closeLeaderPass">&times;</span>
+        <h2>Cambiar Contraseña (Líder)</h2>
+        <form id="changeLeaderPasswordForm">
+          <input type="hidden" id="cp_jefe_id" name="id_jefe">
+          <div class="form-group">
+            <label for="new_leader_password">Nueva contraseña</label>
+            <input type="password" id="new_leader_password" name="new_password" minlength="8" required>
+          </div>
+          <div class="form-group">
+            <label for="confirm_leader_password">Confirmar contraseña</label>
+            <input type="password" id="confirm_leader_password" minlength="8" required>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Actualizar</button>
+            <button type="button" class="btn btn-secondary" id="cancelLeaderPass">Cancelar</button>
+          </div>
+        </form>
+      </div>`;
+
+    document.body.appendChild(leaderEditModal);
+    document.body.appendChild(leaderPassModal);
+
+    // Cierres
+    document.getElementById('closeLeaderEdit').addEventListener('click', ()=> leaderEditModal.style.display='none');
+    document.getElementById('cancelLeaderEdit').addEventListener('click', ()=> leaderEditModal.style.display='none');
+    document.getElementById('closeLeaderPass').addEventListener('click', ()=> leaderPassModal.style.display='none');
+    document.getElementById('cancelLeaderPass').addEventListener('click', ()=> leaderPassModal.style.display='none');
+    window.addEventListener('click', (e)=>{
+        if (e.target === leaderEditModal) leaderEditModal.style.display='none';
+        if (e.target === leaderPassModal) leaderPassModal.style.display='none';
+    });
+
+    // Submit Editar Líder
+    document.getElementById('editLeaderForm').addEventListener('submit', async function(e){
+        e.preventDefault();
+        const payload = {
+            id_jefe: document.getElementById('edit_jefe_id').value.trim(),
+            nuevo_nombre_usuario: document.getElementById('edit_jefe_username').value.trim(),
+            correo: document.getElementById('edit_jefe_correo').value.trim()
+        };
+        const btn = this.querySelector('button[type="submit"]');
+        const original = btn.innerHTML; btn.disabled = true; btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Guardando...';
+        try{
+            const res = await fetch('../../apis/admons/update_jefe.php', {
+                method: 'POST',
+                headers: { 'Accept':'application/json', 'Content-Type':'application/json', 'X-Requested-With':'XMLHttpRequest' },
+                body: JSON.stringify(payload)
+            });
+            const text = await res.text();
+            let data; try{ data = JSON.parse(text); } catch{ throw new Error(`Respuesta no-JSON (${res.status}): ${text.substring(0,200)}`); }
+            if (!res.ok || data.success === false) throw new Error(data?.message || `Error HTTP ${res.status}`);
+            alert('Líder actualizado correctamente');
+            leaderEditModal.style.display = 'none';
+            window.location.reload();
+        }catch(err){
+            console.error(err); alert('Error al actualizar líder: ' + err.message);
+        }finally{ btn.disabled = false; btn.innerHTML = original; }
+    });
+
+    // Submit Cambiar Contraseña Líder
+    document.getElementById('changeLeaderPasswordForm').addEventListener('submit', async function(e){
+        e.preventDefault();
+        const np = document.getElementById('new_leader_password').value;
+        const cp = document.getElementById('confirm_leader_password').value;
+        if (np !== cp) { alert('Las contraseñas no coinciden'); return; }
+        const payload = { id_jefe: document.getElementById('cp_jefe_id').value.trim(), new_password: np };
+        const btn = this.querySelector('button[type="submit"]');
+        const original = btn.innerHTML; btn.disabled = true; btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Actualizando...';
+        try{
+            const res = await fetch('../../apis/admons/change_password_jefe.php', {
+                method: 'POST',
+                headers: { 'Accept':'application/json', 'Content-Type':'application/json', 'X-Requested-With':'XMLHttpRequest' },
+                body: JSON.stringify(payload)
+            });
+            const text = await res.text();
+            let data; try{ data = JSON.parse(text); } catch{ throw new Error(`Respuesta no-JSON (${res.status}): ${text.substring(0,200)}`); }
+            if (!res.ok || data.success === false) throw new Error(data?.message || `Error HTTP ${res.status}`);
+            alert('Contraseña de líder actualizada correctamente');
+            leaderPassModal.style.display = 'none';
+        }catch(err){
+            console.error(err); alert('Error al actualizar contraseña del líder: ' + err.message);
+        }finally{ btn.disabled = false; btn.innerHTML = original; }
+    });
+
+    leaderModalsReady = true;
+}
+
+// Abrir modal Cambiar Contraseña (líder) desde la tabla
+document.addEventListener('click', function(e){
+    const btn = e.target.closest('button.change-password-btn');
+    if (!btn) return;
+    e.preventDefault();
+    const row = btn.closest('tr');
+    if (!row) return;
+    ensureLeaderModals();
+    const id_jefe = (row.cells[0]?.textContent || '').trim();
+    document.getElementById('cp_jefe_id').value = id_jefe;
+    document.getElementById('new_leader_password').value = '';
+    document.getElementById('confirm_leader_password').value = '';
+    leaderPassModal.style.display = 'block';
 });
 
 // Manejar el envío del formulario de edición

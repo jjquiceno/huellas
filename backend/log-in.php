@@ -1,8 +1,8 @@
 <?php
     include "conexion.php";
 
-    require_once "../auth.php";
-    require_once "../helpers/Validator.php";
+    require_once __DIR__ . '/../auth.php';
+    require_once __DIR__ . '/../helpers/Validator.php';
 
     if ( $_SERVER["REQUEST_METHOD"] !== "POST" ) {
         header('HTTP/1.1 405 METHOD NOT ALLOWED');
@@ -27,7 +27,7 @@
     }
     
     if ($auth->login($nombre_usuario, $password)) {
-        header('Location: ../public_html/frontend/templatesIntranet/succes.php');
+        header('Location: ../../frontend/templatesIntranet/succes.php');
         exit;
     } else {
         echo "

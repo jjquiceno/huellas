@@ -16,6 +16,12 @@
     $nombre = $_POST['nombre'] ?? '';
     $fecha_nacimiento = $_POST['fecha_nacimiento'] ?? '';
     $fecha_ingreso = $_POST['fecha_ingreso'] ?? '';
+    $celular = $_POST['celular'] ?? '';
+    $direccion = $_POST['direccion'] ?? '';
+    $eps = $_POST['eps'] ?? '';
+    $afp = $_POST['afp'] ?? '';
+    $arl = $_POST['arl'] ?? '';
+    $caja = $_POST['caja'] ?? '';
     $nombre_usuario = Validator::sanitizeUsername($_POST['nombre_usuario'] ?? '');
     $cargo_id = $_POST['cargo_id'] ?? '';
     $tipo_contrato_id = $_POST['tipo_contrato_id'] ?? '';
@@ -62,14 +68,35 @@
         $check_stmt->close();
     }
 
-    if (!$identificacion || !$tipo_identificacion_id || !$nombre || !$fecha_nacimiento || !$fecha_ingreso || !$nombre_usuario || !$cargo_id || !$tipo_contrato_id || !$salario) {
+    if (!$identificacion || !$tipo_identificacion_id || !$nombre || !$fecha_nacimiento || !$fecha_ingreso || !$celular || !$direccion || !$eps || !$afp || !$arl || !$caja || !$nombre_usuario || !$cargo_id || !$tipo_contrato_id || !$salario) {
         sendResponse(false, 'Todos los campos son obligatorios');
     }
 
-    $sql = "INSERT INTO empleados (identificacion, tipo_identificacion_id, nombre, fecha_nacimiento, fecha_ingreso, nombre_usuario, cargo_id, tipo_contrato_id, duracion_contrato, salario) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO empleados (identificacion, tipo_identificacion_id, nombre, fecha_nacimiento, fecha_ingreso, celular, direccion, eps, afp, arl, caja, nombre_usuario, cargo_id, tipo_contrato_id, duracion_contrato, salario) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     if ($stmt = $conexion->prepare($sql)) {
-        // Vincular parámetros
-        $stmt->bind_param("issssssssi", $identificacion, $tipo_identificacion_id, $nombre, $fecha_nacimiento, $fecha_ingreso, $nombre_usuario, $cargo_id, $tipo_contrato_id, $duracion_contrato, $salario);
+        // Casts y tipos
+        $duracion_val = ($duracion_contrato === '' ? null : (int)$duracion_contrato);
+        $salario_val = (float)$salario;
+        // Vincular parámetros (16 tipos): 14 strings, 1 int (duracion), 1 double (salario)
+        $stmt->bind_param(
+            "ssssssssssssssid",
+            $identificacion,
+            $tipo_identificacion_id,
+            $nombre,
+            $fecha_nacimiento,
+            $fecha_ingreso,
+            $celular,
+            $direccion,
+            $eps,
+            $afp,
+            $arl,
+            $caja,
+            $nombre_usuario,
+            $cargo_id,
+            $tipo_contrato_id,
+            $duracion_val,
+            $salario_val
+        );
         
         // Ejecutar la consulta
         if ($stmt->execute()) {

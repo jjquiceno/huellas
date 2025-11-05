@@ -62,8 +62,9 @@ if (!$identificacion) {
 // Validate required fields
 $requiredFields = [
     'tipo_identificacion_id', 'nombre', 'fecha_nacimiento', 
-    'fecha_ingreso', 'nombre_usuario', 'cargo_id', 
-    'tipo_contrato_id', 'duracion_contrato', 'salario'
+    'fecha_ingreso', 'celular', 'direccion', 'eps', 'afp', 'arl', 
+    'caja', 'nombre_usuario', 'cargo_id', 'tipo_contrato_id', 
+    'duracion_contrato', 'salario'
 ];
 
 $missingFields = [];
@@ -89,6 +90,12 @@ $sql = "UPDATE empleados SET
         nombre = ?, 
         fecha_nacimiento = ?, 
         fecha_ingreso = ?, 
+        celular = ?, 
+        direccion = ?, 
+        eps = ?, 
+        afp = ?, 
+        arl = ?, 
+        caja = ?, 
         nombre_usuario = ?, 
         cargo_id = ?, 
         tipo_contrato_id = ?, 
@@ -111,12 +118,18 @@ if (!$stmt) {
 try {
     // Log the parameter types and values
     // tipos: s(tipo_identificacion_id), s(nombre), s(fecha_nacimiento), s(fecha_ingreso), s(nombre_usuario), i(cargo_id), s(tipo_contrato_id), i(duracion_contrato), d(salario), s(identificacion)
-    $types = "sssssisids";
+    $types = "ssssissssssisids";
     $params = [
         $data['tipo_identificacion_id'],
         $data['nombre'],
         $data['fecha_nacimiento'],
         $data['fecha_ingreso'],
+        $data['celular'],
+        $data['direccion'],
+        $data['eps'],
+        $data['afp'],
+        $data['arl'],
+        $data['caja'],
         $data['nombre_usuario'],
         $data['cargo_id'],
         $data['tipo_contrato_id'],

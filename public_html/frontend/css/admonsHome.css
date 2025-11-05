@@ -59,6 +59,13 @@ textarea:valid ~ .label{
     font-size: 0.7rem;
     padding: 0 2px;
 }
+.labelActive{
+    top: -10px;
+    left: 15px;
+    font-size: 0.7rem;
+    padding: 0 2px;
+    border-radius: 5px;
+}
 .enviar{
     margin: auto;
     width: 200px;

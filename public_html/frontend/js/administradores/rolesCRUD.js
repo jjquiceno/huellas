@@ -3,6 +3,121 @@ const editModal = document.createElement('div');
 editModal.id = 'editRolModal';
 editModal.className = 'modal';
 
+// Contenido del modal
+editModal.innerHTML = `
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Editar Cargo</h2>
+        <form id="editEmployeeForm">
+            <input type="hidden" id="edit_rol_id" name="cargo_id">
+            
+            <div class="form-group">
+                <label class="regular" for="cargo">Nombre del cargo:</label>
+                <input class="regular" type="text" id="cargo" name="cargo" required>
+            </div>
+            
+            <div class="form-group">
+                <label class="regular" for="funciones">Funciones:</label>
+                <textarea class="regular" id="funciones" name="funciones" required></textarea>
+            </div>
+            
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                <button type="button" id="cancelEdit" class="btn btn-secondary">Cancelar</button>
+            </div>
+        </form>
+    </div>
+`;
+document.body.appendChild(editModal);
+
+// Cierre del modal
+editModal.querySelector('.close').addEventListener('click', function(){
+    editModal.style.display = 'none';
+});
+document.getElementById('cancelEdit').addEventListener('click', function(){
+    editModal.style.display = 'none';
+});
+window.addEventListener('click', function(e){
+    if (e.target === editModal) editModal.style.display = 'none';
+});
+
+// Submit de edición
+document.getElementById('editEmployeeForm').addEventListener('submit', async function(e){
+    e.preventDefault();
+    const formData = new FormData(this);
+    const payload = {};
+    formData.forEach((v,k)=> payload[k]=v);
+
+    const btn = this.querySelector('button[type="submit"]');
+    const original = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Guardando...';
+
+    try{
+        const res = await fetch('../../apis/admons/update_cargo.php', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'X-Requested-With': 'XMLHttpRequest'
+            },
+            body: JSON.stringify(payload)
+        });
+        const text = await res.text();
+        let data;
+        try { data = JSON.parse(text); }
+        catch { throw new Error(`Respuesta no-JSON (${res.status}): ${text.substring(0,200)}`); }
+
+        if (!res.ok || data.success === false){
+            throw new Error(data?.message || `Error HTTP ${res.status}`);
+        }
+        alert('Cargo actualizado correctamente');
+        editModal.style.display = 'none';
+        window.location.reload();
+    } catch(err){
+        console.error(err);
+        alert('Error al actualizar el cargo: ' + err.message);
+    } finally {
+        btn.disabled = false;
+        btn.innerHTML = original;
+    }
+});
+
+// Manejar clic en el botón de editar (delegado y robusto)
+document.addEventListener('click', function(e) {
+    const button = e.target.closest('button.edit-btn');
+    if (!button) return; // no es el botón de editar
+
+    e.preventDefault();
+    const row = button.closest('tr');
+    if (!row) { console.warn('[rolesCRUD] No se encontró la fila (tr) para el botón editar'); return; }
+
+    try {
+        const cargoData = {
+            cargo_id: (row.cells[0]?.textContent || '').trim(),
+            cargo: (row.cells[1]?.textContent || '').trim(),
+            funciones: (row.cells[2]?.textContent || '').trim()
+        };
+        console.debug('[rolesCRUD] Edit cargoData:', cargoData);
+
+        const idInput = document.getElementById('edit_rol_id');
+        const cargoInput = document.getElementById('cargo');
+        const funcionesInput = document.getElementById('funciones');
+        if (!idInput || !cargoInput || !funcionesInput) {
+            console.error('[rolesCRUD] No se encontraron inputs del modal de edición');
+            return;
+        }
+
+        idInput.value = cargoData.cargo_id;
+        cargoInput.value = cargoData.cargo;
+        funcionesInput.value = cargoData.funciones;
+
+        editModal.style.display = 'block';
+    } catch(err) {
+        console.error('[rolesCRUD] Error al preparar datos de edición:', err);
+    }
+});
+
 // Función para manejar los clics en las celdas de funciones y botones
 document.addEventListener('click', function(e) {
     // Manejar clic en celdas de funciones
@@ -57,6 +172,8 @@ function eliminarCargo(cargo_id, rowElement) {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'X-Requested-With': 'XMLHttpRequest'
         },
         body: JSON.stringify({ cargo_id: cargo_id })
     })

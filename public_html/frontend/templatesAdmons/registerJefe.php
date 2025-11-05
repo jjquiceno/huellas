@@ -79,7 +79,7 @@
                 </div>
             </div>
             <div class="main-content-fetch">
-                <form action="../../../backend/tablaJefes/registerJefe.php" method="post">
+                <!-- <form action="../../../backend/tablaJefes/registerJefe.php" method="post">
                     <label for="nombre_usuario">Nombre de usuario:</label>
                     <input type="text" id="nombre_usuario" name="nombre_usuario" required>
 
@@ -96,7 +96,48 @@
                     <input type="text" id="nombre" name="nombre" required>
                     
                     <button type="submit">Registrarse</button>
-                </form>
+                </form> -->
+
+                <div class="form-container">
+                    <form id="registerForm" class="form_form" action="../../../backend/tablaJefes/registerJefe.php" method="post">
+                        <div class="titule">
+                            <h3 class="bold" style="width: fit-content; margin: auto;">REGISTRA UN LÍDER</h3>
+                        </div>
+                        <div class="info-message" data-validate = "El nombre es requerido">
+                            <input class="caja_text regular" type="text" name="nombre_usuario" id="nombre_usuario" required>
+                            <label class="label lightI" for="nombre_usuario">Nombre de usuario</label>
+                            <span></span>
+                            <div class="separador-black"></div>
+                        </div>
+                        <div class="info-message" data-validate="El password es necesario">
+                            <input class="caja_text regular" type="text" name="contrasena" id="contrasena" required>
+                            <label class="label lightI" for="contrasena">contraseña</label>
+                            <span></span>
+                            <div class="separador-black"></div>
+                        </div>
+                        <div class="info-message" data-validate="El correo es necesario">
+                            <input class="caja_text regular" type="email" name="correo" id="correo" required>
+                            <label class="label lightI" for="correo">correo</label>
+                            <span></span>
+                            <div class="separador-black"></div>
+                        </div>
+                        <div class="info-message" data-validate="El correo es necesario">
+                            <input class="caja_text regular" type="text" name="identificacion" id="identificacion" required>
+                            <label class="label lightI" for="identificacion">identificacion</label>
+                            <span></span>
+                            <div class="separador-black"></div>
+                        </div>
+                        <div class="info-message" data-validate="El correo es necesario">
+                            <input class="caja_text regular" type="text" name="nombre" id="nombre" required>
+                            <label class="label lightI" for="nombre">nombre</label>
+                            <span></span>
+                            <div class="separador-black"></div>
+                        </div>
+                        <div class="e-b ">
+                            <button type="submit" class="enviar bold">enviar</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </section>

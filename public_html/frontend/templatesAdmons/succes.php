@@ -30,10 +30,10 @@ require_once '../../../helpers/require_login_admin.php';
                             <i class="fa-solid fa-house"></i>
                             <span class="BLACK regular menu-item">Registrar un usuario nuevo</span>
                         </a>
-                        <!-- <a href="registerEmpleado.php" class="ppp2">
+                        <a href="vistaedicionRE.php" class="ppp2">
                             <i class="fa-solid fa-house"></i>
                             <span class="BLACK regular menu-item">Registrar un empleado nuevo</span>
-                        </a> -->
+                        </a>
                         <a href="registerJefe.php" class="ppp2">
                             <i class="fa-solid fa-house"></i>
                             <span class="BLACK regular menu-item">Registrar un líder nuevo</span>
